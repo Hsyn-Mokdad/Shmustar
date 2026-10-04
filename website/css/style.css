@@ -115,11 +115,11 @@ label:focus-visible {
 
 ul,
 ol {
-  padding-left: 1.25rem;
+  padding-inline-start: 1.25rem;
 }
 
 /* Arabic text inside English pages */
-[lang="ar"] {
+html:not([lang="ar"]) [lang="ar"] {
   font-family: "Segoe UI", Tahoma, Arial, sans-serif;
 }
 
@@ -164,7 +164,7 @@ ol {
 /* Skip link: first thing a keyboard user reaches */
 .skip-link {
   position: absolute;
-  left: var(--space-sm);
+  inset-inline-start: var(--space-sm);
   top: -100px;
   background: var(--ink);
   color: var(--white);
@@ -358,7 +358,7 @@ ol {
 }
 
 .dropdown-list {
-  padding-left: var(--space-sm);
+  padding-inline-start: var(--space-sm);
 }
 
 .nav-list .nav-emergency {
@@ -475,7 +475,8 @@ ol {
   margin-bottom: var(--space-xs);
 }
 
-.hero .arabic-name {
+.hero .arabic-name,
+.hero .alt-name {
   display: block;
   font-size: 1.6rem;
   color: var(--sun);
@@ -535,7 +536,7 @@ ol {
 
 .breadcrumb li + li::before {
   content: "›";
-  margin-right: 0.4rem;
+  margin-inline-end: 0.4rem;
   color: var(--sun);
 }
 
@@ -653,7 +654,7 @@ ol {
   padding: 0.15rem 0.7rem;
   font-size: 0.8rem;
   font-weight: 600;
-  margin-right: 0.4rem;
+  margin-inline-end: 0.4rem;
 }
 
 /* Quick-link cards (Nielsen: flexibility & efficiency) — the whole card is a link */
@@ -667,14 +668,14 @@ ol {
   box-shadow: var(--shadow);
   text-decoration: none;
   color: var(--ink);
-  border-left: 5px solid var(--green);
+  border-inline-start: 5px solid var(--green);
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .quick-link:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-hover);
-  border-left-color: var(--sun);
+  border-inline-start-color: var(--sun);
   color: var(--ink);
 }
 
@@ -690,7 +691,7 @@ ol {
 }
 
 .quick-link--emergency {
-  border-left-color: var(--emergency);
+  border-inline-start-color: var(--emergency);
 }
 
 .icon {
@@ -712,7 +713,7 @@ ol {
    -------------------------------------------------------------------------- */
 .callout {
   background-color: var(--white);
-  border-left: 5px solid var(--sun);
+  border-inline-start: 5px solid var(--sun);
   border-radius: var(--radius-sm);
   padding: var(--space-md);
   box-shadow: var(--shadow);
@@ -720,7 +721,7 @@ ol {
 }
 
 .callout--danger {
-  border-left-color: var(--emergency);
+  border-inline-start-color: var(--emergency);
 }
 
 .check-list {
@@ -730,14 +731,14 @@ ol {
 
 .check-list li {
   position: relative;
-  padding-left: 1.8rem;
+  padding-inline-start: 1.8rem;
   margin-bottom: 0.6rem;
 }
 
 .check-list li::before {
   content: "✓";
   position: absolute;
-  left: 0;
+  inset-inline-start: 0;
   top: 0;
   color: var(--white);
   background-color: var(--green);
@@ -764,7 +765,7 @@ blockquote::before {
   content: "“";
   position: absolute;
   top: -0.4rem;
-  left: 0.8rem;
+  inset-inline-start: 0.8rem;
   font-family: Georgia, serif;
   font-size: 4rem;
   color: var(--sun);
@@ -795,7 +796,7 @@ table {
 }
 
 caption {
-  text-align: left;
+  text-align: start;
   font-family: var(--font-heading);
   font-weight: 600;
   padding: var(--space-sm);
@@ -805,7 +806,7 @@ caption {
 
 th,
 td {
-  text-align: left;
+  text-align: start;
   padding: 0.8rem var(--space-sm);
   border-bottom: 1px solid var(--sand);
 }
@@ -987,7 +988,7 @@ tbody tr:hover {
 .lightbox-close {
   position: absolute;
   top: var(--space-sm);
-  right: var(--space-sm);
+  inset-inline-end: var(--space-sm);
   color: var(--white);
   font-size: 1rem;
   font-weight: 600;
@@ -1248,7 +1249,7 @@ tbody tr:hover {
 /* Floating "Back to top" button (Nielsen: user control & freedom) */
 .back-to-top {
   position: fixed;
-  right: var(--space-sm);
+  inset-inline-end: var(--space-sm);
   bottom: var(--space-sm);
   z-index: 90;
   width: 48px;
@@ -1269,7 +1270,73 @@ tbody tr:hover {
 }
 
 /* --------------------------------------------------------------------------
-   17. SMALL UTILITIES
+   17. LANGUAGE SWITCH + ARABIC (RTL) VERSION
+   Layout rules above use logical properties (inline-start / inline-end),
+   so they mirror automatically on pages with dir="rtl".
+   -------------------------------------------------------------------------- */
+.lang-switch {
+  margin-inline-start: auto;
+  margin-inline-end: 0.5rem;
+  padding: 0.45rem 0.9rem;
+  border: 2px solid var(--green);
+  border-radius: 999px;
+  color: var(--green);
+  font-weight: 600;
+  font-size: 0.9rem;
+  line-height: 1.2;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.lang-switch:hover {
+  background-color: var(--green);
+  color: var(--white);
+}
+
+/* The switch on English pages is written in Arabic */
+html:not([lang="ar"]) .lang-switch[lang="ar"] {
+  font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+}
+
+/* Arabic pages: Arabic fonts and no letter-spacing / uppercase */
+html[lang="ar"] {
+  --font-heading: "Cairo", "Segoe UI", Tahoma, Arial, sans-serif;
+  --font-body: "IBM Plex Sans Arabic", "Segoe UI", Tahoma, Arial, sans-serif;
+}
+
+html[lang="ar"] body {
+  line-height: 1.8;
+}
+
+html[lang="ar"] .eyebrow,
+html[lang="ar"] .dropdown-title {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+html[lang="ar"] .eyebrow {
+  font-size: 0.9rem;
+}
+
+[dir="rtl"] .breadcrumb li + li::before {
+  content: "‹";
+}
+
+/* Very small phones: drop the brand subtitle so logo, language switch
+   and Menu button fit on one row */
+@media (max-width: 479px) {
+  .brand-sub {
+    display: none;
+  }
+}
+
+/* Phone numbers and e-mails keep left-to-right order inside Arabic text */
+[dir="rtl"] [dir="ltr"] {
+  unicode-bidi: isolate;
+}
+
+/* --------------------------------------------------------------------------
+   18. SMALL UTILITIES
    -------------------------------------------------------------------------- */
 .text-center { text-align: center; }
 .mt-lg { margin-top: var(--space-lg); }
@@ -1285,7 +1352,7 @@ tbody tr:hover {
 }
 
 /* ==========================================================================
-   18. MEDIA QUERIES — mobile-first: each one ADDS layout for bigger screens
+   19. MEDIA QUERIES — mobile-first: each one ADDS layout for bigger screens
    ========================================================================== */
 
 /* Tablet: 600px and wider */
@@ -1335,10 +1402,17 @@ tbody tr:hover {
     display: none;
   }
 
+  /* Language switch sits after the menu on desktop */
+  .lang-switch {
+    order: 3;
+    margin-inline: 0.5rem 0;
+  }
+
   .main-nav {
     display: block;
     width: auto;
     padding-bottom: 0;
+    margin-inline-start: auto;
   }
 
   .nav-list {
@@ -1376,7 +1450,7 @@ tbody tr:hover {
     display: none;
     position: absolute;
     top: 100%;
-    left: 0;
+    inset-inline-start: 0;
     min-width: 230px;
     padding: var(--space-xs);
     background-color: var(--white);

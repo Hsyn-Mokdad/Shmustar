@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="تواصل مع بلدية شمسطار: أرسل رسالة، واعثر على العنوان والهاتف والبريد الإلكتروني وساعات الدوام والخريطة.">
+  <meta name="author" content="Hsyn Mekdad">
+  <meta name="theme-color" content="#3E6B48">
+  <title>اتصل بنا | بلدية شمسطار</title>
+  <link rel="icon" href="../images/favicon.svg" type="image/svg+xml">
+  <link rel="alternate" hreflang="en" href="../contact.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@500;600;700;800&amp;family=IBM+Plex+Sans+Arabic:wght@400;500;600&amp;display=swap">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">انتقل إلى المحتوى الرئيسي</a>
+
+  <!-- ===== HEADER (same on every page) ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="بلدية شمسطار — العودة إلى الصفحة الرئيسية">
+        <img src="../images/logo.svg" alt="" width="44" height="37">
+        <span class="brand-text">
+          <span class="brand-name">شمسطار</span>
+          <span class="brand-sub">البلدية · <span lang="en">Chmustar Municipality</span></span>
+        </span>
+      </a>
+
+      <a class="lang-switch" href="../contact.html" hreflang="en" lang="en">English</a>
+
+      <!-- Mobile menu: the checkbox stores the open/closed state, CSS does the rest -->
+      <input type="checkbox" id="nav-toggle" class="nav-toggle">
+      <label for="nav-toggle" class="nav-toggle-label"><span class="hamburger"></span> القائمة</label>
+
+      <nav class="main-nav" aria-label="القائمة الرئيسية">
+        <ul class="nav-list">
+          <li><a href="index.html">الرئيسية</a></li>
+          <li><a href="about.html">عن البلدة</a></li>
+          <li><a href="municipality.html">البلدية</a></li>
+          <li><a href="services.html">الخدمات</a></li>
+          <li><a href="news.html">الأخبار</a></li>
+          <li class="has-dropdown">
+            <span class="dropdown-title" tabindex="0">استكشف</span>
+            <ul class="dropdown-list">
+              <li><a href="nature.html">الطبيعة والسياحة</a></li>
+              <li><a href="agriculture.html">الزراعة والمنتجات</a></li>
+              <li><a href="education-health.html">التعليم والصحة</a></li>
+              <li><a href="culture.html">الثقافة والجمعيات</a></li>
+              <li><a href="gallery.html">معرض الصور</a></li>
+            </ul>
+          </li>
+          <li><a href="emergency.html" class="nav-emergency">الطوارئ</a></li>
+          <li><a href="contact.html" class="active" aria-current="page">اتصل بنا</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+    <section class="page-hero page-hero--contact">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="مسار التنقل">
+          <ol>
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><span aria-current="page">اتصل بنا</span></li>
+          </ol>
+        </nav>
+        <h1>اتصل بنا</h1>
+        <p>أسئلة أو طلبات أو اقتراحات؟ نحن هنا لمساعدتك.</p>
+      </div>
+    </section>
+
+  <main id="main">
+    <section class="section" aria-labelledby="form-title">
+      <div class="container split">
+        <!-- The form sends to FormSubmit (free service, no server needed). Replace the e-mail address in action. -->
+        <form class="form" action="https://formsubmit.co/info@chmustar.gov.lb" method="post">
+          <h2 id="form-title">أرسل لنا رسالة</h2>
+          <p class="muted">الحقول المميّزة بـ <span class="required">*</span> إلزامية.</p>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="name">الاسم الكامل <span class="required">*</span></label>
+              <input type="text" id="name" name="name" autocomplete="name" required minlength="3" placeholder="مثال: علي المقداد">
+              <span class="field-error">يرجى إدخال اسمك الكامل (3 أحرف على الأقل).</span>
+            </div>
+            <div class="field">
+              <label for="phone">رقم الهاتف</label>
+              <input type="tel" id="phone" name="phone" autocomplete="tel" pattern="[0-9+ ]{8,15}" placeholder="70 123 456" dir="ltr">
+              <span class="field-hint">اختياري — أرقام فقط، من 8 إلى 15 خانة.</span>
+              <span class="field-error">يرجى استخدام الأرقام فقط (من 8 إلى 15).</span>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="email">البريد الإلكتروني <span class="required">*</span></label>
+            <input type="email" id="email" name="email" autocomplete="email" required placeholder="name@example.com" dir="ltr">
+            <span class="field-error">يرجى إدخال بريد إلكتروني صحيح، مثل name@example.com.</span>
+          </div>
+
+          <div class="field">
+            <label for="subject">الموضوع <span class="required">*</span></label>
+            <select id="subject" name="subject" required>
+              <option value="">— اختر الموضوع —</option>
+              <option>سؤال عن خدمة</option>
+              <option>شكوى</option>
+              <option>اقتراح</option>
+              <option>الإبلاغ عن مشكلة (طريق، إنارة، نفايات)</option>
+              <option>غير ذلك</option>
+            </select>
+            <span class="field-error">يرجى اختيار الموضوع.</span>
+          </div>
+
+          <div class="field">
+            <label for="message">الرسالة <span class="required">*</span></label>
+            <textarea id="message" name="message" rows="6" required minlength="10" placeholder="اكتب رسالتك هنا…"></textarea>
+            <span class="field-error">يجب ألّا تقلّ رسالتك عن 10 أحرف.</span>
+          </div>
+
+          <div class="checkbox-field">
+            <input type="checkbox" id="consent" name="consent" required>
+            <label for="consent">أوافق على أن تتواصل البلدية معي بشأن هذه الرسالة. <span class="required">*</span></label>
+          </div>
+
+          <input type="hidden" name="_subject" value="رسالة جديدة من موقع بلدية شمسطار (النسخة العربية)">
+          <div class="btn-group">
+            <button type="submit" class="btn btn-green">أرسل الرسالة</button>
+            <button type="reset" class="btn btn-outline-dark">مسح</button>
+          </div>
+        </form>
+
+        <div>
+          <h2>زورونا أو اتصلوا بنا</h2>
+          <ul class="contact-list">
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span><strong>العنوان</strong>مبنى البلدية، الشارع الرئيسي، شمسطار، بعلبك الهرمل، لبنان</span></li>
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"/></svg><span><strong>الهاتف</strong><a href="tel:+9618000000" dir="ltr">+961 8 000 000</a></span></li>
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span><strong>البريد الإلكتروني</strong><a href="mailto:info@chmustar.gov.lb" dir="ltr">info@chmustar.gov.lb</a></span></li>
+          </ul>
+          <div class="table-wrap">
+          <table>
+            <caption>ساعات الدوام</caption>
+            <thead>
+              <tr><th scope="col">اليوم</th><th scope="col">الساعات</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>من الاثنين إلى الخميس</td><td><time datetime="08:00">8:00</time> – <time datetime="14:00">14:00</time></td></tr>
+              <tr><td>الجمعة</td><td><time datetime="08:00">8:00</time> – <time datetime="11:00">11:00</time></td></tr>
+              <tr><td>السبت</td><td><time datetime="08:00">8:00</time> – <time datetime="13:00">13:00</time></td></tr>
+              <tr><td>الأحد والعطل الرسمية</td><td>مقفل</td></tr>
+            </tbody>
+          </table>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" aria-labelledby="map2-title">
+      <div class="container">
+        <h2 id="map2-title">الخريطة</h2>
+        <div class="media-frame map-frame">
+          <iframe src="https://maps.google.com/maps?q=Chmustar%2C%20Lebanon&amp;z=13&amp;hl=ar&amp;output=embed" title="خريطة تُظهر موقع بلدية شمسطار" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER (same on every page) ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">
+            <img src="../images/logo.svg" alt="" width="44" height="37">
+            <span>بلدية شمسطار</span>
+          </div>
+          <p>بلدة واحدة، موقع واحد — كل المعلومات في مكان واحد. في خدمة أهالي شمسطار والقرى المجاورة في بعلبك الهرمل.</p>
+        </div>
+        <section>
+          <h2>روابط سريعة</h2>
+          <ul>
+            <li><a href="services.html">الخدمات والمعاملات</a></li>
+            <li><a href="news.html">الأخبار والإعلانات</a></li>
+            <li><a href="emergency.html">أرقام الطوارئ</a></li>
+            <li><a href="gallery.html">معرض الصور</a></li>
+          </ul>
+        </section>
+        <section>
+          <h2>اكتشف</h2>
+          <ul>
+            <li><a href="about.html">عن شمسطار</a></li>
+            <li><a href="nature.html">الطبيعة والسياحة</a></li>
+            <li><a href="agriculture.html">الزراعة</a></li>
+            <li><a href="culture.html">الثقافة والجمعيات</a></li>
+          </ul>
+        </section>
+        <section>
+          <h2>تواصل معنا</h2>
+          <address>
+            <ul>
+              <li>مبنى البلدية، الشارع الرئيسي، شمسطار، بعلبك الهرمل، لبنان</li>
+              <li><a href="tel:+9618000000" dir="ltr">+961 8 000 000</a></li>
+              <li><a href="mailto:info@chmustar.gov.lb" dir="ltr">info@chmustar.gov.lb</a></li>
+              <li><a href="https://www.facebook.com/search/top?q=%D8%A8%D9%84%D8%AF%D9%8A%D8%A9%20%D8%B4%D9%85%D8%B3%D8%B7%D8%A7%D8%B1" target="_blank" rel="noopener">صفحة فيسبوك</a></li>
+            </ul>
+          </address>
+        </section>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 بلدية شمسطار. جميع الحقوق محفوظة.</p>
+        <p><a href="#top">العودة إلى الأعلى ↑</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#top" class="back-to-top" aria-label="العودة إلى الأعلى">↑</a>
+</body>
+</html>
