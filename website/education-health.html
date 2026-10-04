@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Schools, vocational training and health services in Chmustar, a regional centre for the surrounding villages.">
+  <meta name="author" content="Hsyn Mekdad">
+  <meta name="theme-color" content="#3E6B48">
+  <title>Education &amp; Health | Chmustar Municipality</title>
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Poppins:wght@500;600;700;800&amp;display=swap">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- ===== HEADER (same on every page) ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Chmustar Municipality — go to Home page">
+        <img src="images/logo.svg" alt="" width="44" height="37">
+        <span class="brand-text">
+          <span class="brand-name">Chmustar</span>
+          <span class="brand-sub">Municipality · <span lang="ar">بلدية شمسطار</span></span>
+        </span>
+      </a>
+
+      <!-- Mobile menu: the checkbox stores the open/closed state, CSS does the rest -->
+      <input type="checkbox" id="nav-toggle" class="nav-toggle">
+      <label for="nav-toggle" class="nav-toggle-label"><span class="hamburger"></span> Menu</label>
+
+      <nav class="main-nav" aria-label="Main menu">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="municipality.html">Municipality</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="news.html">News</a></li>
+          <li class="has-dropdown active-group">
+            <span class="dropdown-title" tabindex="0">Explore</span>
+            <ul class="dropdown-list">
+              <li><a href="nature.html">Nature &amp; Tourism</a></li>
+              <li><a href="agriculture.html">Agriculture &amp; Products</a></li>
+              <li><a href="education-health.html" class="active" aria-current="page">Education &amp; Health</a></li>
+              <li><a href="culture.html">Culture &amp; Associations</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+            </ul>
+          </li>
+          <li><a href="emergency.html" class="nav-emergency">Emergency</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+    <section class="page-hero page-hero--education">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li><span aria-current="page">Education &amp; Health</span></li>
+          </ol>
+        </nav>
+        <h1>Education &amp; Health</h1>
+        <p>Schools and health services for Chmustar and the surrounding villages.</p>
+      </div>
+    </section>
+
+  <main id="main">
+    <section class="section" aria-labelledby="edu-title">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Education</span>
+          <h2 id="edu-title">Learning in Chmustar since 1936</h2>
+          <p>Students from many nearby villages come to Chmustar to study.</p>
+        </div>
+        <div class="card-grid">
+          <article class="card"><div class="card-body"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m2 9 10-5 10 5-10 5z"/><path d="M6 11v5c3 2 9 2 12 0v-5"/></svg><h3>Public schools</h3><p>Official schools from primary to secondary level.</p></div></article>
+          <article class="card"><div class="card-body"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m2 9 10-5 10 5-10 5z"/><path d="M6 11v5c3 2 9 2 12 0v-5"/></svg><h3>Private schools</h3><p>Private schools offering different programmes and languages.</p></div></article>
+          <article class="card"><div class="card-body"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21V8l8-5 8 5v13"/><path d="M9 21v-6h6v6M4 21h16M9 10h.01M15 10h.01"/></svg><h3>Vocational training</h3><p>Technical and vocational institutes that prepare young people for work.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" aria-labelledby="health-title">
+      <div class="container split">
+        <div>
+          <span class="eyebrow">Health</span>
+          <h2 id="health-title">Health services</h2>
+          <p>Chmustar has health centres, clinics and pharmacies that serve the town and the villages around it.</p>
+          <ul class="check-list">
+            <li>Primary health care and vaccinations</li>
+            <li>Private clinics and laboratories</li>
+            <li>Pharmacies in the town centre</li>
+          </ul>
+          <div class="callout callout--danger">
+            <p><strong>Medical emergency?</strong> Call the Lebanese Red Cross on <a href="tel:140">140</a>. See all <a href="emergency.html">emergency numbers</a>.</p>
+          </div>
+        </div>
+        <img src="images/garden-house.webp" alt="A quiet green garden in Chmustar" width="1600" height="1200" loading="lazy">
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER (same on every page) ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">
+            <img src="images/logo.svg" alt="" width="44" height="37">
+            <span>Chmustar Municipality</span>
+          </div>
+          <p>One town, one website — all the information in one place. Serving the residents of Chmustar and the surrounding villages of Baalbek-Hermel.</p>
+        </div>
+        <section>
+          <h2>Quick links</h2>
+          <ul>
+            <li><a href="services.html">Services &amp; Paperwork</a></li>
+            <li><a href="news.html">News &amp; Announcements</a></li>
+            <li><a href="emergency.html">Emergency Numbers</a></li>
+            <li><a href="gallery.html">Photo Gallery</a></li>
+          </ul>
+        </section>
+        <section>
+          <h2>Discover</h2>
+          <ul>
+            <li><a href="about.html">About Chmustar</a></li>
+            <li><a href="nature.html">Nature &amp; Tourism</a></li>
+            <li><a href="agriculture.html">Agriculture</a></li>
+            <li><a href="culture.html">Culture &amp; Associations</a></li>
+          </ul>
+        </section>
+        <section>
+          <h2>Contact</h2>
+          <address>
+            <ul>
+              <li>Municipality Building, Main Street, Chmustar, Baalbek-Hermel, Lebanon</li>
+              <li><a href="tel:+9618000000">+961 8 000 000</a></li>
+              <li><a href="mailto:info@chmustar.gov.lb">info@chmustar.gov.lb</a></li>
+              <li><a href="https://www.facebook.com/search/top?q=%D8%A8%D9%84%D8%AF%D9%8A%D8%A9%20%D8%B4%D9%85%D8%B3%D8%B7%D8%A7%D8%B1" target="_blank" rel="noopener">Facebook page</a></li>
+            </ul>
+          </address>
+        </section>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Chmustar Municipality. All rights reserved.</p>
+        <p><a href="#top">Back to top ↑</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#top" class="back-to-top" aria-label="Back to top">↑</a>
+</body>
+</html>
