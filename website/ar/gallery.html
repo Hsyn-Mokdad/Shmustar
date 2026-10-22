@@ -12,167 +12,172 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@500;600;700;800&amp;family=IBM+Plex+Sans+Arabic:wght@400;500;600&amp;display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" integrity="sha384-dpuaG1suU0eT09tx5plTaGMLBsfDLzUCCUXOY2j/LSvXYuG6Bqs43ALlhIqAJVRb" crossorigin="anonymous">
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body id="top">
-  <a class="skip-link" href="#main">انتقل إلى المحتوى الرئيسي</a>
+  <a class="skip-link visually-hidden-focusable position-absolute top-0 start-0 m-2 px-3 py-2 bg-dark text-white rounded-2" href="#main">انتقل إلى المحتوى الرئيسي</a>
 
   <!-- ===== HEADER (same on every page) ===== -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="index.html" aria-label="بلدية شمسطار — العودة إلى الصفحة الرئيسية">
-        <img src="../images/logo.svg" alt="" width="44" height="37">
-        <span class="brand-text">
-          <span class="brand-name">شمسطار</span>
-          <span class="brand-sub">البلدية · <span lang="en">Chmustar Municipality</span></span>
-        </span>
-      </a>
+  <header class="site-header sticky-top border-bottom d-print-none">
+    <nav class="navbar navbar-expand-lg" aria-label="القائمة الرئيسية">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="index.html" aria-label="بلدية شمسطار — العودة إلى الصفحة الرئيسية">
+          <img src="../images/logo.svg" alt="" width="44" height="37">
+          <span class="d-flex flex-column lh-sm">
+            <span class="font-heading fw-bold fs-5">شمسطار</span>
+            <span class="small text-body-secondary d-none d-sm-inline">البلدية · <span lang="en">Chmustar Municipality</span></span>
+          </span>
+        </a>
 
-      <a class="lang-switch" href="../gallery.html" hreflang="en" lang="en">English</a>
+        <a class="btn btn-outline-primary btn-sm ms-auto me-2 ms-lg-2 me-lg-0 order-lg-last" href="../gallery.html" hreflang="en" lang="en">English</a>
 
-      <!-- Mobile menu: the checkbox stores the open/closed state, CSS does the rest -->
-      <input type="checkbox" id="nav-toggle" class="nav-toggle">
-      <label for="nav-toggle" class="nav-toggle-label"><span class="hamburger"></span> القائمة</label>
+        <!-- Mobile menu: Bootstrap "collapse" opens and closes the menu -->
+        <button class="navbar-toggler rounded-pill fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false">
+          <span class="navbar-toggler-icon"></span> القائمة
+        </button>
 
-      <nav class="main-nav" aria-label="القائمة الرئيسية">
-        <ul class="nav-list">
-          <li><a href="index.html">الرئيسية</a></li>
-          <li><a href="about.html">عن البلدة</a></li>
-          <li><a href="municipality.html">البلدية</a></li>
-          <li><a href="services.html">الخدمات</a></li>
-          <li><a href="news.html">الأخبار</a></li>
-          <li class="has-dropdown active-group">
-            <span class="dropdown-title" tabindex="0">استكشف</span>
-            <ul class="dropdown-list">
-              <li><a href="nature.html">الطبيعة والسياحة</a></li>
-              <li><a href="agriculture.html">الزراعة والمنتجات</a></li>
-              <li><a href="education-health.html">التعليم والصحة</a></li>
-              <li><a href="culture.html">الثقافة والجمعيات</a></li>
-              <li><a href="gallery.html" class="active" aria-current="page">معرض الصور</a></li>
-            </ul>
-          </li>
-          <li><a href="emergency.html" class="nav-emergency">الطوارئ</a></li>
-          <li><a href="contact.html">اتصل بنا</a></li>
-        </ul>
-      </nav>
-    </div>
+        <div class="collapse navbar-collapse" id="main-nav">
+          <ul class="navbar-nav nav-pills ms-auto gap-lg-1 py-2 py-lg-0">
+            <li class="nav-item"><a class="nav-link" href="index.html">الرئيسية</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">عن البلدة</a></li>
+            <li class="nav-item"><a class="nav-link" href="municipality.html">البلدية</a></li>
+            <li class="nav-item"><a class="nav-link" href="services.html">الخدمات</a></li>
+            <li class="nav-item"><a class="nav-link" href="news.html">الأخبار</a></li>
+            <li class="nav-item dropdown">
+              <button class="nav-link dropdown-toggle active" type="button" data-bs-toggle="dropdown" aria-expanded="false">استكشف</button>
+              <ul class="dropdown-menu border-0 shadow">
+                <li><a class="dropdown-item" href="nature.html">الطبيعة والسياحة</a></li>
+                <li><a class="dropdown-item" href="agriculture.html">الزراعة والمنتجات</a></li>
+                <li><a class="dropdown-item" href="education-health.html">التعليم والصحة</a></li>
+                <li><a class="dropdown-item" href="culture.html">الثقافة والجمعيات</a></li>
+                <li><a class="dropdown-item active" href="gallery.html" aria-current="page">معرض الصور</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link fw-bold text-danger" href="emergency.html">الطوارئ</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">اتصل بنا</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
   </header>
 
-    <section class="page-hero page-hero--gallery">
+    <section class="page-hero page-hero--gallery text-white py-5 d-print-none">
       <div class="container">
-        <nav class="breadcrumb" aria-label="مسار التنقل">
-          <ol>
-            <li><a href="index.html">الرئيسية</a></li>
-            <li><span aria-current="page">معرض الصور</span></li>
+        <nav aria-label="مسار التنقل">
+          <ol class="breadcrumb mb-3">
+            <li class="breadcrumb-item"><a class="text-white" href="index.html">الرئيسية</a></li>
+            <li class="breadcrumb-item active" aria-current="page">معرض الصور</li>
           </ol>
         </nav>
         <h1>معرض الصور</h1>
-        <p>شمسطار عبر الفصول. انقر على أي صورة لتكبيرها.</p>
+        <p class="lead col-lg-7 mb-0">شمسطار عبر الفصول. انقر على أي صورة لتكبيرها.</p>
       </div>
     </section>
 
   <main id="main">
-    <section class="section" aria-labelledby="gal-title">
+    <section class="py-5" aria-labelledby="gal-title">
       <div class="container">
-        <div class="section-header">
-          <span class="eyebrow">20 صورة</span>
+        <div class="col-lg-8 mb-5">
+          <span class="eyebrow d-inline-block mb-2 small fw-semibold text-uppercase text-primary">20 صورة</span>
           <h2 id="gal-title">الصيف والشتاء والغروب والشوارع</h2>
         </div>
-        <div class="gallery" id="gallery-grid">
-          <figure><a href="#photo-1"><img src="../images/chmustar-panorama-summer.webp" alt="بانوراما شمسطار في الصيف" width="1200" height="1200" loading="lazy"></a><figcaption>بانوراما شمسطار في الصيف</figcaption></figure>
-          <figure><a href="#photo-2"><img src="../images/bekaa-valley-view.webp" alt="سهل البقاع من شمسطار" width="1200" height="1200" loading="lazy"></a><figcaption>سهل البقاع من شمسطار</figcaption></figure>
-          <figure><a href="#photo-3"><img src="../images/snowy-road.webp" alt="طريق مغطّى بالثلج بين أشجار الصنوبر" width="1200" height="1200" loading="lazy"></a><figcaption>طريق مغطّى بالثلج بين أشجار الصنوبر</figcaption></figure>
-          <figure><a href="#photo-4"><img src="../images/snow-town-clouds.webp" alt="شمسطار تحت الثلج والغيوم" width="1200" height="1200" loading="lazy"></a><figcaption>شمسطار تحت الثلج والغيوم</figcaption></figure>
-          <figure><a href="#photo-5"><img src="../images/town-houses-minaret.webp" alt="بيوت ومئذنة في وسط البلدة" width="1200" height="1200" loading="lazy"></a><figcaption>بيوت ومئذنة في وسط البلدة</figcaption></figure>
-          <figure><a href="#photo-6"><img src="../images/town-hills-view.webp" alt="بيوت على التلال" width="1200" height="1200" loading="lazy"></a><figcaption>بيوت على التلال</figcaption></figure>
-          <figure><a href="#photo-7"><img src="../images/wheat-field.webp" alt="حقل قمح ذهبي" width="1200" height="1200" loading="lazy"></a><figcaption>حقل قمح ذهبي</figcaption></figure>
-          <figure><a href="#photo-8"><img src="../images/arch-night-lights.webp" alt="القنطرة مضاءة ليلًا" width="1200" height="1200" loading="lazy"></a><figcaption>القنطرة مضاءة ليلًا</figcaption></figure>
-          <figure><a href="#photo-9"><img src="../images/snow-hills-palace.webp" alt="الثلج على التلال" width="1200" height="1200" loading="lazy"></a><figcaption>الثلج على التلال</figcaption></figure>
-          <figure><a href="#photo-10"><img src="../images/pond-reflection.webp" alt="بركة تعكس الأشجار" width="1200" height="1200" loading="lazy"></a><figcaption>بركة تعكس الأشجار</figcaption></figure>
-          <figure><a href="#photo-11"><img src="../images/garden-house.webp" alt="حديقة خضراء" width="1600" height="1200" loading="lazy"></a><figcaption>حديقة خضراء</figcaption></figure>
-          <figure><a href="#photo-12"><img src="../images/valley-town-dusk.webp" alt="البلدة عند الغسق" width="1200" height="1200" loading="lazy"></a><figcaption>البلدة عند الغسق</figcaption></figure>
-          <figure><a href="#photo-13"><img src="../images/sky-clouds-town.webp" alt="غيوم فوق شمسطار" width="1200" height="1200" loading="lazy"></a><figcaption>غيوم فوق شمسطار</figcaption></figure>
-          <figure><a href="#photo-14"><img src="../images/autumn-streetlight.webp" alt="أوراق الخريف وعمود إنارة" width="1600" height="1200" loading="lazy"></a><figcaption>أوراق الخريف وعمود إنارة</figcaption></figure>
-          <figure><a href="#photo-15"><img src="../images/street-sunset-cars.webp" alt="شارع عند الغروب" width="1600" height="1200" loading="lazy"></a><figcaption>شارع عند الغروب</figcaption></figure>
-          <figure><a href="#photo-16"><img src="../images/stone-arch-entrance.webp" alt="القنطرة الحجرية عند المدخل" width="1600" height="1200" loading="lazy"></a><figcaption>القنطرة الحجرية عند المدخل</figcaption></figure>
-          <figure><a href="#photo-17"><img src="../images/corner-shop.webp" alt="دكّان على زاوية الشارع" width="1600" height="1200" loading="lazy"></a><figcaption>دكّان على زاوية الشارع</figcaption></figure>
-          <figure><a href="#photo-18"><img src="../images/sunset-trees.webp" alt="الغروب من بين الأشجار" width="1600" height="1200" loading="lazy"></a><figcaption>الغروب من بين الأشجار</figcaption></figure>
-          <figure><a href="#photo-19"><img src="../images/minaret-mountains.webp" alt="مئذنة وجبال" width="1600" height="1200" loading="lazy"></a><figcaption>مئذنة وجبال</figcaption></figure>
-          <figure><a href="#photo-20"><img src="../images/windmill-sky.webp" alt="طاحونة هواء قديمة عند الغروب" width="1600" height="1200" loading="lazy"></a><figcaption>طاحونة هواء قديمة عند الغروب</figcaption></figure>
+        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-3" id="gallery-grid">
+          <div class="col"><figure class="gallery-item position-relative overflow-hidden rounded-3 shadow-sm mb-0"><a class="ratio ratio-1x1 d-block" href="#photo-1" data-bs-toggle="modal"><img class="object-fit-cover" src="../images/chmustar-panorama-summer.webp" alt="بانوراما شمسطار في الصيف" width="1200" height="1200" loading="lazy"></a><figcaption class="gallery-caption position-absolute bottom-0 start-0 end-0 px-2 pb-2 pt-4 small text-white pe-none">بانوراما شمسطار في الصيف</figcaption></figure></div>
+          <div class="col"><figure class="gallery-item position-relative overflow-hidden rounded-3 shadow-sm mb-0"><a class="ratio ratio-1x1 d-block" href="#photo-2" data-bs-toggle="modal"><img class="object-fit-cover" src="../images/bekaa-valley-view.webp" alt="سهل البقاع من شمسطار" width="1200" height="1200" loading="lazy"></a><figcaption class="gallery-caption position-absolute bottom-0 start-0 end-0 px-2 pb-2 pt-4 small text-white pe-none">سهل البقاع من شمسطار</figcaption></figure></div>
+          <div class="col"><figure class="gallery-item position-relative overflow-hidden rounded-3 shadow-sm mb-0"><a class="ratio ratio-1x1 d-block" href="#photo-3" data-bs-toggle="modal"><img class="object-fit-cover" src="../images/snowy-road.webp" alt="طريق مغطّى بالثلج بين أشجار الصنوبر" width="1200" height="1200" loading="lazy"></a><figcaption class="gallery-caption position-absolute bottom-0 start-0 end-0 px-2 pb-2 pt-4 small text-white pe-none">طريق مغطّى بالثلج بين أشجار الصنوبر</figcaption></figure></div>
+          <div class="col"><figure class="gallery-item position-relative overflow-hidden rounded-3 shadow-sm mb-0"><a class="ratio ratio-1x1 d-block" href="#photo-4" data-bs-toggle="modal"><img class="object-fit-cover" src="../images/snow-town-clouds.webp" alt="شمسطار تحت الثلج والغيوم" width="1200" height="1200" loading="lazy"></a><figcaption class="gallery-caption position-absolute bottom-0 start-0 end-0 px-2 pb-2 pt-4 small text-white pe-none">شمسطار تحت الثلج والغيوم</figcaption></figure></div>
+          <div class="col"><figure class="gallery-item position-relative overflow-hidden rounded-3 shadow-sm mb-0"><a class="ratio ratio-1x1 d-block" href="#photo-5" data-bs-toggle="modal"><img class="object-fit-cover" src="../images/town-houses-minaret.webp" alt="بيوت ومئذنة في وسط البلدة" width="1200" height="1200" loading="lazy"></a><figcaption class="gallery-caption position-absolute bottom-0 start-0 end-0 px-2 pb-2 pt-4 small text-white pe-none">بيوت ومئذنة في وسط البلدة</figcaption></figure></div>
+          <div class="col"><figure class="gallery-item position-relative overflow-hidden rounded-3 shadow-sm mb-0"><a class="ratio ratio-1x1 d-block" href="#photo-6" data-bs-toggle="modal"><img class="object-fit-cover" src="../images/town-hills-view.webp" alt="بيوت على التلال" width="1200" height="1200" loading="lazy"></a><figcaption class="gallery-caption position-absolute bottom-0 start-0 end-0 px-2 pb-2 pt-4 small text-white pe-none">بيوت على التلال</figcaption></figure></div>
+          <div class="col"><figure class="gallery-item position-relative overflow-hidden rounded-3 shadow-sm mb-0"><a class="ratio ratio-1x1 d-block" href="#photo-7" data-bs-toggle="modal"><img class="object-fit-cover" src="../images/wheat-field.webp" alt="حقل قمح ذهبي" width="1200" height="1200" loading="lazy"></a><figcaption class="gallery-caption position-absolute bottom-0 start-0 end-0 px-2 pb-2 pt-4 small text-white pe-none">حقل قمح ذهبي</figcaption></figure></div>
+          <div class="col"><figure class="gallery-item position-relative overflow-hidden rounded-3 shadow-sm mb-0"><a class="ratio ratio-1x1 d-block" href="#photo-8" data-bs-toggle="modal"><img class="object-fit-cover" src="../images/arch-night-lights.webp" alt="القنطرة مضاءة ليلًا" width="1200" height="1200" loading="lazy"></a><figcaption class="gallery-caption position-absolute bottom-0 start-0 end-0 px-2 pb-2 pt-4 small text-white pe-none">القنطرة مضاءة ليلًا</figcaption></figure></div>
+          <div class="col"><figure class="gallery-item position-relative overflow-hidden rounded-3 shadow-sm mb-0"><a class="ratio ratio-1x1 d-block" href="#photo-9" data-bs-toggle="modal"><img class="object-fit-cover" src="../images/snow-hills-palace.webp" alt="الثلج على التلال" width="1200" height="1200" loading="lazy"></a><figcaption class="gallery-caption position-absolute bottom-0 start-0 end-0 px-2 pb-2 pt-4 small text-white pe-none">الثلج على التلال</figcaption></figure></div>
+          <div class="col"><figure class="gallery-item position-relative overflow-hidden rounded-3 shadow-sm mb-0"><a class="ratio ratio-1x1 d-block" href="#photo-10" data-bs-toggle="modal"><img class="object-fit-cover" src="../images/pond-reflection.webp" alt="بركة تعكس الأشجار" width="1200" height="1200" loading="lazy"></a><figcaption class="gallery-caption position-absolute bottom-0 start-0 end-0 px-2 pb-2 pt-4 small text-white pe-none">بركة تعكس الأشجار</figcaption></figure></div>
+          <div class="col"><figure class="gallery-item position-relative overflow-hidden rounded-3 shadow-sm mb-0"><a class="ratio ratio-1x1 d-block" href="#photo-11" data-bs-toggle="modal"><img class="object-fit-cover" src="../images/garden-house.webp" alt="حديقة خضراء" width="1600" height="1200" loading="lazy"></a><figcaption class="gallery-caption position-absolute bottom-0 start-0 end-0 px-2 pb-2 pt-4 small text-white pe-none">حديقة خضراء</figcaption></figure></div>
+          <div class="col"><figure class="gallery-item position-relative overflow-hidden rounded-3 shadow-sm mb-0"><a class="ratio ratio-1x1 d-block" href="#photo-12" data-bs-toggle="modal"><img class="object-fit-cover" src="../images/valley-town-dusk.webp" alt="البلدة عند الغسق" width="1200" height="1200" loading="lazy"></a><figcaption class="gallery-caption position-absolute bottom-0 start-0 end-0 px-2 pb-2 pt-4 small text-white pe-none">البلدة عند الغسق</figcaption></figure></div>
+          <div class="col"><figure class="gallery-item position-relative overflow-hidden rounded-3 shadow-sm mb-0"><a class="ratio ratio-1x1 d-block" href="#photo-13" data-bs-toggle="modal"><img class="object-fit-cover" src="../images/sky-clouds-town.webp" alt="غيوم فوق شمسطار" width="1200" height="1200" loading="lazy"></a><figcaption class="gallery-caption position-absolute bottom-0 start-0 end-0 px-2 pb-2 pt-4 small text-white pe-none">غيوم فوق شمسطار</figcaption></figure></div>
+          <div class="col"><figure class="gallery-item position-relative overflow-hidden rounded-3 shadow-sm mb-0"><a class="ratio ratio-1x1 d-block" href="#photo-14" data-bs-toggle="modal"><img class="object-fit-cover" src="../images/autumn-streetlight.webp" alt="أوراق الخريف وعمود إنارة" width="1600" height="1200" loading="lazy"></a><figcaption class="gallery-caption position-absolute bottom-0 start-0 end-0 px-2 pb-2 pt-4 small text-white pe-none">أوراق الخريف وعمود إنارة</figcaption></figure></div>
+          <div class="col"><figure class="gallery-item position-relative overflow-hidden rounded-3 shadow-sm mb-0"><a class="ratio ratio-1x1 d-block" href="#photo-15" data-bs-toggle="modal"><img class="object-fit-cover" src="../images/street-sunset-cars.webp" alt="شارع عند الغروب" width="1600" height="1200" loading="lazy"></a><figcaption class="gallery-caption position-absolute bottom-0 start-0 end-0 px-2 pb-2 pt-4 small text-white pe-none">شارع عند الغروب</figcaption></figure></div>
+          <div class="col"><figure class="gallery-item position-relative overflow-hidden rounded-3 shadow-sm mb-0"><a class="ratio ratio-1x1 d-block" href="#photo-16" data-bs-toggle="modal"><img class="object-fit-cover" src="../images/stone-arch-entrance.webp" alt="القنطرة الحجرية عند المدخل" width="1600" height="1200" loading="lazy"></a><figcaption class="gallery-caption position-absolute bottom-0 start-0 end-0 px-2 pb-2 pt-4 small text-white pe-none">القنطرة الحجرية عند المدخل</figcaption></figure></div>
+          <div class="col"><figure class="gallery-item position-relative overflow-hidden rounded-3 shadow-sm mb-0"><a class="ratio ratio-1x1 d-block" href="#photo-17" data-bs-toggle="modal"><img class="object-fit-cover" src="../images/corner-shop.webp" alt="دكّان على زاوية الشارع" width="1600" height="1200" loading="lazy"></a><figcaption class="gallery-caption position-absolute bottom-0 start-0 end-0 px-2 pb-2 pt-4 small text-white pe-none">دكّان على زاوية الشارع</figcaption></figure></div>
+          <div class="col"><figure class="gallery-item position-relative overflow-hidden rounded-3 shadow-sm mb-0"><a class="ratio ratio-1x1 d-block" href="#photo-18" data-bs-toggle="modal"><img class="object-fit-cover" src="../images/sunset-trees.webp" alt="الغروب من بين الأشجار" width="1600" height="1200" loading="lazy"></a><figcaption class="gallery-caption position-absolute bottom-0 start-0 end-0 px-2 pb-2 pt-4 small text-white pe-none">الغروب من بين الأشجار</figcaption></figure></div>
+          <div class="col"><figure class="gallery-item position-relative overflow-hidden rounded-3 shadow-sm mb-0"><a class="ratio ratio-1x1 d-block" href="#photo-19" data-bs-toggle="modal"><img class="object-fit-cover" src="../images/minaret-mountains.webp" alt="مئذنة وجبال" width="1600" height="1200" loading="lazy"></a><figcaption class="gallery-caption position-absolute bottom-0 start-0 end-0 px-2 pb-2 pt-4 small text-white pe-none">مئذنة وجبال</figcaption></figure></div>
+          <div class="col"><figure class="gallery-item position-relative overflow-hidden rounded-3 shadow-sm mb-0"><a class="ratio ratio-1x1 d-block" href="#photo-20" data-bs-toggle="modal"><img class="object-fit-cover" src="../images/windmill-sky.webp" alt="طاحونة هواء قديمة عند الغروب" width="1600" height="1200" loading="lazy"></a><figcaption class="gallery-caption position-absolute bottom-0 start-0 end-0 px-2 pb-2 pt-4 small text-white pe-none">طاحونة هواء قديمة عند الغروب</figcaption></figure></div>
         </div>
       </div>
     </section>
-    <!-- Lightboxes: hidden until their id is the URL #target -->
-    <div class="lightbox" id="photo-1" role="dialog" aria-label="بانوراما شمسطار في الصيف"><a class="lightbox-close" href="#gallery-grid">إغلاق ✕</a><img src="../images/chmustar-panorama-summer.webp" alt="بانوراما شمسطار في الصيف" width="1200" height="1200" loading="lazy"><p>بانوراما شمسطار في الصيف · 1 / 20</p><nav class="lightbox-nav" aria-label="التنقل بين الصور"><a href="#photo-20">→ السابقة</a><a href="#photo-2">التالية ←</a></nav></div>
-    <div class="lightbox" id="photo-2" role="dialog" aria-label="سهل البقاع من شمسطار"><a class="lightbox-close" href="#gallery-grid">إغلاق ✕</a><img src="../images/bekaa-valley-view.webp" alt="سهل البقاع من شمسطار" width="1200" height="1200" loading="lazy"><p>سهل البقاع من شمسطار · 2 / 20</p><nav class="lightbox-nav" aria-label="التنقل بين الصور"><a href="#photo-1">→ السابقة</a><a href="#photo-3">التالية ←</a></nav></div>
-    <div class="lightbox" id="photo-3" role="dialog" aria-label="طريق مغطّى بالثلج بين أشجار الصنوبر"><a class="lightbox-close" href="#gallery-grid">إغلاق ✕</a><img src="../images/snowy-road.webp" alt="طريق مغطّى بالثلج بين أشجار الصنوبر" width="1200" height="1200" loading="lazy"><p>طريق مغطّى بالثلج بين أشجار الصنوبر · 3 / 20</p><nav class="lightbox-nav" aria-label="التنقل بين الصور"><a href="#photo-2">→ السابقة</a><a href="#photo-4">التالية ←</a></nav></div>
-    <div class="lightbox" id="photo-4" role="dialog" aria-label="شمسطار تحت الثلج والغيوم"><a class="lightbox-close" href="#gallery-grid">إغلاق ✕</a><img src="../images/snow-town-clouds.webp" alt="شمسطار تحت الثلج والغيوم" width="1200" height="1200" loading="lazy"><p>شمسطار تحت الثلج والغيوم · 4 / 20</p><nav class="lightbox-nav" aria-label="التنقل بين الصور"><a href="#photo-3">→ السابقة</a><a href="#photo-5">التالية ←</a></nav></div>
-    <div class="lightbox" id="photo-5" role="dialog" aria-label="بيوت ومئذنة في وسط البلدة"><a class="lightbox-close" href="#gallery-grid">إغلاق ✕</a><img src="../images/town-houses-minaret.webp" alt="بيوت ومئذنة في وسط البلدة" width="1200" height="1200" loading="lazy"><p>بيوت ومئذنة في وسط البلدة · 5 / 20</p><nav class="lightbox-nav" aria-label="التنقل بين الصور"><a href="#photo-4">→ السابقة</a><a href="#photo-6">التالية ←</a></nav></div>
-    <div class="lightbox" id="photo-6" role="dialog" aria-label="بيوت على التلال"><a class="lightbox-close" href="#gallery-grid">إغلاق ✕</a><img src="../images/town-hills-view.webp" alt="بيوت على التلال" width="1200" height="1200" loading="lazy"><p>بيوت على التلال · 6 / 20</p><nav class="lightbox-nav" aria-label="التنقل بين الصور"><a href="#photo-5">→ السابقة</a><a href="#photo-7">التالية ←</a></nav></div>
-    <div class="lightbox" id="photo-7" role="dialog" aria-label="حقل قمح ذهبي"><a class="lightbox-close" href="#gallery-grid">إغلاق ✕</a><img src="../images/wheat-field.webp" alt="حقل قمح ذهبي" width="1200" height="1200" loading="lazy"><p>حقل قمح ذهبي · 7 / 20</p><nav class="lightbox-nav" aria-label="التنقل بين الصور"><a href="#photo-6">→ السابقة</a><a href="#photo-8">التالية ←</a></nav></div>
-    <div class="lightbox" id="photo-8" role="dialog" aria-label="القنطرة مضاءة ليلًا"><a class="lightbox-close" href="#gallery-grid">إغلاق ✕</a><img src="../images/arch-night-lights.webp" alt="القنطرة مضاءة ليلًا" width="1200" height="1200" loading="lazy"><p>القنطرة مضاءة ليلًا · 8 / 20</p><nav class="lightbox-nav" aria-label="التنقل بين الصور"><a href="#photo-7">→ السابقة</a><a href="#photo-9">التالية ←</a></nav></div>
-    <div class="lightbox" id="photo-9" role="dialog" aria-label="الثلج على التلال"><a class="lightbox-close" href="#gallery-grid">إغلاق ✕</a><img src="../images/snow-hills-palace.webp" alt="الثلج على التلال" width="1200" height="1200" loading="lazy"><p>الثلج على التلال · 9 / 20</p><nav class="lightbox-nav" aria-label="التنقل بين الصور"><a href="#photo-8">→ السابقة</a><a href="#photo-10">التالية ←</a></nav></div>
-    <div class="lightbox" id="photo-10" role="dialog" aria-label="بركة تعكس الأشجار"><a class="lightbox-close" href="#gallery-grid">إغلاق ✕</a><img src="../images/pond-reflection.webp" alt="بركة تعكس الأشجار" width="1200" height="1200" loading="lazy"><p>بركة تعكس الأشجار · 10 / 20</p><nav class="lightbox-nav" aria-label="التنقل بين الصور"><a href="#photo-9">→ السابقة</a><a href="#photo-11">التالية ←</a></nav></div>
-    <div class="lightbox" id="photo-11" role="dialog" aria-label="حديقة خضراء"><a class="lightbox-close" href="#gallery-grid">إغلاق ✕</a><img src="../images/garden-house.webp" alt="حديقة خضراء" width="1600" height="1200" loading="lazy"><p>حديقة خضراء · 11 / 20</p><nav class="lightbox-nav" aria-label="التنقل بين الصور"><a href="#photo-10">→ السابقة</a><a href="#photo-12">التالية ←</a></nav></div>
-    <div class="lightbox" id="photo-12" role="dialog" aria-label="البلدة عند الغسق"><a class="lightbox-close" href="#gallery-grid">إغلاق ✕</a><img src="../images/valley-town-dusk.webp" alt="البلدة عند الغسق" width="1200" height="1200" loading="lazy"><p>البلدة عند الغسق · 12 / 20</p><nav class="lightbox-nav" aria-label="التنقل بين الصور"><a href="#photo-11">→ السابقة</a><a href="#photo-13">التالية ←</a></nav></div>
-    <div class="lightbox" id="photo-13" role="dialog" aria-label="غيوم فوق شمسطار"><a class="lightbox-close" href="#gallery-grid">إغلاق ✕</a><img src="../images/sky-clouds-town.webp" alt="غيوم فوق شمسطار" width="1200" height="1200" loading="lazy"><p>غيوم فوق شمسطار · 13 / 20</p><nav class="lightbox-nav" aria-label="التنقل بين الصور"><a href="#photo-12">→ السابقة</a><a href="#photo-14">التالية ←</a></nav></div>
-    <div class="lightbox" id="photo-14" role="dialog" aria-label="أوراق الخريف وعمود إنارة"><a class="lightbox-close" href="#gallery-grid">إغلاق ✕</a><img src="../images/autumn-streetlight.webp" alt="أوراق الخريف وعمود إنارة" width="1600" height="1200" loading="lazy"><p>أوراق الخريف وعمود إنارة · 14 / 20</p><nav class="lightbox-nav" aria-label="التنقل بين الصور"><a href="#photo-13">→ السابقة</a><a href="#photo-15">التالية ←</a></nav></div>
-    <div class="lightbox" id="photo-15" role="dialog" aria-label="شارع عند الغروب"><a class="lightbox-close" href="#gallery-grid">إغلاق ✕</a><img src="../images/street-sunset-cars.webp" alt="شارع عند الغروب" width="1600" height="1200" loading="lazy"><p>شارع عند الغروب · 15 / 20</p><nav class="lightbox-nav" aria-label="التنقل بين الصور"><a href="#photo-14">→ السابقة</a><a href="#photo-16">التالية ←</a></nav></div>
-    <div class="lightbox" id="photo-16" role="dialog" aria-label="القنطرة الحجرية عند المدخل"><a class="lightbox-close" href="#gallery-grid">إغلاق ✕</a><img src="../images/stone-arch-entrance.webp" alt="القنطرة الحجرية عند المدخل" width="1600" height="1200" loading="lazy"><p>القنطرة الحجرية عند المدخل · 16 / 20</p><nav class="lightbox-nav" aria-label="التنقل بين الصور"><a href="#photo-15">→ السابقة</a><a href="#photo-17">التالية ←</a></nav></div>
-    <div class="lightbox" id="photo-17" role="dialog" aria-label="دكّان على زاوية الشارع"><a class="lightbox-close" href="#gallery-grid">إغلاق ✕</a><img src="../images/corner-shop.webp" alt="دكّان على زاوية الشارع" width="1600" height="1200" loading="lazy"><p>دكّان على زاوية الشارع · 17 / 20</p><nav class="lightbox-nav" aria-label="التنقل بين الصور"><a href="#photo-16">→ السابقة</a><a href="#photo-18">التالية ←</a></nav></div>
-    <div class="lightbox" id="photo-18" role="dialog" aria-label="الغروب من بين الأشجار"><a class="lightbox-close" href="#gallery-grid">إغلاق ✕</a><img src="../images/sunset-trees.webp" alt="الغروب من بين الأشجار" width="1600" height="1200" loading="lazy"><p>الغروب من بين الأشجار · 18 / 20</p><nav class="lightbox-nav" aria-label="التنقل بين الصور"><a href="#photo-17">→ السابقة</a><a href="#photo-19">التالية ←</a></nav></div>
-    <div class="lightbox" id="photo-19" role="dialog" aria-label="مئذنة وجبال"><a class="lightbox-close" href="#gallery-grid">إغلاق ✕</a><img src="../images/minaret-mountains.webp" alt="مئذنة وجبال" width="1600" height="1200" loading="lazy"><p>مئذنة وجبال · 19 / 20</p><nav class="lightbox-nav" aria-label="التنقل بين الصور"><a href="#photo-18">→ السابقة</a><a href="#photo-20">التالية ←</a></nav></div>
-    <div class="lightbox" id="photo-20" role="dialog" aria-label="طاحونة هواء قديمة عند الغروب"><a class="lightbox-close" href="#gallery-grid">إغلاق ✕</a><img src="../images/windmill-sky.webp" alt="طاحونة هواء قديمة عند الغروب" width="1600" height="1200" loading="lazy"><p>طاحونة هواء قديمة عند الغروب · 20 / 20</p><nav class="lightbox-nav" aria-label="التنقل بين الصور"><a href="#photo-19">→ السابقة</a><a href="#photo-1">التالية ←</a></nav></div>
+    <!-- Photo viewers: Bootstrap modals, Previous/Next switch to the neighbouring modal -->
+    <div class="modal fade gallery-modal" id="photo-1" tabindex="-1" aria-labelledby="photo-1-title" aria-hidden="true"><div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content bg-dark text-white border-0"><div class="modal-header border-0"><h2 class="modal-title fs-6" id="photo-1-title">بانوراما شمسطار في الصيف · 1 / 20</h2><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="إغلاق"></button></div><div class="modal-body p-0"><img class="d-block mx-auto img-fluid" src="../images/chmustar-panorama-summer.webp" alt="بانوراما شمسطار في الصيف" width="1200" height="1200" loading="lazy"></div><nav class="modal-footer border-0 justify-content-center" aria-label="التنقل بين الصور"><button type="button" class="btn btn-outline-light" data-bs-target="#photo-20" data-bs-toggle="modal">→ السابقة</button><button type="button" class="btn btn-outline-light" data-bs-target="#photo-2" data-bs-toggle="modal">التالية ←</button></nav></div></div></div>
+    <div class="modal fade gallery-modal" id="photo-2" tabindex="-1" aria-labelledby="photo-2-title" aria-hidden="true"><div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content bg-dark text-white border-0"><div class="modal-header border-0"><h2 class="modal-title fs-6" id="photo-2-title">سهل البقاع من شمسطار · 2 / 20</h2><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="إغلاق"></button></div><div class="modal-body p-0"><img class="d-block mx-auto img-fluid" src="../images/bekaa-valley-view.webp" alt="سهل البقاع من شمسطار" width="1200" height="1200" loading="lazy"></div><nav class="modal-footer border-0 justify-content-center" aria-label="التنقل بين الصور"><button type="button" class="btn btn-outline-light" data-bs-target="#photo-1" data-bs-toggle="modal">→ السابقة</button><button type="button" class="btn btn-outline-light" data-bs-target="#photo-3" data-bs-toggle="modal">التالية ←</button></nav></div></div></div>
+    <div class="modal fade gallery-modal" id="photo-3" tabindex="-1" aria-labelledby="photo-3-title" aria-hidden="true"><div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content bg-dark text-white border-0"><div class="modal-header border-0"><h2 class="modal-title fs-6" id="photo-3-title">طريق مغطّى بالثلج بين أشجار الصنوبر · 3 / 20</h2><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="إغلاق"></button></div><div class="modal-body p-0"><img class="d-block mx-auto img-fluid" src="../images/snowy-road.webp" alt="طريق مغطّى بالثلج بين أشجار الصنوبر" width="1200" height="1200" loading="lazy"></div><nav class="modal-footer border-0 justify-content-center" aria-label="التنقل بين الصور"><button type="button" class="btn btn-outline-light" data-bs-target="#photo-2" data-bs-toggle="modal">→ السابقة</button><button type="button" class="btn btn-outline-light" data-bs-target="#photo-4" data-bs-toggle="modal">التالية ←</button></nav></div></div></div>
+    <div class="modal fade gallery-modal" id="photo-4" tabindex="-1" aria-labelledby="photo-4-title" aria-hidden="true"><div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content bg-dark text-white border-0"><div class="modal-header border-0"><h2 class="modal-title fs-6" id="photo-4-title">شمسطار تحت الثلج والغيوم · 4 / 20</h2><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="إغلاق"></button></div><div class="modal-body p-0"><img class="d-block mx-auto img-fluid" src="../images/snow-town-clouds.webp" alt="شمسطار تحت الثلج والغيوم" width="1200" height="1200" loading="lazy"></div><nav class="modal-footer border-0 justify-content-center" aria-label="التنقل بين الصور"><button type="button" class="btn btn-outline-light" data-bs-target="#photo-3" data-bs-toggle="modal">→ السابقة</button><button type="button" class="btn btn-outline-light" data-bs-target="#photo-5" data-bs-toggle="modal">التالية ←</button></nav></div></div></div>
+    <div class="modal fade gallery-modal" id="photo-5" tabindex="-1" aria-labelledby="photo-5-title" aria-hidden="true"><div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content bg-dark text-white border-0"><div class="modal-header border-0"><h2 class="modal-title fs-6" id="photo-5-title">بيوت ومئذنة في وسط البلدة · 5 / 20</h2><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="إغلاق"></button></div><div class="modal-body p-0"><img class="d-block mx-auto img-fluid" src="../images/town-houses-minaret.webp" alt="بيوت ومئذنة في وسط البلدة" width="1200" height="1200" loading="lazy"></div><nav class="modal-footer border-0 justify-content-center" aria-label="التنقل بين الصور"><button type="button" class="btn btn-outline-light" data-bs-target="#photo-4" data-bs-toggle="modal">→ السابقة</button><button type="button" class="btn btn-outline-light" data-bs-target="#photo-6" data-bs-toggle="modal">التالية ←</button></nav></div></div></div>
+    <div class="modal fade gallery-modal" id="photo-6" tabindex="-1" aria-labelledby="photo-6-title" aria-hidden="true"><div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content bg-dark text-white border-0"><div class="modal-header border-0"><h2 class="modal-title fs-6" id="photo-6-title">بيوت على التلال · 6 / 20</h2><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="إغلاق"></button></div><div class="modal-body p-0"><img class="d-block mx-auto img-fluid" src="../images/town-hills-view.webp" alt="بيوت على التلال" width="1200" height="1200" loading="lazy"></div><nav class="modal-footer border-0 justify-content-center" aria-label="التنقل بين الصور"><button type="button" class="btn btn-outline-light" data-bs-target="#photo-5" data-bs-toggle="modal">→ السابقة</button><button type="button" class="btn btn-outline-light" data-bs-target="#photo-7" data-bs-toggle="modal">التالية ←</button></nav></div></div></div>
+    <div class="modal fade gallery-modal" id="photo-7" tabindex="-1" aria-labelledby="photo-7-title" aria-hidden="true"><div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content bg-dark text-white border-0"><div class="modal-header border-0"><h2 class="modal-title fs-6" id="photo-7-title">حقل قمح ذهبي · 7 / 20</h2><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="إغلاق"></button></div><div class="modal-body p-0"><img class="d-block mx-auto img-fluid" src="../images/wheat-field.webp" alt="حقل قمح ذهبي" width="1200" height="1200" loading="lazy"></div><nav class="modal-footer border-0 justify-content-center" aria-label="التنقل بين الصور"><button type="button" class="btn btn-outline-light" data-bs-target="#photo-6" data-bs-toggle="modal">→ السابقة</button><button type="button" class="btn btn-outline-light" data-bs-target="#photo-8" data-bs-toggle="modal">التالية ←</button></nav></div></div></div>
+    <div class="modal fade gallery-modal" id="photo-8" tabindex="-1" aria-labelledby="photo-8-title" aria-hidden="true"><div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content bg-dark text-white border-0"><div class="modal-header border-0"><h2 class="modal-title fs-6" id="photo-8-title">القنطرة مضاءة ليلًا · 8 / 20</h2><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="إغلاق"></button></div><div class="modal-body p-0"><img class="d-block mx-auto img-fluid" src="../images/arch-night-lights.webp" alt="القنطرة مضاءة ليلًا" width="1200" height="1200" loading="lazy"></div><nav class="modal-footer border-0 justify-content-center" aria-label="التنقل بين الصور"><button type="button" class="btn btn-outline-light" data-bs-target="#photo-7" data-bs-toggle="modal">→ السابقة</button><button type="button" class="btn btn-outline-light" data-bs-target="#photo-9" data-bs-toggle="modal">التالية ←</button></nav></div></div></div>
+    <div class="modal fade gallery-modal" id="photo-9" tabindex="-1" aria-labelledby="photo-9-title" aria-hidden="true"><div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content bg-dark text-white border-0"><div class="modal-header border-0"><h2 class="modal-title fs-6" id="photo-9-title">الثلج على التلال · 9 / 20</h2><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="إغلاق"></button></div><div class="modal-body p-0"><img class="d-block mx-auto img-fluid" src="../images/snow-hills-palace.webp" alt="الثلج على التلال" width="1200" height="1200" loading="lazy"></div><nav class="modal-footer border-0 justify-content-center" aria-label="التنقل بين الصور"><button type="button" class="btn btn-outline-light" data-bs-target="#photo-8" data-bs-toggle="modal">→ السابقة</button><button type="button" class="btn btn-outline-light" data-bs-target="#photo-10" data-bs-toggle="modal">التالية ←</button></nav></div></div></div>
+    <div class="modal fade gallery-modal" id="photo-10" tabindex="-1" aria-labelledby="photo-10-title" aria-hidden="true"><div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content bg-dark text-white border-0"><div class="modal-header border-0"><h2 class="modal-title fs-6" id="photo-10-title">بركة تعكس الأشجار · 10 / 20</h2><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="إغلاق"></button></div><div class="modal-body p-0"><img class="d-block mx-auto img-fluid" src="../images/pond-reflection.webp" alt="بركة تعكس الأشجار" width="1200" height="1200" loading="lazy"></div><nav class="modal-footer border-0 justify-content-center" aria-label="التنقل بين الصور"><button type="button" class="btn btn-outline-light" data-bs-target="#photo-9" data-bs-toggle="modal">→ السابقة</button><button type="button" class="btn btn-outline-light" data-bs-target="#photo-11" data-bs-toggle="modal">التالية ←</button></nav></div></div></div>
+    <div class="modal fade gallery-modal" id="photo-11" tabindex="-1" aria-labelledby="photo-11-title" aria-hidden="true"><div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content bg-dark text-white border-0"><div class="modal-header border-0"><h2 class="modal-title fs-6" id="photo-11-title">حديقة خضراء · 11 / 20</h2><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="إغلاق"></button></div><div class="modal-body p-0"><img class="d-block mx-auto img-fluid" src="../images/garden-house.webp" alt="حديقة خضراء" width="1600" height="1200" loading="lazy"></div><nav class="modal-footer border-0 justify-content-center" aria-label="التنقل بين الصور"><button type="button" class="btn btn-outline-light" data-bs-target="#photo-10" data-bs-toggle="modal">→ السابقة</button><button type="button" class="btn btn-outline-light" data-bs-target="#photo-12" data-bs-toggle="modal">التالية ←</button></nav></div></div></div>
+    <div class="modal fade gallery-modal" id="photo-12" tabindex="-1" aria-labelledby="photo-12-title" aria-hidden="true"><div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content bg-dark text-white border-0"><div class="modal-header border-0"><h2 class="modal-title fs-6" id="photo-12-title">البلدة عند الغسق · 12 / 20</h2><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="إغلاق"></button></div><div class="modal-body p-0"><img class="d-block mx-auto img-fluid" src="../images/valley-town-dusk.webp" alt="البلدة عند الغسق" width="1200" height="1200" loading="lazy"></div><nav class="modal-footer border-0 justify-content-center" aria-label="التنقل بين الصور"><button type="button" class="btn btn-outline-light" data-bs-target="#photo-11" data-bs-toggle="modal">→ السابقة</button><button type="button" class="btn btn-outline-light" data-bs-target="#photo-13" data-bs-toggle="modal">التالية ←</button></nav></div></div></div>
+    <div class="modal fade gallery-modal" id="photo-13" tabindex="-1" aria-labelledby="photo-13-title" aria-hidden="true"><div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content bg-dark text-white border-0"><div class="modal-header border-0"><h2 class="modal-title fs-6" id="photo-13-title">غيوم فوق شمسطار · 13 / 20</h2><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="إغلاق"></button></div><div class="modal-body p-0"><img class="d-block mx-auto img-fluid" src="../images/sky-clouds-town.webp" alt="غيوم فوق شمسطار" width="1200" height="1200" loading="lazy"></div><nav class="modal-footer border-0 justify-content-center" aria-label="التنقل بين الصور"><button type="button" class="btn btn-outline-light" data-bs-target="#photo-12" data-bs-toggle="modal">→ السابقة</button><button type="button" class="btn btn-outline-light" data-bs-target="#photo-14" data-bs-toggle="modal">التالية ←</button></nav></div></div></div>
+    <div class="modal fade gallery-modal" id="photo-14" tabindex="-1" aria-labelledby="photo-14-title" aria-hidden="true"><div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content bg-dark text-white border-0"><div class="modal-header border-0"><h2 class="modal-title fs-6" id="photo-14-title">أوراق الخريف وعمود إنارة · 14 / 20</h2><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="إغلاق"></button></div><div class="modal-body p-0"><img class="d-block mx-auto img-fluid" src="../images/autumn-streetlight.webp" alt="أوراق الخريف وعمود إنارة" width="1600" height="1200" loading="lazy"></div><nav class="modal-footer border-0 justify-content-center" aria-label="التنقل بين الصور"><button type="button" class="btn btn-outline-light" data-bs-target="#photo-13" data-bs-toggle="modal">→ السابقة</button><button type="button" class="btn btn-outline-light" data-bs-target="#photo-15" data-bs-toggle="modal">التالية ←</button></nav></div></div></div>
+    <div class="modal fade gallery-modal" id="photo-15" tabindex="-1" aria-labelledby="photo-15-title" aria-hidden="true"><div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content bg-dark text-white border-0"><div class="modal-header border-0"><h2 class="modal-title fs-6" id="photo-15-title">شارع عند الغروب · 15 / 20</h2><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="إغلاق"></button></div><div class="modal-body p-0"><img class="d-block mx-auto img-fluid" src="../images/street-sunset-cars.webp" alt="شارع عند الغروب" width="1600" height="1200" loading="lazy"></div><nav class="modal-footer border-0 justify-content-center" aria-label="التنقل بين الصور"><button type="button" class="btn btn-outline-light" data-bs-target="#photo-14" data-bs-toggle="modal">→ السابقة</button><button type="button" class="btn btn-outline-light" data-bs-target="#photo-16" data-bs-toggle="modal">التالية ←</button></nav></div></div></div>
+    <div class="modal fade gallery-modal" id="photo-16" tabindex="-1" aria-labelledby="photo-16-title" aria-hidden="true"><div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content bg-dark text-white border-0"><div class="modal-header border-0"><h2 class="modal-title fs-6" id="photo-16-title">القنطرة الحجرية عند المدخل · 16 / 20</h2><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="إغلاق"></button></div><div class="modal-body p-0"><img class="d-block mx-auto img-fluid" src="../images/stone-arch-entrance.webp" alt="القنطرة الحجرية عند المدخل" width="1600" height="1200" loading="lazy"></div><nav class="modal-footer border-0 justify-content-center" aria-label="التنقل بين الصور"><button type="button" class="btn btn-outline-light" data-bs-target="#photo-15" data-bs-toggle="modal">→ السابقة</button><button type="button" class="btn btn-outline-light" data-bs-target="#photo-17" data-bs-toggle="modal">التالية ←</button></nav></div></div></div>
+    <div class="modal fade gallery-modal" id="photo-17" tabindex="-1" aria-labelledby="photo-17-title" aria-hidden="true"><div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content bg-dark text-white border-0"><div class="modal-header border-0"><h2 class="modal-title fs-6" id="photo-17-title">دكّان على زاوية الشارع · 17 / 20</h2><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="إغلاق"></button></div><div class="modal-body p-0"><img class="d-block mx-auto img-fluid" src="../images/corner-shop.webp" alt="دكّان على زاوية الشارع" width="1600" height="1200" loading="lazy"></div><nav class="modal-footer border-0 justify-content-center" aria-label="التنقل بين الصور"><button type="button" class="btn btn-outline-light" data-bs-target="#photo-16" data-bs-toggle="modal">→ السابقة</button><button type="button" class="btn btn-outline-light" data-bs-target="#photo-18" data-bs-toggle="modal">التالية ←</button></nav></div></div></div>
+    <div class="modal fade gallery-modal" id="photo-18" tabindex="-1" aria-labelledby="photo-18-title" aria-hidden="true"><div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content bg-dark text-white border-0"><div class="modal-header border-0"><h2 class="modal-title fs-6" id="photo-18-title">الغروب من بين الأشجار · 18 / 20</h2><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="إغلاق"></button></div><div class="modal-body p-0"><img class="d-block mx-auto img-fluid" src="../images/sunset-trees.webp" alt="الغروب من بين الأشجار" width="1600" height="1200" loading="lazy"></div><nav class="modal-footer border-0 justify-content-center" aria-label="التنقل بين الصور"><button type="button" class="btn btn-outline-light" data-bs-target="#photo-17" data-bs-toggle="modal">→ السابقة</button><button type="button" class="btn btn-outline-light" data-bs-target="#photo-19" data-bs-toggle="modal">التالية ←</button></nav></div></div></div>
+    <div class="modal fade gallery-modal" id="photo-19" tabindex="-1" aria-labelledby="photo-19-title" aria-hidden="true"><div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content bg-dark text-white border-0"><div class="modal-header border-0"><h2 class="modal-title fs-6" id="photo-19-title">مئذنة وجبال · 19 / 20</h2><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="إغلاق"></button></div><div class="modal-body p-0"><img class="d-block mx-auto img-fluid" src="../images/minaret-mountains.webp" alt="مئذنة وجبال" width="1600" height="1200" loading="lazy"></div><nav class="modal-footer border-0 justify-content-center" aria-label="التنقل بين الصور"><button type="button" class="btn btn-outline-light" data-bs-target="#photo-18" data-bs-toggle="modal">→ السابقة</button><button type="button" class="btn btn-outline-light" data-bs-target="#photo-20" data-bs-toggle="modal">التالية ←</button></nav></div></div></div>
+    <div class="modal fade gallery-modal" id="photo-20" tabindex="-1" aria-labelledby="photo-20-title" aria-hidden="true"><div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content bg-dark text-white border-0"><div class="modal-header border-0"><h2 class="modal-title fs-6" id="photo-20-title">طاحونة هواء قديمة عند الغروب · 20 / 20</h2><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="إغلاق"></button></div><div class="modal-body p-0"><img class="d-block mx-auto img-fluid" src="../images/windmill-sky.webp" alt="طاحونة هواء قديمة عند الغروب" width="1600" height="1200" loading="lazy"></div><nav class="modal-footer border-0 justify-content-center" aria-label="التنقل بين الصور"><button type="button" class="btn btn-outline-light" data-bs-target="#photo-19" data-bs-toggle="modal">→ السابقة</button><button type="button" class="btn btn-outline-light" data-bs-target="#photo-1" data-bs-toggle="modal">التالية ←</button></nav></div></div></div>
   </main>
 
   <!-- ===== FOOTER (same on every page) ===== -->
-  <footer class="site-footer">
+  <footer class="site-footer bg-dark pt-5 pb-4 d-print-none">
     <div class="container">
-      <div class="footer-grid">
-        <div>
-          <div class="footer-brand">
+      <div class="row g-5 mb-5">
+        <div class="col-md-6 col-lg-4">
+          <div class="d-flex align-items-center gap-2 mb-3">
             <img src="../images/logo.svg" alt="" width="44" height="37">
-            <span>بلدية شمسطار</span>
+            <span class="font-heading fs-5 fw-bold text-white">بلدية شمسطار</span>
           </div>
           <p>بلدة واحدة، موقع واحد — كل المعلومات في مكان واحد. في خدمة أهالي شمسطار والقرى المجاورة في بعلبك الهرمل.</p>
         </div>
-        <section>
-          <h2>روابط سريعة</h2>
-          <ul>
-            <li><a href="services.html">الخدمات والمعاملات</a></li>
-            <li><a href="news.html">الأخبار والإعلانات</a></li>
-            <li><a href="emergency.html">أرقام الطوارئ</a></li>
-            <li><a href="gallery.html">معرض الصور</a></li>
+        <section class="col-md-6 col-lg-2">
+          <h2 class="h6 text-white mb-3">روابط سريعة</h2>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-2"><a href="services.html">الخدمات والمعاملات</a></li>
+            <li class="mb-2"><a href="news.html">الأخبار والإعلانات</a></li>
+            <li class="mb-2"><a href="emergency.html">أرقام الطوارئ</a></li>
+            <li class="mb-2"><a href="gallery.html">معرض الصور</a></li>
           </ul>
         </section>
-        <section>
-          <h2>اكتشف</h2>
-          <ul>
-            <li><a href="about.html">عن شمسطار</a></li>
-            <li><a href="nature.html">الطبيعة والسياحة</a></li>
-            <li><a href="agriculture.html">الزراعة</a></li>
-            <li><a href="culture.html">الثقافة والجمعيات</a></li>
+        <section class="col-md-6 col-lg-2">
+          <h2 class="h6 text-white mb-3">اكتشف</h2>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-2"><a href="about.html">عن شمسطار</a></li>
+            <li class="mb-2"><a href="nature.html">الطبيعة والسياحة</a></li>
+            <li class="mb-2"><a href="agriculture.html">الزراعة</a></li>
+            <li class="mb-2"><a href="culture.html">الثقافة والجمعيات</a></li>
           </ul>
         </section>
-        <section>
-          <h2>تواصل معنا</h2>
-          <address>
-            <ul>
-              <li>مبنى البلدية، الشارع الرئيسي، شمسطار، بعلبك الهرمل، لبنان</li>
-              <li><a href="tel:+9618000000" dir="ltr">+961 8 000 000</a></li>
-              <li><a href="mailto:info@chmustar.gov.lb" dir="ltr">info@chmustar.gov.lb</a></li>
-              <li><a href="https://www.facebook.com/search/top?q=%D8%A8%D9%84%D8%AF%D9%8A%D8%A9%20%D8%B4%D9%85%D8%B3%D8%B7%D8%A7%D8%B1" target="_blank" rel="noopener">صفحة فيسبوك</a></li>
+        <section class="col-md-6 col-lg-4">
+          <h2 class="h6 text-white mb-3">تواصل معنا</h2>
+          <address class="mb-0">
+            <ul class="list-unstyled mb-0">
+              <li class="mb-2">مبنى البلدية، الشارع الرئيسي، شمسطار، بعلبك الهرمل، لبنان</li>
+              <li class="mb-2"><a href="tel:+9618000000" dir="ltr">+961 8 000 000</a></li>
+              <li class="mb-2"><a href="mailto:info@chmustar.gov.lb" dir="ltr">info@chmustar.gov.lb</a></li>
+              <li class="mb-2"><a href="https://www.facebook.com/search/top?q=%D8%A8%D9%84%D8%AF%D9%8A%D8%A9%20%D8%B4%D9%85%D8%B3%D8%B7%D8%A7%D8%B1" target="_blank" rel="noopener">صفحة فيسبوك</a></li>
             </ul>
           </address>
         </section>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 بلدية شمسطار. جميع الحقوق محفوظة.</p>
-        <p><a href="#top">العودة إلى الأعلى ↑</a></p>
+      <div class="d-flex flex-wrap justify-content-between gap-3 border-top border-white border-opacity-10 pt-4 small">
+        <p class="mb-0">&copy; 2026 بلدية شمسطار. جميع الحقوق محفوظة.</p>
+        <p class="mb-0"><a href="#top">العودة إلى الأعلى ↑</a></p>
       </div>
     </div>
   </footer>
 
-  <a href="#top" class="back-to-top" aria-label="العودة إلى الأعلى">↑</a>
+  <a href="#top" class="back-to-top btn btn-primary rounded-circle shadow position-fixed bottom-0 end-0 m-3 z-3 d-flex align-items-center justify-content-center p-0 fs-5 d-print-none" aria-label="العودة إلى الأعلى">↑</a>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>

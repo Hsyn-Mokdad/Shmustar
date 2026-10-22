@@ -12,193 +12,199 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Poppins:wght@500;600;700;800&amp;display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body id="top">
-  <a class="skip-link" href="#main">Skip to main content</a>
+  <a class="skip-link visually-hidden-focusable position-absolute top-0 start-0 m-2 px-3 py-2 bg-dark text-white rounded-2" href="#main">Skip to main content</a>
 
   <!-- ===== HEADER (same on every page) ===== -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="index.html" aria-label="Chmustar Municipality — go to Home page">
-        <img src="images/logo.svg" alt="" width="44" height="37">
-        <span class="brand-text">
-          <span class="brand-name">Chmustar</span>
-          <span class="brand-sub">Municipality · <span lang="ar">بلدية شمسطار</span></span>
-        </span>
-      </a>
+  <header class="site-header sticky-top border-bottom d-print-none">
+    <nav class="navbar navbar-expand-lg" aria-label="Main menu">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="index.html" aria-label="Chmustar Municipality — go to Home page">
+          <img src="images/logo.svg" alt="" width="44" height="37">
+          <span class="d-flex flex-column lh-sm">
+            <span class="font-heading fw-bold fs-5">Chmustar</span>
+            <span class="small text-body-secondary d-none d-sm-inline">Municipality · <span lang="ar">بلدية شمسطار</span></span>
+          </span>
+        </a>
 
-      <a class="lang-switch" href="ar/index.html" hreflang="ar" lang="ar">العربية</a>
+        <a class="btn btn-outline-primary btn-sm ms-auto me-2 ms-lg-2 me-lg-0 order-lg-last" href="ar/index.html" hreflang="ar" lang="ar">العربية</a>
 
-      <!-- Mobile menu: the checkbox stores the open/closed state, CSS does the rest -->
-      <input type="checkbox" id="nav-toggle" class="nav-toggle">
-      <label for="nav-toggle" class="nav-toggle-label"><span class="hamburger"></span> Menu</label>
+        <!-- Mobile menu: Bootstrap "collapse" opens and closes the menu -->
+        <button class="navbar-toggler rounded-pill fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false">
+          <span class="navbar-toggler-icon"></span> Menu
+        </button>
 
-      <nav class="main-nav" aria-label="Main menu">
-        <ul class="nav-list">
-          <li><a href="index.html" class="active" aria-current="page">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="municipality.html">Municipality</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="news.html">News</a></li>
-          <li class="has-dropdown">
-            <span class="dropdown-title" tabindex="0">Explore</span>
-            <ul class="dropdown-list">
-              <li><a href="nature.html">Nature &amp; Tourism</a></li>
-              <li><a href="agriculture.html">Agriculture &amp; Products</a></li>
-              <li><a href="education-health.html">Education &amp; Health</a></li>
-              <li><a href="culture.html">Culture &amp; Associations</a></li>
-              <li><a href="gallery.html">Gallery</a></li>
-            </ul>
-          </li>
-          <li><a href="emergency.html" class="nav-emergency">Emergency</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
+        <div class="collapse navbar-collapse" id="main-nav">
+          <ul class="navbar-nav nav-pills ms-auto gap-lg-1 py-2 py-lg-0">
+            <li class="nav-item"><a class="nav-link active" href="index.html" aria-current="page">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="municipality.html">Municipality</a></li>
+            <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+            <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
+            <li class="nav-item dropdown">
+              <button class="nav-link dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Explore</button>
+              <ul class="dropdown-menu border-0 shadow">
+                <li><a class="dropdown-item" href="nature.html">Nature &amp; Tourism</a></li>
+                <li><a class="dropdown-item" href="agriculture.html">Agriculture &amp; Products</a></li>
+                <li><a class="dropdown-item" href="education-health.html">Education &amp; Health</a></li>
+                <li><a class="dropdown-item" href="culture.html">Culture &amp; Associations</a></li>
+                <li><a class="dropdown-item" href="gallery.html">Gallery</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link fw-bold text-danger" href="emergency.html">Emergency</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
   </header>
 
   <main id="main">
     <!-- HERO -->
-    <section class="hero" aria-labelledby="hero-title">
+    <section class="hero d-flex align-items-end text-white" aria-labelledby="hero-title">
       <div class="container hero-content">
-        <span class="eyebrow">Official website · Baalbek-Hermel, Lebanon</span>
-        <h1 id="hero-title">Chmustar Municipality <span class="arabic-name" lang="ar">بلدية شمسطار</span></h1>
-        <p class="hero-tagline">One town, one website — all the information in one place. <strong>Nature · Heritage · Community.</strong></p>
-        <div class="btn-group">
-          <a class="btn btn-primary" href="services.html">Municipal services</a>
-          <a class="btn btn-outline" href="about.html">Discover Chmustar</a>
+        <span class="eyebrow d-inline-block mb-2 small fw-semibold text-uppercase text-warning">Official website · Baalbek-Hermel, Lebanon</span>
+        <h1 id="hero-title" class="display-4 fw-bold mb-2">Chmustar Municipality <span class="d-block fs-2 text-warning mb-3" lang="ar">بلدية شمسطار</span></h1>
+        <p class="lead col-lg-6 mb-4">One town, one website — all the information in one place. <strong>Nature · Heritage · Community.</strong></p>
+        <div class="d-flex flex-wrap gap-3">
+          <a class="btn btn-warning btn-lg" href="services.html">Municipal services</a>
+          <a class="btn btn-outline-light btn-lg" href="about.html">Discover Chmustar</a>
         </div>
       </div>
     </section>
 
     <!-- KEY NUMBERS -->
     <div class="container">
-      <dl class="stats stats-overlap">
-        <div class="stat"><dt>Elevation on Mount Sannine</dt><dd>1,250 m</dd></div>
-        <div class="stat"><dt>From Beirut</dt><dd>75 km</dd></div>
-        <div class="stat"><dt>From Baalbek</dt><dd>21 km</dd></div>
-        <div class="stat"><dt>Residents (2012)</dt><dd>~30,000</dd></div>
-      </dl>
+      <div class="row row-cols-2 row-cols-md-4 g-3 stats-overlap">
+        <div class="col"><dl class="card h-100 text-center border-0 border-top border-4 border-warning shadow-sm p-4 mb-0"><dt class="small fw-normal text-body-secondary">Elevation on Mount Sannine</dt><dd class="order-first font-heading fs-2 fw-bold text-primary mb-0">1,250 m</dd></dl></div>
+        <div class="col"><dl class="card h-100 text-center border-0 border-top border-4 border-warning shadow-sm p-4 mb-0"><dt class="small fw-normal text-body-secondary">From Beirut</dt><dd class="order-first font-heading fs-2 fw-bold text-primary mb-0">75 km</dd></dl></div>
+        <div class="col"><dl class="card h-100 text-center border-0 border-top border-4 border-warning shadow-sm p-4 mb-0"><dt class="small fw-normal text-body-secondary">From Baalbek</dt><dd class="order-first font-heading fs-2 fw-bold text-primary mb-0">21 km</dd></dl></div>
+        <div class="col"><dl class="card h-100 text-center border-0 border-top border-4 border-warning shadow-sm p-4 mb-0"><dt class="small fw-normal text-body-secondary">Residents (2012)</dt><dd class="order-first font-heading fs-2 fw-bold text-primary mb-0">~30,000</dd></dl></div>
+      </div>
     </div>
 
     <!-- QUICK LINKS (top tasks) -->
-    <section class="section" aria-labelledby="quick-title">
+    <section class="py-5" aria-labelledby="quick-title">
       <div class="container">
-        <div class="section-header">
-          <span class="eyebrow">Quick links</span>
+        <div class="col-lg-8 mb-5">
+          <span class="eyebrow d-inline-block mb-2 small fw-semibold text-uppercase text-primary">Quick links</span>
           <h2 id="quick-title">How can we help you today?</h2>
-          <p>The most requested pages, one click away.</p>
+          <p class="text-body-secondary">The most requested pages, one click away.</p>
         </div>
-        <div class="card-grid">
-          <a class="quick-link" href="services.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><path d="M8 13h8M8 17h5"/></svg><span><strong>Services &amp; Paperwork</strong><span>Certificates, permits, fees</span></span></a>
-          <a class="quick-link" href="news.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h13v14H6a2 2 0 0 1-2-2z"/><path d="M17 9h3v8a2 2 0 0 1-2 2"/><path d="M8 9h5M8 13h5"/></svg><span><strong>News &amp; Announcements</strong><span>What's happening in town</span></span></a>
-          <a class="quick-link quick-link--emergency" href="emergency.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 2 20h20z"/><path d="M12 10v4M12 17h.01"/></svg><span><strong>Emergency Numbers</strong><span>Police, Red Cross, Civil Defense</span></span></a>
-          <a class="quick-link" href="contact.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span><strong>Contact Us</strong><span>Send a message or visit us</span></span></a>
-          <a class="quick-link" href="nature.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 20 6-11 4 7 2-3 6 7z"/><circle cx="17" cy="6" r="2"/></svg><span><strong>Nature &amp; Tourism</strong><span>Places to visit in Chmustar</span></span></a>
-          <a class="quick-link" href="gallery.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg><span><strong>Photo Gallery</strong><span>Chmustar through the seasons</span></span></a>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+          <div class="col"><a class="d-flex align-items-center gap-3 h-100 p-4 bg-white rounded-4 shadow-sm text-body text-decoration-none border-start border-5 border-primary hover-lift" href="services.html"><svg class="flex-shrink-0 p-2 rounded-3 bg-light text-primary" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><path d="M8 13h8M8 17h5"/></svg><span><strong class="d-block font-heading">Services &amp; Paperwork</strong><span class="small text-body-secondary">Certificates, permits, fees</span></span></a></div>
+          <div class="col"><a class="d-flex align-items-center gap-3 h-100 p-4 bg-white rounded-4 shadow-sm text-body text-decoration-none border-start border-5 border-primary hover-lift" href="news.html"><svg class="flex-shrink-0 p-2 rounded-3 bg-light text-primary" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h13v14H6a2 2 0 0 1-2-2z"/><path d="M17 9h3v8a2 2 0 0 1-2 2"/><path d="M8 9h5M8 13h5"/></svg><span><strong class="d-block font-heading">News &amp; Announcements</strong><span class="small text-body-secondary">What's happening in town</span></span></a></div>
+          <div class="col"><a class="d-flex align-items-center gap-3 h-100 p-4 bg-white rounded-4 shadow-sm text-body text-decoration-none border-start border-5 border-danger hover-lift" href="emergency.html"><svg class="flex-shrink-0 p-2 rounded-3 bg-light text-danger" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 2 20h20z"/><path d="M12 10v4M12 17h.01"/></svg><span><strong class="d-block font-heading">Emergency Numbers</strong><span class="small text-body-secondary">Police, Red Cross, Civil Defense</span></span></a></div>
+          <div class="col"><a class="d-flex align-items-center gap-3 h-100 p-4 bg-white rounded-4 shadow-sm text-body text-decoration-none border-start border-5 border-primary hover-lift" href="contact.html"><svg class="flex-shrink-0 p-2 rounded-3 bg-light text-primary" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span><strong class="d-block font-heading">Contact Us</strong><span class="small text-body-secondary">Send a message or visit us</span></span></a></div>
+          <div class="col"><a class="d-flex align-items-center gap-3 h-100 p-4 bg-white rounded-4 shadow-sm text-body text-decoration-none border-start border-5 border-primary hover-lift" href="nature.html"><svg class="flex-shrink-0 p-2 rounded-3 bg-light text-primary" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 20 6-11 4 7 2-3 6 7z"/><circle cx="17" cy="6" r="2"/></svg><span><strong class="d-block font-heading">Nature &amp; Tourism</strong><span class="small text-body-secondary">Places to visit in Chmustar</span></span></a></div>
+          <div class="col"><a class="d-flex align-items-center gap-3 h-100 p-4 bg-white rounded-4 shadow-sm text-body text-decoration-none border-start border-5 border-primary hover-lift" href="gallery.html"><svg class="flex-shrink-0 p-2 rounded-3 bg-light text-primary" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg><span><strong class="d-block font-heading">Photo Gallery</strong><span class="small text-body-secondary">Chmustar through the seasons</span></span></a></div>
         </div>
       </div>
     </section>
 
     <!-- ABOUT TEASER -->
-    <section class="section section-alt" aria-labelledby="about-title">
-      <div class="container split">
-        <img src="images/town-houses-minaret.webp" alt="Stone houses and a minaret in the centre of Chmustar" width="1200" height="1200" loading="lazy">
-        <div>
-          <span class="eyebrow">About the town</span>
+    <section class="py-5 bg-light" aria-labelledby="about-title">
+      <div class="container"><div class="row g-5 align-items-center">
+        <div class="col-lg-6"><div class="ratio ratio-4x3 rounded-4 overflow-hidden shadow-sm"><img class="object-fit-cover" src="images/town-houses-minaret.webp" alt="Stone houses and a minaret in the centre of Chmustar" width="1200" height="1200" loading="lazy"></div></div>
+        <div class="col-lg-6">
+          <span class="eyebrow d-inline-block mb-2 small fw-semibold text-uppercase text-primary">About the town</span>
           <h2 id="about-title">The sun of the mountain</h2>
           <p>Chmustar (<span lang="ar">شمسطار</span>) sits at 1,250 metres on the eastern slope of Mount Sannine, overlooking the Bekaa Valley between Baalbek and Zahlé.</p>
           <p>It is a regional centre for dozens of surrounding villages, home to official institutions, schools, health centres and a busy market.</p>
-          <a class="btn btn-green" href="about.html">Read more about Chmustar</a>
+          <a class="btn btn-primary" href="about.html">Read more about Chmustar</a>
         </div>
-      </div>
+      </div></div>
     </section>
 
     <!-- WORD OF THE MUNICIPALITY -->
-    <section class="section" aria-labelledby="word-title">
+    <section class="py-5" aria-labelledby="word-title">
       <div class="container">
-        <div class="section-header">
-          <span class="eyebrow">A word from the municipality</span>
+        <div class="col-lg-8 mb-5">
+          <span class="eyebrow d-inline-block mb-2 small fw-semibold text-uppercase text-primary">A word from the municipality</span>
           <h2 id="word-title">Closer to every resident</h2>
         </div>
-        <blockquote>
-          <p>This website was created so that every resident — in town or abroad — can find trusted information, follow municipal news and reach our services easily, at any time and from any device.</p>
-          <footer>— Chmustar Municipal Council</footer>
-        </blockquote>
+        <figure class="quote bg-white rounded-4 shadow-sm px-5 py-4 mb-0">
+          <blockquote class="blockquote mb-3">
+            <p>This website was created so that every resident — in town or abroad — can find trusted information, follow municipal news and reach our services easily, at any time and from any device.</p>
+          </blockquote>
+          <figcaption class="blockquote-footer fw-semibold text-primary mb-0">Chmustar Municipal Council</figcaption>
+        </figure>
       </div>
     </section>
 
     <!-- LATEST NEWS -->
-    <section class="section section-alt" aria-labelledby="news-title">
+    <section class="py-5 bg-light" aria-labelledby="news-title">
       <div class="container">
-        <div class="section-header">
-          <span class="eyebrow">Latest news</span>
+        <div class="col-lg-8 mb-5">
+          <span class="eyebrow d-inline-block mb-2 small fw-semibold text-uppercase text-primary">Latest news</span>
           <h2 id="news-title">News &amp; announcements</h2>
         </div>
-        <div class="card-grid">
-          <article class="card">
-            <img src="images/valley-town-dusk.webp" alt="Chmustar houses at dusk with the Bekaa Valley behind" width="1200" height="1200" loading="lazy">
-            <div class="card-body">
-              <p><span class="tag">Announcement</span> <time datetime="2026-10-01">1 October 2026</time></p>
-              <h3>The municipality launches its official website</h3>
-              <p>Services, office hours, emergency numbers and town news are now available in one place, on phone, tablet and computer.</p>
-              <a class="card-link" href="news.html">Read more<span class="visually-hidden"> about The municipality launches its official website</span> →</a>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+          <div class="col"><article class="card h-100 border-0 shadow-sm hover-lift">
+            <img class="card-img-top object-fit-cover" src="images/valley-town-dusk.webp" alt="Chmustar houses at dusk with the Bekaa Valley behind" width="1200" height="1200" loading="lazy">
+            <div class="card-body d-flex flex-column p-4">
+              <p class="small text-body-secondary mb-2"><span class="badge rounded-pill text-bg-light me-1">Announcement</span> <time datetime="2026-10-01">1 October 2026</time></p>
+              <h3 class="h5 card-title">The municipality launches its official website</h3>
+              <p class="text-body-secondary">Services, office hours, emergency numbers and town news are now available in one place, on phone, tablet and computer.</p>
+              <a class="mt-auto fw-semibold" href="news.html">Read more<span class="visually-hidden"> about The municipality launches its official website</span> →</a>
             </div>
-          </article><article class="card">
-            <img src="images/snowy-road.webp" alt="A road in Chmustar cleared of snow between tall pine trees" width="1200" height="1200" loading="lazy">
-            <div class="card-body">
-              <p><span class="tag">Public works</span> <time datetime="2026-09-28">28 September 2026</time></p>
-              <h3>Winter readiness: snow-clearing teams on standby</h3>
-              <p>Equipment has been checked and teams are ready to keep the main roads open during snowstorms this winter.</p>
-              <a class="card-link" href="news.html">Read more<span class="visually-hidden"> about Winter readiness: snow-clearing teams on standby</span> →</a>
+          </article></div><div class="col"><article class="card h-100 border-0 shadow-sm hover-lift">
+            <img class="card-img-top object-fit-cover" src="images/snowy-road.webp" alt="A road in Chmustar cleared of snow between tall pine trees" width="1200" height="1200" loading="lazy">
+            <div class="card-body d-flex flex-column p-4">
+              <p class="small text-body-secondary mb-2"><span class="badge rounded-pill text-bg-light me-1">Public works</span> <time datetime="2026-09-28">28 September 2026</time></p>
+              <h3 class="h5 card-title">Winter readiness: snow-clearing teams on standby</h3>
+              <p class="text-body-secondary">Equipment has been checked and teams are ready to keep the main roads open during snowstorms this winter.</p>
+              <a class="mt-auto fw-semibold" href="news.html">Read more<span class="visually-hidden"> about Winter readiness: snow-clearing teams on standby</span> →</a>
             </div>
-          </article><article class="card">
-            <img src="images/pond-reflection.webp" alt="A water pond in Chmustar reflecting trees" width="1200" height="1200" loading="lazy">
-            <div class="card-body">
-              <p><span class="tag">Projects</span> <time datetime="2026-09-15">15 September 2026</time></p>
-              <h3>Solar energy powers the town's water pumps</h3>
-              <p>The solar station built in Chmustar generates electricity for the water pumps, reducing costs and power cuts.</p>
-              <a class="card-link" href="news.html">Read more<span class="visually-hidden"> about Solar energy powers the town's water pumps</span> →</a>
+          </article></div><div class="col"><article class="card h-100 border-0 shadow-sm hover-lift">
+            <img class="card-img-top object-fit-cover" src="images/pond-reflection.webp" alt="A water pond in Chmustar reflecting trees" width="1200" height="1200" loading="lazy">
+            <div class="card-body d-flex flex-column p-4">
+              <p class="small text-body-secondary mb-2"><span class="badge rounded-pill text-bg-light me-1">Projects</span> <time datetime="2026-09-15">15 September 2026</time></p>
+              <h3 class="h5 card-title">Solar energy powers the town's water pumps</h3>
+              <p class="text-body-secondary">The solar station built in Chmustar generates electricity for the water pumps, reducing costs and power cuts.</p>
+              <a class="mt-auto fw-semibold" href="news.html">Read more<span class="visually-hidden"> about Solar energy powers the town's water pumps</span> →</a>
             </div>
-          </article>
+          </article></div>
         </div>
-        <p class="text-center mt-lg"><a class="btn btn-green" href="news.html">All news</a></p>
+        <p class="text-center mt-5 mb-0"><a class="btn btn-primary" href="news.html">All news</a></p>
       </div>
     </section>
 
     <!-- VIDEO -->
-    <section class="section" aria-labelledby="video-title">
-      <div class="container split">
-        <div>
-          <span class="eyebrow">Video</span>
+    <section class="py-5" aria-labelledby="video-title">
+      <div class="container"><div class="row g-5 align-items-center">
+        <div class="col-lg-6">
+          <span class="eyebrow d-inline-block mb-2 small fw-semibold text-uppercase text-primary">Video</span>
           <h2 id="video-title">Chmustar in 25 seconds</h2>
           <p>From golden wheat fields to snowy winters and warm sunsets: a short tour of our town.</p>
-          <a class="btn btn-green" href="gallery.html">Open the gallery</a>
+          <a class="btn btn-primary" href="gallery.html">Open the gallery</a>
         </div>
-        <div class="media-frame">
+        <div class="col-lg-6"><div class="ratio ratio-16x9 rounded-4 overflow-hidden shadow-sm bg-dark">
           <video controls preload="none" width="1280" height="720" poster="images/chmustar-panorama-summer.webp">
             <source src="video/chmustar-tour.mp4" type="video/mp4">
             Your browser does not support the video tag. <a href="video/chmustar-tour.mp4">Download the video</a>.
           </video>
-        </div>
-      </div>
+        </div></div>
+      </div></div>
     </section>
 
     <!-- MAP -->
-    <section class="section section-alt" aria-labelledby="map-title">
-      <div class="container split split--reverse">
-        <div class="media-frame map-frame">
-          <iframe src="https://maps.google.com/maps?q=Chmustar%2C%20Lebanon&amp;z=13&amp;output=embed" title="Map showing the location of Chmustar, Lebanon" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
-        </div>
-        <div>
-          <span class="eyebrow">Visit us</span>
+    <section class="py-5 bg-light" aria-labelledby="map-title">
+      <div class="container"><div class="row g-5 align-items-center">
+        <div class="col-lg-6 order-lg-last"><div class="rounded-4 overflow-hidden shadow-sm">
+          <iframe class="d-block w-100 border-0" height="380" src="https://maps.google.com/maps?q=Chmustar%2C%20Lebanon&amp;z=13&amp;output=embed" title="Map showing the location of Chmustar, Lebanon" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        </div></div>
+        <div class="col-lg-6">
+          <span class="eyebrow d-inline-block mb-2 small fw-semibold text-uppercase text-primary">Visit us</span>
           <h2 id="map-title">Find the municipality</h2>
           <p>Municipality Building, Main Street, Chmustar — Baalbek-Hermel Governorate, Lebanon.</p>
-          <div class="table-wrap">
-          <table>
-            <caption>Office hours</caption>
-            <thead>
+          <div class="table-responsive rounded-4 shadow-sm mb-4">
+          <table class="table table-striped table-hover align-middle caption-top mb-0">
+            <caption class="bg-primary text-white font-heading fw-semibold px-3 py-2">Office hours</caption>
+            <thead class="table-light">
               <tr><th scope="col">Day</th><th scope="col">Hours</th></tr>
             </thead>
             <tbody>
@@ -209,60 +215,61 @@
             </tbody>
           </table>
         </div>
-          <a class="btn btn-green" href="contact.html">Contact us</a>
+          <a class="btn btn-primary" href="contact.html">Contact us</a>
         </div>
-      </div>
+      </div></div>
     </section>
   </main>
 
   <!-- ===== FOOTER (same on every page) ===== -->
-  <footer class="site-footer">
+  <footer class="site-footer bg-dark pt-5 pb-4 d-print-none">
     <div class="container">
-      <div class="footer-grid">
-        <div>
-          <div class="footer-brand">
+      <div class="row g-5 mb-5">
+        <div class="col-md-6 col-lg-4">
+          <div class="d-flex align-items-center gap-2 mb-3">
             <img src="images/logo.svg" alt="" width="44" height="37">
-            <span>Chmustar Municipality</span>
+            <span class="font-heading fs-5 fw-bold text-white">Chmustar Municipality</span>
           </div>
           <p>One town, one website — all the information in one place. Serving the residents of Chmustar and the surrounding villages of Baalbek-Hermel.</p>
         </div>
-        <section>
-          <h2>Quick links</h2>
-          <ul>
-            <li><a href="services.html">Services &amp; Paperwork</a></li>
-            <li><a href="news.html">News &amp; Announcements</a></li>
-            <li><a href="emergency.html">Emergency Numbers</a></li>
-            <li><a href="gallery.html">Photo Gallery</a></li>
+        <section class="col-md-6 col-lg-2">
+          <h2 class="h6 text-white mb-3">Quick links</h2>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-2"><a href="services.html">Services &amp; Paperwork</a></li>
+            <li class="mb-2"><a href="news.html">News &amp; Announcements</a></li>
+            <li class="mb-2"><a href="emergency.html">Emergency Numbers</a></li>
+            <li class="mb-2"><a href="gallery.html">Photo Gallery</a></li>
           </ul>
         </section>
-        <section>
-          <h2>Discover</h2>
-          <ul>
-            <li><a href="about.html">About Chmustar</a></li>
-            <li><a href="nature.html">Nature &amp; Tourism</a></li>
-            <li><a href="agriculture.html">Agriculture</a></li>
-            <li><a href="culture.html">Culture &amp; Associations</a></li>
+        <section class="col-md-6 col-lg-2">
+          <h2 class="h6 text-white mb-3">Discover</h2>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-2"><a href="about.html">About Chmustar</a></li>
+            <li class="mb-2"><a href="nature.html">Nature &amp; Tourism</a></li>
+            <li class="mb-2"><a href="agriculture.html">Agriculture</a></li>
+            <li class="mb-2"><a href="culture.html">Culture &amp; Associations</a></li>
           </ul>
         </section>
-        <section>
-          <h2>Contact</h2>
-          <address>
-            <ul>
-              <li>Municipality Building, Main Street, Chmustar, Baalbek-Hermel, Lebanon</li>
-              <li><a href="tel:+9618000000">+961 8 000 000</a></li>
-              <li><a href="mailto:info@chmustar.gov.lb">info@chmustar.gov.lb</a></li>
-              <li><a href="https://www.facebook.com/search/top?q=%D8%A8%D9%84%D8%AF%D9%8A%D8%A9%20%D8%B4%D9%85%D8%B3%D8%B7%D8%A7%D8%B1" target="_blank" rel="noopener">Facebook page</a></li>
+        <section class="col-md-6 col-lg-4">
+          <h2 class="h6 text-white mb-3">Contact</h2>
+          <address class="mb-0">
+            <ul class="list-unstyled mb-0">
+              <li class="mb-2">Municipality Building, Main Street, Chmustar, Baalbek-Hermel, Lebanon</li>
+              <li class="mb-2"><a href="tel:+9618000000">+961 8 000 000</a></li>
+              <li class="mb-2"><a href="mailto:info@chmustar.gov.lb">info@chmustar.gov.lb</a></li>
+              <li class="mb-2"><a href="https://www.facebook.com/search/top?q=%D8%A8%D9%84%D8%AF%D9%8A%D8%A9%20%D8%B4%D9%85%D8%B3%D8%B7%D8%A7%D8%B1" target="_blank" rel="noopener">Facebook page</a></li>
             </ul>
           </address>
         </section>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 Chmustar Municipality. All rights reserved.</p>
-        <p><a href="#top">Back to top ↑</a></p>
+      <div class="d-flex flex-wrap justify-content-between gap-3 border-top border-white border-opacity-10 pt-4 small">
+        <p class="mb-0">&copy; 2026 Chmustar Municipality. All rights reserved.</p>
+        <p class="mb-0"><a href="#top">Back to top ↑</a></p>
       </div>
     </div>
   </footer>
 
-  <a href="#top" class="back-to-top" aria-label="Back to top">↑</a>
+  <a href="#top" class="back-to-top btn btn-primary rounded-circle shadow position-fixed bottom-0 end-0 m-3 z-3 d-flex align-items-center justify-content-center p-0 fs-5 d-print-none" aria-label="Back to top">↑</a>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>

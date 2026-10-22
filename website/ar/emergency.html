@@ -12,161 +12,166 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@500;600;700;800&amp;family=IBM+Plex+Sans+Arabic:wght@400;500;600&amp;display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" integrity="sha384-dpuaG1suU0eT09tx5plTaGMLBsfDLzUCCUXOY2j/LSvXYuG6Bqs43ALlhIqAJVRb" crossorigin="anonymous">
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body id="top">
-  <a class="skip-link" href="#main">انتقل إلى المحتوى الرئيسي</a>
+  <a class="skip-link visually-hidden-focusable position-absolute top-0 start-0 m-2 px-3 py-2 bg-dark text-white rounded-2" href="#main">انتقل إلى المحتوى الرئيسي</a>
 
   <!-- ===== HEADER (same on every page) ===== -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="index.html" aria-label="بلدية شمسطار — العودة إلى الصفحة الرئيسية">
-        <img src="../images/logo.svg" alt="" width="44" height="37">
-        <span class="brand-text">
-          <span class="brand-name">شمسطار</span>
-          <span class="brand-sub">البلدية · <span lang="en">Chmustar Municipality</span></span>
-        </span>
-      </a>
+  <header class="site-header sticky-top border-bottom d-print-none">
+    <nav class="navbar navbar-expand-lg" aria-label="القائمة الرئيسية">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="index.html" aria-label="بلدية شمسطار — العودة إلى الصفحة الرئيسية">
+          <img src="../images/logo.svg" alt="" width="44" height="37">
+          <span class="d-flex flex-column lh-sm">
+            <span class="font-heading fw-bold fs-5">شمسطار</span>
+            <span class="small text-body-secondary d-none d-sm-inline">البلدية · <span lang="en">Chmustar Municipality</span></span>
+          </span>
+        </a>
 
-      <a class="lang-switch" href="../emergency.html" hreflang="en" lang="en">English</a>
+        <a class="btn btn-outline-primary btn-sm ms-auto me-2 ms-lg-2 me-lg-0 order-lg-last" href="../emergency.html" hreflang="en" lang="en">English</a>
 
-      <!-- Mobile menu: the checkbox stores the open/closed state, CSS does the rest -->
-      <input type="checkbox" id="nav-toggle" class="nav-toggle">
-      <label for="nav-toggle" class="nav-toggle-label"><span class="hamburger"></span> القائمة</label>
+        <!-- Mobile menu: Bootstrap "collapse" opens and closes the menu -->
+        <button class="navbar-toggler rounded-pill fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false">
+          <span class="navbar-toggler-icon"></span> القائمة
+        </button>
 
-      <nav class="main-nav" aria-label="القائمة الرئيسية">
-        <ul class="nav-list">
-          <li><a href="index.html">الرئيسية</a></li>
-          <li><a href="about.html">عن البلدة</a></li>
-          <li><a href="municipality.html">البلدية</a></li>
-          <li><a href="services.html">الخدمات</a></li>
-          <li><a href="news.html">الأخبار</a></li>
-          <li class="has-dropdown">
-            <span class="dropdown-title" tabindex="0">استكشف</span>
-            <ul class="dropdown-list">
-              <li><a href="nature.html">الطبيعة والسياحة</a></li>
-              <li><a href="agriculture.html">الزراعة والمنتجات</a></li>
-              <li><a href="education-health.html">التعليم والصحة</a></li>
-              <li><a href="culture.html">الثقافة والجمعيات</a></li>
-              <li><a href="gallery.html">معرض الصور</a></li>
-            </ul>
-          </li>
-          <li><a href="emergency.html" class="nav-emergency active" aria-current="page">الطوارئ</a></li>
-          <li><a href="contact.html">اتصل بنا</a></li>
-        </ul>
-      </nav>
-    </div>
+        <div class="collapse navbar-collapse" id="main-nav">
+          <ul class="navbar-nav nav-pills ms-auto gap-lg-1 py-2 py-lg-0">
+            <li class="nav-item"><a class="nav-link" href="index.html">الرئيسية</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">عن البلدة</a></li>
+            <li class="nav-item"><a class="nav-link" href="municipality.html">البلدية</a></li>
+            <li class="nav-item"><a class="nav-link" href="services.html">الخدمات</a></li>
+            <li class="nav-item"><a class="nav-link" href="news.html">الأخبار</a></li>
+            <li class="nav-item dropdown">
+              <button class="nav-link dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">استكشف</button>
+              <ul class="dropdown-menu border-0 shadow">
+                <li><a class="dropdown-item" href="nature.html">الطبيعة والسياحة</a></li>
+                <li><a class="dropdown-item" href="agriculture.html">الزراعة والمنتجات</a></li>
+                <li><a class="dropdown-item" href="education-health.html">التعليم والصحة</a></li>
+                <li><a class="dropdown-item" href="culture.html">الثقافة والجمعيات</a></li>
+                <li><a class="dropdown-item" href="gallery.html">معرض الصور</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link fw-bold bg-danger text-white active" href="emergency.html" aria-current="page">الطوارئ</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">اتصل بنا</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
   </header>
 
-    <section class="page-hero page-hero--emergency">
+    <section class="page-hero page-hero--emergency text-white py-5 d-print-none">
       <div class="container">
-        <nav class="breadcrumb" aria-label="مسار التنقل">
-          <ol>
-            <li><a href="index.html">الرئيسية</a></li>
-            <li><span aria-current="page">أرقام الطوارئ</span></li>
+        <nav aria-label="مسار التنقل">
+          <ol class="breadcrumb mb-3">
+            <li class="breadcrumb-item"><a class="text-white" href="index.html">الرئيسية</a></li>
+            <li class="breadcrumb-item active" aria-current="page">أرقام الطوارئ</li>
           </ol>
         </nav>
         <h1>أرقام الطوارئ</h1>
-        <p>في حالة الطوارئ، اتصل فورًا. اضغط على الرقم في هاتفك للاتصال.</p>
+        <p class="lead col-lg-7 mb-0">في حالة الطوارئ، اتصل فورًا. اضغط على الرقم في هاتفك للاتصال.</p>
       </div>
     </section>
 
   <main id="main">
-    <section class="section" aria-labelledby="em-title">
+    <section class="py-5" aria-labelledby="em-title">
       <div class="container">
         <h2 id="em-title" class="visually-hidden">أرقام الطوارئ الوطنية</h2>
-        <div class="emergency-grid">
-          <a class="emergency-tile" href="tel:112"><span class="num">112</span>قوى الأمن الداخلي</a>
-          <a class="emergency-tile" href="tel:140"><span class="num">140</span>الصليب الأحمر اللبناني (إسعاف)</a>
-          <a class="emergency-tile" href="tel:125"><span class="num">125</span>الدفاع المدني</a>
-          <a class="emergency-tile" href="tel:175"><span class="num">175</span>فوج الإطفاء</a>
+        <div class="row row-cols-2 row-cols-md-4 g-3 mb-5">
+          <div class="col"><a class="btn btn-outline-danger d-flex flex-column align-items-center justify-content-center h-100 p-4 rounded-4 shadow-sm fw-normal" href="tel:112"><span class="display-5 fw-bold lh-1 mb-2">112</span>قوى الأمن الداخلي</a></div>
+          <div class="col"><a class="btn btn-outline-danger d-flex flex-column align-items-center justify-content-center h-100 p-4 rounded-4 shadow-sm fw-normal" href="tel:140"><span class="display-5 fw-bold lh-1 mb-2">140</span>الصليب الأحمر اللبناني (إسعاف)</a></div>
+          <div class="col"><a class="btn btn-outline-danger d-flex flex-column align-items-center justify-content-center h-100 p-4 rounded-4 shadow-sm fw-normal" href="tel:125"><span class="display-5 fw-bold lh-1 mb-2">125</span>الدفاع المدني</a></div>
+          <div class="col"><a class="btn btn-outline-danger d-flex flex-column align-items-center justify-content-center h-100 p-4 rounded-4 shadow-sm fw-normal" href="tel:175"><span class="display-5 fw-bold lh-1 mb-2">175</span>فوج الإطفاء</a></div>
         </div>
 
-        <div class="table-wrap">
-          <table>
-            <caption>أرقام مفيدة</caption>
-            <thead>
+        <div class="table-responsive rounded-4 shadow-sm mb-4">
+          <table class="table table-striped table-hover align-middle caption-top mb-0">
+            <caption class="bg-primary text-white font-heading fw-semibold px-3 py-2">أرقام مفيدة</caption>
+            <thead class="table-light">
               <tr><th scope="col">الجهة</th><th scope="col">الرقم</th><th scope="col">متى تتصل</th></tr>
             </thead>
             <tbody>
-              <tr><td>قوى الأمن</td><td class="number-big"><a href="tel:112">112</a></td><td>الجرائم، الحوادث، الخطر على الأشخاص</td></tr>
-              <tr><td>الصليب الأحمر اللبناني</td><td class="number-big"><a href="tel:140">140</a></td><td>الحالات الطبية الطارئة، الإسعاف</td></tr>
-              <tr><td>الدفاع المدني</td><td class="number-big"><a href="tel:125">125</a></td><td>الإنقاذ، الفيضانات، المحاصرون بالثلوج</td></tr>
-              <tr><td>فوج الإطفاء</td><td class="number-big"><a href="tel:175">175</a></td><td>الحرائق</td></tr>
-              <tr><td>بلدية شمسطار</td><td class="number-big"><a href="tel:+9618000000" dir="ltr">08 000 000</a></td><td>الطرق، المياه، الإنارة، النفايات (خلال الدوام)</td></tr>
-              <tr><td>الشرطة البلدية</td><td class="number-big"><a href="tel:+9618000001" dir="ltr">08 000 001</a></td><td>السير والمشاكل المحلية</td></tr>
+              <tr><td>قوى الأمن</td><td class="font-heading fs-5 fw-bold"><a class="text-decoration-none" href="tel:112">112</a></td><td>الجرائم، الحوادث، الخطر على الأشخاص</td></tr>
+              <tr><td>الصليب الأحمر اللبناني</td><td class="font-heading fs-5 fw-bold"><a class="text-decoration-none" href="tel:140">140</a></td><td>الحالات الطبية الطارئة، الإسعاف</td></tr>
+              <tr><td>الدفاع المدني</td><td class="font-heading fs-5 fw-bold"><a class="text-decoration-none" href="tel:125">125</a></td><td>الإنقاذ، الفيضانات، المحاصرون بالثلوج</td></tr>
+              <tr><td>فوج الإطفاء</td><td class="font-heading fs-5 fw-bold"><a class="text-decoration-none" href="tel:175">175</a></td><td>الحرائق</td></tr>
+              <tr><td>بلدية شمسطار</td><td class="font-heading fs-5 fw-bold"><a class="text-decoration-none" href="tel:+9618000000" dir="ltr">08 000 000</a></td><td>الطرق، المياه، الإنارة، النفايات (خلال الدوام)</td></tr>
+              <tr><td>الشرطة البلدية</td><td class="font-heading fs-5 fw-bold"><a class="text-decoration-none" href="tel:+9618000001" dir="ltr">08 000 001</a></td><td>السير والمشاكل المحلية</td></tr>
             </tbody>
           </table>
         </div>
       </div>
     </section>
 
-    <section class="section section-alt" aria-labelledby="safety-title">
+    <section class="py-5 bg-light" aria-labelledby="safety-title">
       <div class="container">
-        <div class="section-header">
-          <span class="eyebrow">ابقَ بأمان</span>
+        <div class="col-lg-8 mb-5">
+          <span class="eyebrow d-inline-block mb-2 small fw-semibold text-uppercase text-primary">ابقَ بأمان</span>
           <h2 id="safety-title">نصائح للسلامة</h2>
         </div>
-        <div class="card-grid">
-          <article class="card"><div class="card-body"><h3>خلال العاصفة الثلجية</h3><p>ابقَ في المنزل إن أمكن. وإن اضطررت إلى القيادة، استخدم سلاسل الثلج وأخبر أحدًا بطريقك.</p></div></article>
-          <article class="card"><div class="card-body"><h3>في حال الحريق</h3><p>غادر المبنى، وأغلق الأبواب خلفك، واتصل بالرقم 175. لا تستخدم المصعد أبدًا.</p></div></article>
-          <article class="card"><div class="card-body"><h3>عندما تتصل</h3><p>حافظ على هدوئك. اذكر اسمك والمكان بدقة وما الذي حدث. لا تُنهِ المكالمة قبل أن يُطلب منك ذلك.</p></div></article>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+          <div class="col"><article class="card h-100 border-0 shadow-sm hover-lift"><div class="card-body d-flex flex-column p-4"><h3 class="h5 card-title">خلال العاصفة الثلجية</h3><p class="text-body-secondary">ابقَ في المنزل إن أمكن. وإن اضطررت إلى القيادة، استخدم سلاسل الثلج وأخبر أحدًا بطريقك.</p></div></article></div>
+          <div class="col"><article class="card h-100 border-0 shadow-sm hover-lift"><div class="card-body d-flex flex-column p-4"><h3 class="h5 card-title">في حال الحريق</h3><p class="text-body-secondary">غادر المبنى، وأغلق الأبواب خلفك، واتصل بالرقم 175. لا تستخدم المصعد أبدًا.</p></div></article></div>
+          <div class="col"><article class="card h-100 border-0 shadow-sm hover-lift"><div class="card-body d-flex flex-column p-4"><h3 class="h5 card-title">عندما تتصل</h3><p class="text-body-secondary">حافظ على هدوئك. اذكر اسمك والمكان بدقة وما الذي حدث. لا تُنهِ المكالمة قبل أن يُطلب منك ذلك.</p></div></article></div>
         </div>
-        <div class="callout callout--danger">
-          <p><strong>نصيحة:</strong> اطبع هذه الصفحة واحتفظ بها قرب الهاتف في منزلك.</p>
+        <div class="alert alert-danger border-0 border-start border-5 border-danger shadow-sm my-4">
+          <p class="mb-0"><strong>نصيحة:</strong> اطبع هذه الصفحة واحتفظ بها قرب الهاتف في منزلك.</p>
         </div>
       </div>
     </section>
   </main>
 
   <!-- ===== FOOTER (same on every page) ===== -->
-  <footer class="site-footer">
+  <footer class="site-footer bg-dark pt-5 pb-4 d-print-none">
     <div class="container">
-      <div class="footer-grid">
-        <div>
-          <div class="footer-brand">
+      <div class="row g-5 mb-5">
+        <div class="col-md-6 col-lg-4">
+          <div class="d-flex align-items-center gap-2 mb-3">
             <img src="../images/logo.svg" alt="" width="44" height="37">
-            <span>بلدية شمسطار</span>
+            <span class="font-heading fs-5 fw-bold text-white">بلدية شمسطار</span>
           </div>
           <p>بلدة واحدة، موقع واحد — كل المعلومات في مكان واحد. في خدمة أهالي شمسطار والقرى المجاورة في بعلبك الهرمل.</p>
         </div>
-        <section>
-          <h2>روابط سريعة</h2>
-          <ul>
-            <li><a href="services.html">الخدمات والمعاملات</a></li>
-            <li><a href="news.html">الأخبار والإعلانات</a></li>
-            <li><a href="emergency.html">أرقام الطوارئ</a></li>
-            <li><a href="gallery.html">معرض الصور</a></li>
+        <section class="col-md-6 col-lg-2">
+          <h2 class="h6 text-white mb-3">روابط سريعة</h2>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-2"><a href="services.html">الخدمات والمعاملات</a></li>
+            <li class="mb-2"><a href="news.html">الأخبار والإعلانات</a></li>
+            <li class="mb-2"><a href="emergency.html">أرقام الطوارئ</a></li>
+            <li class="mb-2"><a href="gallery.html">معرض الصور</a></li>
           </ul>
         </section>
-        <section>
-          <h2>اكتشف</h2>
-          <ul>
-            <li><a href="about.html">عن شمسطار</a></li>
-            <li><a href="nature.html">الطبيعة والسياحة</a></li>
-            <li><a href="agriculture.html">الزراعة</a></li>
-            <li><a href="culture.html">الثقافة والجمعيات</a></li>
+        <section class="col-md-6 col-lg-2">
+          <h2 class="h6 text-white mb-3">اكتشف</h2>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-2"><a href="about.html">عن شمسطار</a></li>
+            <li class="mb-2"><a href="nature.html">الطبيعة والسياحة</a></li>
+            <li class="mb-2"><a href="agriculture.html">الزراعة</a></li>
+            <li class="mb-2"><a href="culture.html">الثقافة والجمعيات</a></li>
           </ul>
         </section>
-        <section>
-          <h2>تواصل معنا</h2>
-          <address>
-            <ul>
-              <li>مبنى البلدية، الشارع الرئيسي، شمسطار، بعلبك الهرمل، لبنان</li>
-              <li><a href="tel:+9618000000" dir="ltr">+961 8 000 000</a></li>
-              <li><a href="mailto:info@chmustar.gov.lb" dir="ltr">info@chmustar.gov.lb</a></li>
-              <li><a href="https://www.facebook.com/search/top?q=%D8%A8%D9%84%D8%AF%D9%8A%D8%A9%20%D8%B4%D9%85%D8%B3%D8%B7%D8%A7%D8%B1" target="_blank" rel="noopener">صفحة فيسبوك</a></li>
+        <section class="col-md-6 col-lg-4">
+          <h2 class="h6 text-white mb-3">تواصل معنا</h2>
+          <address class="mb-0">
+            <ul class="list-unstyled mb-0">
+              <li class="mb-2">مبنى البلدية، الشارع الرئيسي، شمسطار، بعلبك الهرمل، لبنان</li>
+              <li class="mb-2"><a href="tel:+9618000000" dir="ltr">+961 8 000 000</a></li>
+              <li class="mb-2"><a href="mailto:info@chmustar.gov.lb" dir="ltr">info@chmustar.gov.lb</a></li>
+              <li class="mb-2"><a href="https://www.facebook.com/search/top?q=%D8%A8%D9%84%D8%AF%D9%8A%D8%A9%20%D8%B4%D9%85%D8%B3%D8%B7%D8%A7%D8%B1" target="_blank" rel="noopener">صفحة فيسبوك</a></li>
             </ul>
           </address>
         </section>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 بلدية شمسطار. جميع الحقوق محفوظة.</p>
-        <p><a href="#top">العودة إلى الأعلى ↑</a></p>
+      <div class="d-flex flex-wrap justify-content-between gap-3 border-top border-white border-opacity-10 pt-4 small">
+        <p class="mb-0">&copy; 2026 بلدية شمسطار. جميع الحقوق محفوظة.</p>
+        <p class="mb-0"><a href="#top">العودة إلى الأعلى ↑</a></p>
       </div>
     </div>
   </footer>
 
-  <a href="#top" class="back-to-top" aria-label="العودة إلى الأعلى">↑</a>
+  <a href="#top" class="back-to-top btn btn-primary rounded-circle shadow position-fixed bottom-0 end-0 m-3 z-3 d-flex align-items-center justify-content-center p-0 fs-5 d-print-none" aria-label="العودة إلى الأعلى">↑</a>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>

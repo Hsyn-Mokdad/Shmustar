@@ -12,122 +12,126 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Poppins:wght@500;600;700;800&amp;display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body id="top">
-  <a class="skip-link" href="#main">Skip to main content</a>
+  <a class="skip-link visually-hidden-focusable position-absolute top-0 start-0 m-2 px-3 py-2 bg-dark text-white rounded-2" href="#main">Skip to main content</a>
 
   <!-- ===== HEADER (same on every page) ===== -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="index.html" aria-label="Chmustar Municipality — go to Home page">
-        <img src="images/logo.svg" alt="" width="44" height="37">
-        <span class="brand-text">
-          <span class="brand-name">Chmustar</span>
-          <span class="brand-sub">Municipality · <span lang="ar">بلدية شمسطار</span></span>
-        </span>
-      </a>
+  <header class="site-header sticky-top border-bottom d-print-none">
+    <nav class="navbar navbar-expand-lg" aria-label="Main menu">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="index.html" aria-label="Chmustar Municipality — go to Home page">
+          <img src="images/logo.svg" alt="" width="44" height="37">
+          <span class="d-flex flex-column lh-sm">
+            <span class="font-heading fw-bold fs-5">Chmustar</span>
+            <span class="small text-body-secondary d-none d-sm-inline">Municipality · <span lang="ar">بلدية شمسطار</span></span>
+          </span>
+        </a>
 
-      <a class="lang-switch" href="ar/services.html" hreflang="ar" lang="ar">العربية</a>
+        <a class="btn btn-outline-primary btn-sm ms-auto me-2 ms-lg-2 me-lg-0 order-lg-last" href="ar/services.html" hreflang="ar" lang="ar">العربية</a>
 
-      <!-- Mobile menu: the checkbox stores the open/closed state, CSS does the rest -->
-      <input type="checkbox" id="nav-toggle" class="nav-toggle">
-      <label for="nav-toggle" class="nav-toggle-label"><span class="hamburger"></span> Menu</label>
+        <!-- Mobile menu: Bootstrap "collapse" opens and closes the menu -->
+        <button class="navbar-toggler rounded-pill fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false">
+          <span class="navbar-toggler-icon"></span> Menu
+        </button>
 
-      <nav class="main-nav" aria-label="Main menu">
-        <ul class="nav-list">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="municipality.html">Municipality</a></li>
-          <li><a href="services.html" class="active" aria-current="page">Services</a></li>
-          <li><a href="news.html">News</a></li>
-          <li class="has-dropdown">
-            <span class="dropdown-title" tabindex="0">Explore</span>
-            <ul class="dropdown-list">
-              <li><a href="nature.html">Nature &amp; Tourism</a></li>
-              <li><a href="agriculture.html">Agriculture &amp; Products</a></li>
-              <li><a href="education-health.html">Education &amp; Health</a></li>
-              <li><a href="culture.html">Culture &amp; Associations</a></li>
-              <li><a href="gallery.html">Gallery</a></li>
-            </ul>
-          </li>
-          <li><a href="emergency.html" class="nav-emergency">Emergency</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
+        <div class="collapse navbar-collapse" id="main-nav">
+          <ul class="navbar-nav nav-pills ms-auto gap-lg-1 py-2 py-lg-0">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="municipality.html">Municipality</a></li>
+            <li class="nav-item"><a class="nav-link active" href="services.html" aria-current="page">Services</a></li>
+            <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
+            <li class="nav-item dropdown">
+              <button class="nav-link dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Explore</button>
+              <ul class="dropdown-menu border-0 shadow">
+                <li><a class="dropdown-item" href="nature.html">Nature &amp; Tourism</a></li>
+                <li><a class="dropdown-item" href="agriculture.html">Agriculture &amp; Products</a></li>
+                <li><a class="dropdown-item" href="education-health.html">Education &amp; Health</a></li>
+                <li><a class="dropdown-item" href="culture.html">Culture &amp; Associations</a></li>
+                <li><a class="dropdown-item" href="gallery.html">Gallery</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link fw-bold text-danger" href="emergency.html">Emergency</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
   </header>
 
-    <section class="page-hero page-hero--services">
+    <section class="page-hero page-hero--services text-white py-5 d-print-none">
       <div class="container">
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-          <ol>
-            <li><a href="index.html">Home</a></li>
-            <li><span aria-current="page">Services &amp; Paperwork</span></li>
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb mb-3">
+            <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Services &amp; Paperwork</li>
           </ol>
         </nav>
         <h1>Services &amp; Paperwork</h1>
-        <p>What you need, where to go, and how long it takes.</p>
+        <p class="lead col-lg-7 mb-0">What you need, where to go, and how long it takes.</p>
       </div>
     </section>
 
   <main id="main">
-    <section class="section" aria-labelledby="svc-title">
+    <section class="py-5" aria-labelledby="svc-title">
       <div class="container">
-        <div class="section-header">
-          <span class="eyebrow">Main services</span>
+        <div class="col-lg-8 mb-5">
+          <span class="eyebrow d-inline-block mb-2 small fw-semibold text-uppercase text-primary">Main services</span>
           <h2 id="svc-title">Choose a service</h2>
-          <p>Each card lists the documents to bring, so you can finish in one visit.</p>
+          <p class="text-body-secondary">Each card lists the documents to bring, so you can finish in one visit.</p>
         </div>
-        <div class="card-grid">
-          <article class="card"><div class="card-body">
-            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><path d="M8 13h8M8 17h5"/></svg>
-            <h3>Residence certificate</h3>
-            <p><span lang="ar">إفادة سكن</span> — proves that you live in Chmustar.</p>
-            <h4>You need:</h4>
-            <ul class="check-list"><li>Copy of your ID card</li><li>Proof of address (rent contract or title deed)</li><li>Paid fiscal stamp</li></ul>
-          </div></article><article class="card"><div class="card-body">
-            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 11 9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg>
-            <h3>Building permit</h3>
-            <p>For new buildings, additions or major repairs.</p>
-            <h4>You need:</h4>
-            <ul class="check-list"><li>Copy of the title deed</li><li>Plans signed by a registered engineer</li><li>Land survey (cadastral) map</li></ul>
-          </div></article><article class="card"><div class="card-body">
-            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M15 9.5c-.5-1-1.6-1.5-3-1.5-1.7 0-3 .9-3 2s1.3 1.8 3 2 3 .9 3 2-1.3 2-3 2c-1.4 0-2.5-.5-3-1.5M12 6v2M12 16v2"/></svg>
-            <h3>Municipal fees</h3>
-            <p>Annual fees on homes and shops (rental value).</p>
-            <h4>You need:</h4>
-            <ul class="check-list"><li>Your property or shop number</li><li>Last year's receipt, if available</li><li>Payment at the finance office</li></ul>
-          </div></article><article class="card"><div class="card-body">
-            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"/></svg>
-            <h3>Waste &amp; cleaning</h3>
-            <p>Report missed collection or request bulky-waste pickup.</p>
-            <h4>You need:</h4>
-            <ul class="check-list"><li>Your street and nearest landmark</li><li>Type of waste</li><li>Phone number to reach you</li></ul>
-          </div></article><article class="card"><div class="card-body">
-            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"/></svg>
-            <h3>Street lights &amp; roads</h3>
-            <p>Report a broken light, a pothole or a blocked road.</p>
-            <h4>You need:</h4>
-            <ul class="check-list"><li>Exact location</li><li>A photo, if possible</li><li>Your contact details</li></ul>
-          </div></article><article class="card"><div class="card-body">
-            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
-            <h3>Complaints &amp; suggestions</h3>
-            <p>Tell us what we can do better.</p>
-            <h4>You need:</h4>
-            <ul class="check-list"><li>Use the <a href="contact.html">contact form</a></li><li>Or visit the municipality</li><li>We reply within 5 working days</li></ul>
-          </div></article>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+          <div class="col"><article class="card h-100 border-0 shadow-sm hover-lift"><div class="card-body d-flex flex-column p-4">
+            <svg class="flex-shrink-0 p-2 rounded-3 bg-light text-primary mb-3" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><path d="M8 13h8M8 17h5"/></svg>
+            <h3 class="h5 card-title">Residence certificate</h3>
+            <p class="text-body-secondary"><span lang="ar">إفادة سكن</span> — proves that you live in Chmustar.</p>
+            <h4 class="h6 fw-semibold mt-2">You need:</h4>
+            <ul class="list-unstyled check-list"><li>Copy of your ID card</li><li>Proof of address (rent contract or title deed)</li><li>Paid fiscal stamp</li></ul>
+          </div></article></div><div class="col"><article class="card h-100 border-0 shadow-sm hover-lift"><div class="card-body d-flex flex-column p-4">
+            <svg class="flex-shrink-0 p-2 rounded-3 bg-light text-primary mb-3" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 11 9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg>
+            <h3 class="h5 card-title">Building permit</h3>
+            <p class="text-body-secondary">For new buildings, additions or major repairs.</p>
+            <h4 class="h6 fw-semibold mt-2">You need:</h4>
+            <ul class="list-unstyled check-list"><li>Copy of the title deed</li><li>Plans signed by a registered engineer</li><li>Land survey (cadastral) map</li></ul>
+          </div></article></div><div class="col"><article class="card h-100 border-0 shadow-sm hover-lift"><div class="card-body d-flex flex-column p-4">
+            <svg class="flex-shrink-0 p-2 rounded-3 bg-light text-primary mb-3" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M15 9.5c-.5-1-1.6-1.5-3-1.5-1.7 0-3 .9-3 2s1.3 1.8 3 2 3 .9 3 2-1.3 2-3 2c-1.4 0-2.5-.5-3-1.5M12 6v2M12 16v2"/></svg>
+            <h3 class="h5 card-title">Municipal fees</h3>
+            <p class="text-body-secondary">Annual fees on homes and shops (rental value).</p>
+            <h4 class="h6 fw-semibold mt-2">You need:</h4>
+            <ul class="list-unstyled check-list"><li>Your property or shop number</li><li>Last year's receipt, if available</li><li>Payment at the finance office</li></ul>
+          </div></article></div><div class="col"><article class="card h-100 border-0 shadow-sm hover-lift"><div class="card-body d-flex flex-column p-4">
+            <svg class="flex-shrink-0 p-2 rounded-3 bg-light text-primary mb-3" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"/></svg>
+            <h3 class="h5 card-title">Waste &amp; cleaning</h3>
+            <p class="text-body-secondary">Report missed collection or request bulky-waste pickup.</p>
+            <h4 class="h6 fw-semibold mt-2">You need:</h4>
+            <ul class="list-unstyled check-list"><li>Your street and nearest landmark</li><li>Type of waste</li><li>Phone number to reach you</li></ul>
+          </div></article></div><div class="col"><article class="card h-100 border-0 shadow-sm hover-lift"><div class="card-body d-flex flex-column p-4">
+            <svg class="flex-shrink-0 p-2 rounded-3 bg-light text-primary mb-3" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"/></svg>
+            <h3 class="h5 card-title">Street lights &amp; roads</h3>
+            <p class="text-body-secondary">Report a broken light, a pothole or a blocked road.</p>
+            <h4 class="h6 fw-semibold mt-2">You need:</h4>
+            <ul class="list-unstyled check-list"><li>Exact location</li><li>A photo, if possible</li><li>Your contact details</li></ul>
+          </div></article></div><div class="col"><article class="card h-100 border-0 shadow-sm hover-lift"><div class="card-body d-flex flex-column p-4">
+            <svg class="flex-shrink-0 p-2 rounded-3 bg-light text-primary mb-3" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+            <h3 class="h5 card-title">Complaints &amp; suggestions</h3>
+            <p class="text-body-secondary">Tell us what we can do better.</p>
+            <h4 class="h6 fw-semibold mt-2">You need:</h4>
+            <ul class="list-unstyled check-list"><li>Use the <a href="contact.html">contact form</a></li><li>Or visit the municipality</li><li>We reply within 5 working days</li></ul>
+          </div></article></div>
         </div>
-        <div class="callout">
-          <p><strong>Good to know:</strong> requirements can change. If you are not sure, call the municipality before your visit.</p>
+        <div class="alert alert-warning border-0 border-start border-5 border-warning shadow-sm my-4">
+          <p class="mb-0"><strong>Good to know:</strong> requirements can change. If you are not sure, call the municipality before your visit.</p>
         </div>
       </div>
     </section>
 
-    <section class="section section-alt" aria-labelledby="steps-title">
-      <div class="container split">
-        <div>
-          <span class="eyebrow">Step by step</span>
+    <section class="py-5 bg-light" aria-labelledby="steps-title">
+      <div class="container"><div class="row g-5 align-items-center">
+        <div class="col-lg-6">
+          <span class="eyebrow d-inline-block mb-2 small fw-semibold text-uppercase text-primary">Step by step</span>
           <h2 id="steps-title">How to apply</h2>
           <ol>
             <li>Check the documents you need on this page.</li>
@@ -137,10 +141,10 @@
             <li>Receive your document or a follow-up number.</li>
           </ol>
         </div>
-        <div><div class="table-wrap">
-          <table>
-            <caption>Office hours</caption>
-            <thead>
+        <div class="col-lg-6"><div class="table-responsive rounded-4 shadow-sm mb-4">
+          <table class="table table-striped table-hover align-middle caption-top mb-0">
+            <caption class="bg-primary text-white font-heading fw-semibold px-3 py-2">Office hours</caption>
+            <thead class="table-light">
               <tr><th scope="col">Day</th><th scope="col">Hours</th></tr>
             </thead>
             <tbody>
@@ -151,68 +155,90 @@
             </tbody>
           </table>
         </div></div>
-      </div>
+      </div></div>
     </section>
 
-    <section class="section faq" aria-labelledby="faq-title">
+    <section class="py-5" aria-labelledby="faq-title">
       <div class="container">
-        <div class="section-header">
-          <span class="eyebrow">Help</span>
+        <div class="col-lg-8 mb-5">
+          <span class="eyebrow d-inline-block mb-2 small fw-semibold text-uppercase text-primary">Help</span>
           <h2 id="faq-title">Frequently asked questions</h2>
         </div>
-        <details><summary>How long does a residence certificate take?</summary><p>Usually the same day, if you bring all the required documents during office hours.</p></details><details><summary>Can someone else apply for me?</summary><p>Yes. A family member can apply with a copy of your ID card and their own ID card. For property matters a legal power of attorney may be needed.</p></details><details><summary>Can I pay municipal fees online?</summary><p>Not yet. Fees are paid at the finance office in the municipality building. Online payment is a planned next step for this website.</p></details><details><summary>Who do I call if a road is blocked by snow?</summary><p>Call the municipality during office hours. Outside office hours, or if anyone is in danger, call Civil Defense on <a href="tel:125">125</a>.</p></details><details><summary>I live abroad. How can I follow municipal news?</summary><p>Visit the <a href="news.html">News page</a> or follow the municipality's Facebook page. You can also write to us through the <a href="contact.html">contact form</a>.</p></details>
+        <div class="accordion shadow-sm" id="faq-list">
+          <div class="accordion-item">
+            <h3 class="accordion-header"><button class="accordion-button collapsed font-heading fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq-1" aria-expanded="false" aria-controls="faq-1">How long does a residence certificate take?</button></h3>
+            <div id="faq-1" class="accordion-collapse collapse"><div class="accordion-body text-body-secondary"><p class="mb-0">Usually the same day, if you bring all the required documents during office hours.</p></div></div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header"><button class="accordion-button collapsed font-heading fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq-2" aria-expanded="false" aria-controls="faq-2">Can someone else apply for me?</button></h3>
+            <div id="faq-2" class="accordion-collapse collapse"><div class="accordion-body text-body-secondary"><p class="mb-0">Yes. A family member can apply with a copy of your ID card and their own ID card. For property matters a legal power of attorney may be needed.</p></div></div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header"><button class="accordion-button collapsed font-heading fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq-3" aria-expanded="false" aria-controls="faq-3">Can I pay municipal fees online?</button></h3>
+            <div id="faq-3" class="accordion-collapse collapse"><div class="accordion-body text-body-secondary"><p class="mb-0">Not yet. Fees are paid at the finance office in the municipality building. Online payment is a planned next step for this website.</p></div></div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header"><button class="accordion-button collapsed font-heading fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq-4" aria-expanded="false" aria-controls="faq-4">Who do I call if a road is blocked by snow?</button></h3>
+            <div id="faq-4" class="accordion-collapse collapse"><div class="accordion-body text-body-secondary"><p class="mb-0">Call the municipality during office hours. Outside office hours, or if anyone is in danger, call Civil Defense on <a href="tel:125">125</a>.</p></div></div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header"><button class="accordion-button collapsed font-heading fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq-5" aria-expanded="false" aria-controls="faq-5">I live abroad. How can I follow municipal news?</button></h3>
+            <div id="faq-5" class="accordion-collapse collapse"><div class="accordion-body text-body-secondary"><p class="mb-0">Visit the <a href="news.html">News page</a> or follow the municipality's Facebook page. You can also write to us through the <a href="contact.html">contact form</a>.</p></div></div>
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
   <!-- ===== FOOTER (same on every page) ===== -->
-  <footer class="site-footer">
+  <footer class="site-footer bg-dark pt-5 pb-4 d-print-none">
     <div class="container">
-      <div class="footer-grid">
-        <div>
-          <div class="footer-brand">
+      <div class="row g-5 mb-5">
+        <div class="col-md-6 col-lg-4">
+          <div class="d-flex align-items-center gap-2 mb-3">
             <img src="images/logo.svg" alt="" width="44" height="37">
-            <span>Chmustar Municipality</span>
+            <span class="font-heading fs-5 fw-bold text-white">Chmustar Municipality</span>
           </div>
           <p>One town, one website — all the information in one place. Serving the residents of Chmustar and the surrounding villages of Baalbek-Hermel.</p>
         </div>
-        <section>
-          <h2>Quick links</h2>
-          <ul>
-            <li><a href="services.html">Services &amp; Paperwork</a></li>
-            <li><a href="news.html">News &amp; Announcements</a></li>
-            <li><a href="emergency.html">Emergency Numbers</a></li>
-            <li><a href="gallery.html">Photo Gallery</a></li>
+        <section class="col-md-6 col-lg-2">
+          <h2 class="h6 text-white mb-3">Quick links</h2>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-2"><a href="services.html">Services &amp; Paperwork</a></li>
+            <li class="mb-2"><a href="news.html">News &amp; Announcements</a></li>
+            <li class="mb-2"><a href="emergency.html">Emergency Numbers</a></li>
+            <li class="mb-2"><a href="gallery.html">Photo Gallery</a></li>
           </ul>
         </section>
-        <section>
-          <h2>Discover</h2>
-          <ul>
-            <li><a href="about.html">About Chmustar</a></li>
-            <li><a href="nature.html">Nature &amp; Tourism</a></li>
-            <li><a href="agriculture.html">Agriculture</a></li>
-            <li><a href="culture.html">Culture &amp; Associations</a></li>
+        <section class="col-md-6 col-lg-2">
+          <h2 class="h6 text-white mb-3">Discover</h2>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-2"><a href="about.html">About Chmustar</a></li>
+            <li class="mb-2"><a href="nature.html">Nature &amp; Tourism</a></li>
+            <li class="mb-2"><a href="agriculture.html">Agriculture</a></li>
+            <li class="mb-2"><a href="culture.html">Culture &amp; Associations</a></li>
           </ul>
         </section>
-        <section>
-          <h2>Contact</h2>
-          <address>
-            <ul>
-              <li>Municipality Building, Main Street, Chmustar, Baalbek-Hermel, Lebanon</li>
-              <li><a href="tel:+9618000000">+961 8 000 000</a></li>
-              <li><a href="mailto:info@chmustar.gov.lb">info@chmustar.gov.lb</a></li>
-              <li><a href="https://www.facebook.com/search/top?q=%D8%A8%D9%84%D8%AF%D9%8A%D8%A9%20%D8%B4%D9%85%D8%B3%D8%B7%D8%A7%D8%B1" target="_blank" rel="noopener">Facebook page</a></li>
+        <section class="col-md-6 col-lg-4">
+          <h2 class="h6 text-white mb-3">Contact</h2>
+          <address class="mb-0">
+            <ul class="list-unstyled mb-0">
+              <li class="mb-2">Municipality Building, Main Street, Chmustar, Baalbek-Hermel, Lebanon</li>
+              <li class="mb-2"><a href="tel:+9618000000">+961 8 000 000</a></li>
+              <li class="mb-2"><a href="mailto:info@chmustar.gov.lb">info@chmustar.gov.lb</a></li>
+              <li class="mb-2"><a href="https://www.facebook.com/search/top?q=%D8%A8%D9%84%D8%AF%D9%8A%D8%A9%20%D8%B4%D9%85%D8%B3%D8%B7%D8%A7%D8%B1" target="_blank" rel="noopener">Facebook page</a></li>
             </ul>
           </address>
         </section>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 Chmustar Municipality. All rights reserved.</p>
-        <p><a href="#top">Back to top ↑</a></p>
+      <div class="d-flex flex-wrap justify-content-between gap-3 border-top border-white border-opacity-10 pt-4 small">
+        <p class="mb-0">&copy; 2026 Chmustar Municipality. All rights reserved.</p>
+        <p class="mb-0"><a href="#top">Back to top ↑</a></p>
       </div>
     </div>
   </footer>
 
-  <a href="#top" class="back-to-top" aria-label="Back to top">↑</a>
+  <a href="#top" class="back-to-top btn btn-primary rounded-circle shadow position-fixed bottom-0 end-0 m-3 z-3 d-flex align-items-center justify-content-center p-0 fs-5 d-print-none" aria-label="Back to top">↑</a>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>

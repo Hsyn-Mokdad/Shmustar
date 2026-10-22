@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="utf-8">
@@ -12,149 +12,154 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@500;600;700;800&amp;family=IBM+Plex+Sans+Arabic:wght@400;500;600&amp;display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" integrity="sha384-dpuaG1suU0eT09tx5plTaGMLBsfDLzUCCUXOY2j/LSvXYuG6Bqs43ALlhIqAJVRb" crossorigin="anonymous">
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body id="top">
-  <a class="skip-link" href="#main">انتقل إلى المحتوى الرئيسي</a>
+  <a class="skip-link visually-hidden-focusable position-absolute top-0 start-0 m-2 px-3 py-2 bg-dark text-white rounded-2" href="#main">انتقل إلى المحتوى الرئيسي</a>
 
   <!-- ===== HEADER (same on every page) ===== -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="index.html" aria-label="بلدية شمسطار — العودة إلى الصفحة الرئيسية">
-        <img src="../images/logo.svg" alt="" width="44" height="37">
-        <span class="brand-text">
-          <span class="brand-name">شمسطار</span>
-          <span class="brand-sub">البلدية · <span lang="en">Chmustar Municipality</span></span>
-        </span>
-      </a>
+  <header class="site-header sticky-top border-bottom d-print-none">
+    <nav class="navbar navbar-expand-lg" aria-label="القائمة الرئيسية">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="index.html" aria-label="بلدية شمسطار — العودة إلى الصفحة الرئيسية">
+          <img src="../images/logo.svg" alt="" width="44" height="37">
+          <span class="d-flex flex-column lh-sm">
+            <span class="font-heading fw-bold fs-5">شمسطار</span>
+            <span class="small text-body-secondary d-none d-sm-inline">البلدية · <span lang="en">Chmustar Municipality</span></span>
+          </span>
+        </a>
 
-      <a class="lang-switch" href="../education-health.html" hreflang="en" lang="en">English</a>
+        <a class="btn btn-outline-primary btn-sm ms-auto me-2 ms-lg-2 me-lg-0 order-lg-last" href="../education-health.html" hreflang="en" lang="en">English</a>
 
-      <!-- Mobile menu: the checkbox stores the open/closed state, CSS does the rest -->
-      <input type="checkbox" id="nav-toggle" class="nav-toggle">
-      <label for="nav-toggle" class="nav-toggle-label"><span class="hamburger"></span> القائمة</label>
+        <!-- Mobile menu: Bootstrap "collapse" opens and closes the menu -->
+        <button class="navbar-toggler rounded-pill fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false">
+          <span class="navbar-toggler-icon"></span> القائمة
+        </button>
 
-      <nav class="main-nav" aria-label="القائمة الرئيسية">
-        <ul class="nav-list">
-          <li><a href="index.html">الرئيسية</a></li>
-          <li><a href="about.html">عن البلدة</a></li>
-          <li><a href="municipality.html">البلدية</a></li>
-          <li><a href="services.html">الخدمات</a></li>
-          <li><a href="news.html">الأخبار</a></li>
-          <li class="has-dropdown active-group">
-            <span class="dropdown-title" tabindex="0">استكشف</span>
-            <ul class="dropdown-list">
-              <li><a href="nature.html">الطبيعة والسياحة</a></li>
-              <li><a href="agriculture.html">الزراعة والمنتجات</a></li>
-              <li><a href="education-health.html" class="active" aria-current="page">التعليم والصحة</a></li>
-              <li><a href="culture.html">الثقافة والجمعيات</a></li>
-              <li><a href="gallery.html">معرض الصور</a></li>
-            </ul>
-          </li>
-          <li><a href="emergency.html" class="nav-emergency">الطوارئ</a></li>
-          <li><a href="contact.html">اتصل بنا</a></li>
-        </ul>
-      </nav>
-    </div>
+        <div class="collapse navbar-collapse" id="main-nav">
+          <ul class="navbar-nav nav-pills ms-auto gap-lg-1 py-2 py-lg-0">
+            <li class="nav-item"><a class="nav-link" href="index.html">الرئيسية</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">عن البلدة</a></li>
+            <li class="nav-item"><a class="nav-link" href="municipality.html">البلدية</a></li>
+            <li class="nav-item"><a class="nav-link" href="services.html">الخدمات</a></li>
+            <li class="nav-item"><a class="nav-link" href="news.html">الأخبار</a></li>
+            <li class="nav-item dropdown">
+              <button class="nav-link dropdown-toggle active" type="button" data-bs-toggle="dropdown" aria-expanded="false">استكشف</button>
+              <ul class="dropdown-menu border-0 shadow">
+                <li><a class="dropdown-item" href="nature.html">الطبيعة والسياحة</a></li>
+                <li><a class="dropdown-item" href="agriculture.html">الزراعة والمنتجات</a></li>
+                <li><a class="dropdown-item active" href="education-health.html" aria-current="page">التعليم والصحة</a></li>
+                <li><a class="dropdown-item" href="culture.html">الثقافة والجمعيات</a></li>
+                <li><a class="dropdown-item" href="gallery.html">معرض الصور</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link fw-bold text-danger" href="emergency.html">الطوارئ</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">اتصل بنا</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
   </header>
 
-    <section class="page-hero page-hero--education">
+    <section class="page-hero page-hero--education text-white py-5 d-print-none">
       <div class="container">
-        <nav class="breadcrumb" aria-label="مسار التنقل">
-          <ol>
-            <li><a href="index.html">الرئيسية</a></li>
-            <li><span aria-current="page">التعليم والصحة</span></li>
+        <nav aria-label="مسار التنقل">
+          <ol class="breadcrumb mb-3">
+            <li class="breadcrumb-item"><a class="text-white" href="index.html">الرئيسية</a></li>
+            <li class="breadcrumb-item active" aria-current="page">التعليم والصحة</li>
           </ol>
         </nav>
         <h1>التعليم والصحة</h1>
-        <p>مدارس وخدمات صحية لشمسطار والقرى المحيطة بها.</p>
+        <p class="lead col-lg-7 mb-0">مدارس وخدمات صحية لشمسطار والقرى المحيطة بها.</p>
       </div>
     </section>
 
   <main id="main">
-    <section class="section" aria-labelledby="edu-title">
+    <section class="py-5" aria-labelledby="edu-title">
       <div class="container">
-        <div class="section-header">
-          <span class="eyebrow">التعليم</span>
+        <div class="col-lg-8 mb-5">
+          <span class="eyebrow d-inline-block mb-2 small fw-semibold text-uppercase text-primary">التعليم</span>
           <h2 id="edu-title">التعليم في شمسطار منذ عام 1936</h2>
-          <p>يقصد طلاب من قرى مجاورة كثيرة شمسطار للدراسة.</p>
+          <p class="text-body-secondary">يقصد طلاب من قرى مجاورة كثيرة شمسطار للدراسة.</p>
         </div>
-        <div class="card-grid">
-          <article class="card"><div class="card-body"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m2 9 10-5 10 5-10 5z"/><path d="M6 11v5c3 2 9 2 12 0v-5"/></svg><h3>المدارس الرسمية</h3><p>مدارس رسمية من المرحلة الابتدائية حتى الثانوية.</p></div></article>
-          <article class="card"><div class="card-body"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m2 9 10-5 10 5-10 5z"/><path d="M6 11v5c3 2 9 2 12 0v-5"/></svg><h3>المدارس الخاصة</h3><p>مدارس خاصة تقدّم برامج ولغات متنوّعة.</p></div></article>
-          <article class="card"><div class="card-body"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21V8l8-5 8 5v13"/><path d="M9 21v-6h6v6M4 21h16M9 10h.01M15 10h.01"/></svg><h3>التعليم المهني</h3><p>معاهد فنية ومهنية تُعدّ الشباب لسوق العمل.</p></div></article>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+          <div class="col"><article class="card h-100 border-0 shadow-sm hover-lift"><div class="card-body d-flex flex-column p-4"><svg class="flex-shrink-0 p-2 rounded-3 bg-light text-primary mb-3" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m2 9 10-5 10 5-10 5z"/><path d="M6 11v5c3 2 9 2 12 0v-5"/></svg><h3 class="h5 card-title">المدارس الرسمية</h3><p class="text-body-secondary">مدارس رسمية من المرحلة الابتدائية حتى الثانوية.</p></div></article></div>
+          <div class="col"><article class="card h-100 border-0 shadow-sm hover-lift"><div class="card-body d-flex flex-column p-4"><svg class="flex-shrink-0 p-2 rounded-3 bg-light text-primary mb-3" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m2 9 10-5 10 5-10 5z"/><path d="M6 11v5c3 2 9 2 12 0v-5"/></svg><h3 class="h5 card-title">المدارس الخاصة</h3><p class="text-body-secondary">مدارس خاصة تقدّم برامج ولغات متنوّعة.</p></div></article></div>
+          <div class="col"><article class="card h-100 border-0 shadow-sm hover-lift"><div class="card-body d-flex flex-column p-4"><svg class="flex-shrink-0 p-2 rounded-3 bg-light text-primary mb-3" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21V8l8-5 8 5v13"/><path d="M9 21v-6h6v6M4 21h16M9 10h.01M15 10h.01"/></svg><h3 class="h5 card-title">التعليم المهني</h3><p class="text-body-secondary">معاهد فنية ومهنية تُعدّ الشباب لسوق العمل.</p></div></article></div>
         </div>
       </div>
     </section>
 
-    <section class="section section-alt" aria-labelledby="health-title">
-      <div class="container split">
-        <div>
-          <span class="eyebrow">الصحة</span>
+    <section class="py-5 bg-light" aria-labelledby="health-title">
+      <div class="container"><div class="row g-5 align-items-center">
+        <div class="col-lg-6">
+          <span class="eyebrow d-inline-block mb-2 small fw-semibold text-uppercase text-primary">الصحة</span>
           <h2 id="health-title">الخدمات الصحية</h2>
           <p>تضمّ شمسطار مراكز صحية وعيادات وصيدليات تخدم البلدة والقرى المحيطة بها.</p>
-          <ul class="check-list">
+          <ul class="list-unstyled check-list">
             <li>رعاية صحية أولية ولقاحات</li>
             <li>عيادات خاصة ومختبرات</li>
             <li>صيدليات في وسط البلدة</li>
           </ul>
-          <div class="callout callout--danger">
-            <p><strong>حالة طبية طارئة؟</strong> اتصل بالصليب الأحمر اللبناني على الرقم <a href="tel:140">140</a>. واطّلع على جميع <a href="emergency.html">أرقام الطوارئ</a>.</p>
+          <div class="alert alert-danger border-0 border-start border-5 border-danger shadow-sm my-4">
+            <p class="mb-0"><strong>حالة طبية طارئة؟</strong> اتصل بالصليب الأحمر اللبناني على الرقم <a href="tel:140">140</a>. واطّلع على جميع <a href="emergency.html">أرقام الطوارئ</a>.</p>
           </div>
         </div>
-        <img src="../images/garden-house.webp" alt="حديقة خضراء هادئة في شمسطار" width="1600" height="1200" loading="lazy">
-      </div>
+        <div class="col-lg-6"><div class="ratio ratio-4x3 rounded-4 overflow-hidden shadow-sm"><img class="object-fit-cover" src="../images/garden-house.webp" alt="حديقة خضراء هادئة في شمسطار" width="1600" height="1200" loading="lazy"></div></div>
+      </div></div>
     </section>
   </main>
 
   <!-- ===== FOOTER (same on every page) ===== -->
-  <footer class="site-footer">
+  <footer class="site-footer bg-dark pt-5 pb-4 d-print-none">
     <div class="container">
-      <div class="footer-grid">
-        <div>
-          <div class="footer-brand">
+      <div class="row g-5 mb-5">
+        <div class="col-md-6 col-lg-4">
+          <div class="d-flex align-items-center gap-2 mb-3">
             <img src="../images/logo.svg" alt="" width="44" height="37">
-            <span>بلدية شمسطار</span>
+            <span class="font-heading fs-5 fw-bold text-white">بلدية شمسطار</span>
           </div>
           <p>بلدة واحدة، موقع واحد — كل المعلومات في مكان واحد. في خدمة أهالي شمسطار والقرى المجاورة في بعلبك الهرمل.</p>
         </div>
-        <section>
-          <h2>روابط سريعة</h2>
-          <ul>
-            <li><a href="services.html">الخدمات والمعاملات</a></li>
-            <li><a href="news.html">الأخبار والإعلانات</a></li>
-            <li><a href="emergency.html">أرقام الطوارئ</a></li>
-            <li><a href="gallery.html">معرض الصور</a></li>
+        <section class="col-md-6 col-lg-2">
+          <h2 class="h6 text-white mb-3">روابط سريعة</h2>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-2"><a href="services.html">الخدمات والمعاملات</a></li>
+            <li class="mb-2"><a href="news.html">الأخبار والإعلانات</a></li>
+            <li class="mb-2"><a href="emergency.html">أرقام الطوارئ</a></li>
+            <li class="mb-2"><a href="gallery.html">معرض الصور</a></li>
           </ul>
         </section>
-        <section>
-          <h2>اكتشف</h2>
-          <ul>
-            <li><a href="about.html">عن شمسطار</a></li>
-            <li><a href="nature.html">الطبيعة والسياحة</a></li>
-            <li><a href="agriculture.html">الزراعة</a></li>
-            <li><a href="culture.html">الثقافة والجمعيات</a></li>
+        <section class="col-md-6 col-lg-2">
+          <h2 class="h6 text-white mb-3">اكتشف</h2>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-2"><a href="about.html">عن شمسطار</a></li>
+            <li class="mb-2"><a href="nature.html">الطبيعة والسياحة</a></li>
+            <li class="mb-2"><a href="agriculture.html">الزراعة</a></li>
+            <li class="mb-2"><a href="culture.html">الثقافة والجمعيات</a></li>
           </ul>
         </section>
-        <section>
-          <h2>تواصل معنا</h2>
-          <address>
-            <ul>
-              <li>مبنى البلدية، الشارع الرئيسي، شمسطار، بعلبك الهرمل، لبنان</li>
-              <li><a href="tel:+9618000000" dir="ltr">+961 8 000 000</a></li>
-              <li><a href="mailto:info@chmustar.gov.lb" dir="ltr">info@chmustar.gov.lb</a></li>
-              <li><a href="https://www.facebook.com/search/top?q=%D8%A8%D9%84%D8%AF%D9%8A%D8%A9%20%D8%B4%D9%85%D8%B3%D8%B7%D8%A7%D8%B1" target="_blank" rel="noopener">صفحة فيسبوك</a></li>
+        <section class="col-md-6 col-lg-4">
+          <h2 class="h6 text-white mb-3">تواصل معنا</h2>
+          <address class="mb-0">
+            <ul class="list-unstyled mb-0">
+              <li class="mb-2">مبنى البلدية، الشارع الرئيسي، شمسطار، بعلبك الهرمل، لبنان</li>
+              <li class="mb-2"><a href="tel:+9618000000" dir="ltr">+961 8 000 000</a></li>
+              <li class="mb-2"><a href="mailto:info@chmustar.gov.lb" dir="ltr">info@chmustar.gov.lb</a></li>
+              <li class="mb-2"><a href="https://www.facebook.com/search/top?q=%D8%A8%D9%84%D8%AF%D9%8A%D8%A9%20%D8%B4%D9%85%D8%B3%D8%B7%D8%A7%D8%B1" target="_blank" rel="noopener">صفحة فيسبوك</a></li>
             </ul>
           </address>
         </section>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 بلدية شمسطار. جميع الحقوق محفوظة.</p>
-        <p><a href="#top">العودة إلى الأعلى ↑</a></p>
+      <div class="d-flex flex-wrap justify-content-between gap-3 border-top border-white border-opacity-10 pt-4 small">
+        <p class="mb-0">&copy; 2026 بلدية شمسطار. جميع الحقوق محفوظة.</p>
+        <p class="mb-0"><a href="#top">العودة إلى الأعلى ↑</a></p>
       </div>
     </div>
   </footer>
 
-  <a href="#top" class="back-to-top" aria-label="العودة إلى الأعلى">↑</a>
+  <a href="#top" class="back-to-top btn btn-primary rounded-circle shadow position-fixed bottom-0 end-0 m-3 z-3 d-flex align-items-center justify-content-center p-0 fs-5 d-print-none" aria-label="العودة إلى الأعلى">↑</a>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>

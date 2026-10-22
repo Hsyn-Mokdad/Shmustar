@@ -12,167 +12,172 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Poppins:wght@500;600;700;800&amp;display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body id="top">
-  <a class="skip-link" href="#main">Skip to main content</a>
+  <a class="skip-link visually-hidden-focusable position-absolute top-0 start-0 m-2 px-3 py-2 bg-dark text-white rounded-2" href="#main">Skip to main content</a>
 
   <!-- ===== HEADER (same on every page) ===== -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="index.html" aria-label="Chmustar Municipality — go to Home page">
-        <img src="images/logo.svg" alt="" width="44" height="37">
-        <span class="brand-text">
-          <span class="brand-name">Chmustar</span>
-          <span class="brand-sub">Municipality · <span lang="ar">بلدية شمسطار</span></span>
-        </span>
-      </a>
+  <header class="site-header sticky-top border-bottom d-print-none">
+    <nav class="navbar navbar-expand-lg" aria-label="Main menu">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="index.html" aria-label="Chmustar Municipality — go to Home page">
+          <img src="images/logo.svg" alt="" width="44" height="37">
+          <span class="d-flex flex-column lh-sm">
+            <span class="font-heading fw-bold fs-5">Chmustar</span>
+            <span class="small text-body-secondary d-none d-sm-inline">Municipality · <span lang="ar">بلدية شمسطار</span></span>
+          </span>
+        </a>
 
-      <a class="lang-switch" href="ar/gallery.html" hreflang="ar" lang="ar">العربية</a>
+        <a class="btn btn-outline-primary btn-sm ms-auto me-2 ms-lg-2 me-lg-0 order-lg-last" href="ar/gallery.html" hreflang="ar" lang="ar">العربية</a>
 
-      <!-- Mobile menu: the checkbox stores the open/closed state, CSS does the rest -->
-      <input type="checkbox" id="nav-toggle" class="nav-toggle">
-      <label for="nav-toggle" class="nav-toggle-label"><span class="hamburger"></span> Menu</label>
+        <!-- Mobile menu: Bootstrap "collapse" opens and closes the menu -->
+        <button class="navbar-toggler rounded-pill fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false">
+          <span class="navbar-toggler-icon"></span> Menu
+        </button>
 
-      <nav class="main-nav" aria-label="Main menu">
-        <ul class="nav-list">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="municipality.html">Municipality</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="news.html">News</a></li>
-          <li class="has-dropdown active-group">
-            <span class="dropdown-title" tabindex="0">Explore</span>
-            <ul class="dropdown-list">
-              <li><a href="nature.html">Nature &amp; Tourism</a></li>
-              <li><a href="agriculture.html">Agriculture &amp; Products</a></li>
-              <li><a href="education-health.html">Education &amp; Health</a></li>
-              <li><a href="culture.html">Culture &amp; Associations</a></li>
-              <li><a href="gallery.html" class="active" aria-current="page">Gallery</a></li>
-            </ul>
-          </li>
-          <li><a href="emergency.html" class="nav-emergency">Emergency</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
+        <div class="collapse navbar-collapse" id="main-nav">
+          <ul class="navbar-nav nav-pills ms-auto gap-lg-1 py-2 py-lg-0">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="municipality.html">Municipality</a></li>
+            <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+            <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
+            <li class="nav-item dropdown">
+              <button class="nav-link dropdown-toggle active" type="button" data-bs-toggle="dropdown" aria-expanded="false">Explore</button>
+              <ul class="dropdown-menu border-0 shadow">
+                <li><a class="dropdown-item" href="nature.html">Nature &amp; Tourism</a></li>
+                <li><a class="dropdown-item" href="agriculture.html">Agriculture &amp; Products</a></li>
+                <li><a class="dropdown-item" href="education-health.html">Education &amp; Health</a></li>
+                <li><a class="dropdown-item" href="culture.html">Culture &amp; Associations</a></li>
+                <li><a class="dropdown-item active" href="gallery.html" aria-current="page">Gallery</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link fw-bold text-danger" href="emergency.html">Emergency</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
   </header>
 
-    <section class="page-hero page-hero--gallery">
+    <section class="page-hero page-hero--gallery text-white py-5 d-print-none">
       <div class="container">
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-          <ol>
-            <li><a href="index.html">Home</a></li>
-            <li><span aria-current="page">Photo Gallery</span></li>
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb mb-3">
+            <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Photo Gallery</li>
           </ol>
         </nav>
         <h1>Photo Gallery</h1>
-        <p>Chmustar through the seasons. Click a photo to see it larger.</p>
+        <p class="lead col-lg-7 mb-0">Chmustar through the seasons. Click a photo to see it larger.</p>
       </div>
     </section>
 
   <main id="main">
-    <section class="section" aria-labelledby="gal-title">
+    <section class="py-5" aria-labelledby="gal-title">
       <div class="container">
-        <div class="section-header">
-          <span class="eyebrow">20 photos</span>
+        <div class="col-lg-8 mb-5">
+          <span class="eyebrow d-inline-block mb-2 small fw-semibold text-uppercase text-primary">20 photos</span>
           <h2 id="gal-title">Summer, winter, sunsets and streets</h2>
         </div>
-        <div class="gallery" id="gallery-grid">
-          <figure><a href="#photo-1"><img src="images/chmustar-panorama-summer.webp" alt="Summer panorama of Chmustar" width="1200" height="1200" loading="lazy"></a><figcaption>Summer panorama of Chmustar</figcaption></figure>
-          <figure><a href="#photo-2"><img src="images/bekaa-valley-view.webp" alt="The Bekaa Valley seen from Chmustar" width="1200" height="1200" loading="lazy"></a><figcaption>The Bekaa Valley seen from Chmustar</figcaption></figure>
-          <figure><a href="#photo-3"><img src="images/snowy-road.webp" alt="Snowy road between pine trees" width="1200" height="1200" loading="lazy"></a><figcaption>Snowy road between pine trees</figcaption></figure>
-          <figure><a href="#photo-4"><img src="images/snow-town-clouds.webp" alt="Chmustar under snow and clouds" width="1200" height="1200" loading="lazy"></a><figcaption>Chmustar under snow and clouds</figcaption></figure>
-          <figure><a href="#photo-5"><img src="images/town-houses-minaret.webp" alt="Houses and minaret in the town centre" width="1200" height="1200" loading="lazy"></a><figcaption>Houses and minaret in the town centre</figcaption></figure>
-          <figure><a href="#photo-6"><img src="images/town-hills-view.webp" alt="Houses on the hills" width="1200" height="1200" loading="lazy"></a><figcaption>Houses on the hills</figcaption></figure>
-          <figure><a href="#photo-7"><img src="images/wheat-field.webp" alt="Golden wheat field" width="1200" height="1200" loading="lazy"></a><figcaption>Golden wheat field</figcaption></figure>
-          <figure><a href="#photo-8"><img src="images/arch-night-lights.webp" alt="The arch lit up at night" width="1200" height="1200" loading="lazy"></a><figcaption>The arch lit up at night</figcaption></figure>
-          <figure><a href="#photo-9"><img src="images/snow-hills-palace.webp" alt="Snow on the hills" width="1200" height="1200" loading="lazy"></a><figcaption>Snow on the hills</figcaption></figure>
-          <figure><a href="#photo-10"><img src="images/pond-reflection.webp" alt="Pond reflecting the trees" width="1200" height="1200" loading="lazy"></a><figcaption>Pond reflecting the trees</figcaption></figure>
-          <figure><a href="#photo-11"><img src="images/garden-house.webp" alt="A green garden" width="1600" height="1200" loading="lazy"></a><figcaption>A green garden</figcaption></figure>
-          <figure><a href="#photo-12"><img src="images/valley-town-dusk.webp" alt="The town at dusk" width="1200" height="1200" loading="lazy"></a><figcaption>The town at dusk</figcaption></figure>
-          <figure><a href="#photo-13"><img src="images/sky-clouds-town.webp" alt="Clouds over Chmustar" width="1200" height="1200" loading="lazy"></a><figcaption>Clouds over Chmustar</figcaption></figure>
-          <figure><a href="#photo-14"><img src="images/autumn-streetlight.webp" alt="Autumn leaves and a street lamp" width="1600" height="1200" loading="lazy"></a><figcaption>Autumn leaves and a street lamp</figcaption></figure>
-          <figure><a href="#photo-15"><img src="images/street-sunset-cars.webp" alt="A street at sunset" width="1600" height="1200" loading="lazy"></a><figcaption>A street at sunset</figcaption></figure>
-          <figure><a href="#photo-16"><img src="images/stone-arch-entrance.webp" alt="The stone arch at the entrance" width="1600" height="1200" loading="lazy"></a><figcaption>The stone arch at the entrance</figcaption></figure>
-          <figure><a href="#photo-17"><img src="images/corner-shop.webp" alt="A local corner shop" width="1600" height="1200" loading="lazy"></a><figcaption>A local corner shop</figcaption></figure>
-          <figure><a href="#photo-18"><img src="images/sunset-trees.webp" alt="Sunset through the trees" width="1600" height="1200" loading="lazy"></a><figcaption>Sunset through the trees</figcaption></figure>
-          <figure><a href="#photo-19"><img src="images/minaret-mountains.webp" alt="Minaret and mountains" width="1600" height="1200" loading="lazy"></a><figcaption>Minaret and mountains</figcaption></figure>
-          <figure><a href="#photo-20"><img src="images/windmill-sky.webp" alt="Old windmill at sunset" width="1600" height="1200" loading="lazy"></a><figcaption>Old windmill at sunset</figcaption></figure>
+        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-3" id="gallery-grid">
+          <div class="col"><figure class="gallery-item position-relative overflow-hidden rounded-3 shadow-sm mb-0"><a class="ratio ratio-1x1 d-block" href="#photo-1" data-bs-toggle="modal"><img class="object-fit-cover" src="images/chmustar-panorama-summer.webp" alt="Summer panorama of Chmustar" width="1200" height="1200" loading="lazy"></a><figcaption class="gallery-caption position-absolute bottom-0 start-0 end-0 px-2 pb-2 pt-4 small text-white pe-none">Summer panorama of Chmustar</figcaption></figure></div>
+          <div class="col"><figure class="gallery-item position-relative overflow-hidden rounded-3 shadow-sm mb-0"><a class="ratio ratio-1x1 d-block" href="#photo-2" data-bs-toggle="modal"><img class="object-fit-cover" src="images/bekaa-valley-view.webp" alt="The Bekaa Valley seen from Chmustar" width="1200" height="1200" loading="lazy"></a><figcaption class="gallery-caption position-absolute bottom-0 start-0 end-0 px-2 pb-2 pt-4 small text-white pe-none">The Bekaa Valley seen from Chmustar</figcaption></figure></div>
+          <div class="col"><figure class="gallery-item position-relative overflow-hidden rounded-3 shadow-sm mb-0"><a class="ratio ratio-1x1 d-block" href="#photo-3" data-bs-toggle="modal"><img class="object-fit-cover" src="images/snowy-road.webp" alt="Snowy road between pine trees" width="1200" height="1200" loading="lazy"></a><figcaption class="gallery-caption position-absolute bottom-0 start-0 end-0 px-2 pb-2 pt-4 small text-white pe-none">Snowy road between pine trees</figcaption></figure></div>
+          <div class="col"><figure class="gallery-item position-relative overflow-hidden rounded-3 shadow-sm mb-0"><a class="ratio ratio-1x1 d-block" href="#photo-4" data-bs-toggle="modal"><img class="object-fit-cover" src="images/snow-town-clouds.webp" alt="Chmustar under snow and clouds" width="1200" height="1200" loading="lazy"></a><figcaption class="gallery-caption position-absolute bottom-0 start-0 end-0 px-2 pb-2 pt-4 small text-white pe-none">Chmustar under snow and clouds</figcaption></figure></div>
+          <div class="col"><figure class="gallery-item position-relative overflow-hidden rounded-3 shadow-sm mb-0"><a class="ratio ratio-1x1 d-block" href="#photo-5" data-bs-toggle="modal"><img class="object-fit-cover" src="images/town-houses-minaret.webp" alt="Houses and minaret in the town centre" width="1200" height="1200" loading="lazy"></a><figcaption class="gallery-caption position-absolute bottom-0 start-0 end-0 px-2 pb-2 pt-4 small text-white pe-none">Houses and minaret in the town centre</figcaption></figure></div>
+          <div class="col"><figure class="gallery-item position-relative overflow-hidden rounded-3 shadow-sm mb-0"><a class="ratio ratio-1x1 d-block" href="#photo-6" data-bs-toggle="modal"><img class="object-fit-cover" src="images/town-hills-view.webp" alt="Houses on the hills" width="1200" height="1200" loading="lazy"></a><figcaption class="gallery-caption position-absolute bottom-0 start-0 end-0 px-2 pb-2 pt-4 small text-white pe-none">Houses on the hills</figcaption></figure></div>
+          <div class="col"><figure class="gallery-item position-relative overflow-hidden rounded-3 shadow-sm mb-0"><a class="ratio ratio-1x1 d-block" href="#photo-7" data-bs-toggle="modal"><img class="object-fit-cover" src="images/wheat-field.webp" alt="Golden wheat field" width="1200" height="1200" loading="lazy"></a><figcaption class="gallery-caption position-absolute bottom-0 start-0 end-0 px-2 pb-2 pt-4 small text-white pe-none">Golden wheat field</figcaption></figure></div>
+          <div class="col"><figure class="gallery-item position-relative overflow-hidden rounded-3 shadow-sm mb-0"><a class="ratio ratio-1x1 d-block" href="#photo-8" data-bs-toggle="modal"><img class="object-fit-cover" src="images/arch-night-lights.webp" alt="The arch lit up at night" width="1200" height="1200" loading="lazy"></a><figcaption class="gallery-caption position-absolute bottom-0 start-0 end-0 px-2 pb-2 pt-4 small text-white pe-none">The arch lit up at night</figcaption></figure></div>
+          <div class="col"><figure class="gallery-item position-relative overflow-hidden rounded-3 shadow-sm mb-0"><a class="ratio ratio-1x1 d-block" href="#photo-9" data-bs-toggle="modal"><img class="object-fit-cover" src="images/snow-hills-palace.webp" alt="Snow on the hills" width="1200" height="1200" loading="lazy"></a><figcaption class="gallery-caption position-absolute bottom-0 start-0 end-0 px-2 pb-2 pt-4 small text-white pe-none">Snow on the hills</figcaption></figure></div>
+          <div class="col"><figure class="gallery-item position-relative overflow-hidden rounded-3 shadow-sm mb-0"><a class="ratio ratio-1x1 d-block" href="#photo-10" data-bs-toggle="modal"><img class="object-fit-cover" src="images/pond-reflection.webp" alt="Pond reflecting the trees" width="1200" height="1200" loading="lazy"></a><figcaption class="gallery-caption position-absolute bottom-0 start-0 end-0 px-2 pb-2 pt-4 small text-white pe-none">Pond reflecting the trees</figcaption></figure></div>
+          <div class="col"><figure class="gallery-item position-relative overflow-hidden rounded-3 shadow-sm mb-0"><a class="ratio ratio-1x1 d-block" href="#photo-11" data-bs-toggle="modal"><img class="object-fit-cover" src="images/garden-house.webp" alt="A green garden" width="1600" height="1200" loading="lazy"></a><figcaption class="gallery-caption position-absolute bottom-0 start-0 end-0 px-2 pb-2 pt-4 small text-white pe-none">A green garden</figcaption></figure></div>
+          <div class="col"><figure class="gallery-item position-relative overflow-hidden rounded-3 shadow-sm mb-0"><a class="ratio ratio-1x1 d-block" href="#photo-12" data-bs-toggle="modal"><img class="object-fit-cover" src="images/valley-town-dusk.webp" alt="The town at dusk" width="1200" height="1200" loading="lazy"></a><figcaption class="gallery-caption position-absolute bottom-0 start-0 end-0 px-2 pb-2 pt-4 small text-white pe-none">The town at dusk</figcaption></figure></div>
+          <div class="col"><figure class="gallery-item position-relative overflow-hidden rounded-3 shadow-sm mb-0"><a class="ratio ratio-1x1 d-block" href="#photo-13" data-bs-toggle="modal"><img class="object-fit-cover" src="images/sky-clouds-town.webp" alt="Clouds over Chmustar" width="1200" height="1200" loading="lazy"></a><figcaption class="gallery-caption position-absolute bottom-0 start-0 end-0 px-2 pb-2 pt-4 small text-white pe-none">Clouds over Chmustar</figcaption></figure></div>
+          <div class="col"><figure class="gallery-item position-relative overflow-hidden rounded-3 shadow-sm mb-0"><a class="ratio ratio-1x1 d-block" href="#photo-14" data-bs-toggle="modal"><img class="object-fit-cover" src="images/autumn-streetlight.webp" alt="Autumn leaves and a street lamp" width="1600" height="1200" loading="lazy"></a><figcaption class="gallery-caption position-absolute bottom-0 start-0 end-0 px-2 pb-2 pt-4 small text-white pe-none">Autumn leaves and a street lamp</figcaption></figure></div>
+          <div class="col"><figure class="gallery-item position-relative overflow-hidden rounded-3 shadow-sm mb-0"><a class="ratio ratio-1x1 d-block" href="#photo-15" data-bs-toggle="modal"><img class="object-fit-cover" src="images/street-sunset-cars.webp" alt="A street at sunset" width="1600" height="1200" loading="lazy"></a><figcaption class="gallery-caption position-absolute bottom-0 start-0 end-0 px-2 pb-2 pt-4 small text-white pe-none">A street at sunset</figcaption></figure></div>
+          <div class="col"><figure class="gallery-item position-relative overflow-hidden rounded-3 shadow-sm mb-0"><a class="ratio ratio-1x1 d-block" href="#photo-16" data-bs-toggle="modal"><img class="object-fit-cover" src="images/stone-arch-entrance.webp" alt="The stone arch at the entrance" width="1600" height="1200" loading="lazy"></a><figcaption class="gallery-caption position-absolute bottom-0 start-0 end-0 px-2 pb-2 pt-4 small text-white pe-none">The stone arch at the entrance</figcaption></figure></div>
+          <div class="col"><figure class="gallery-item position-relative overflow-hidden rounded-3 shadow-sm mb-0"><a class="ratio ratio-1x1 d-block" href="#photo-17" data-bs-toggle="modal"><img class="object-fit-cover" src="images/corner-shop.webp" alt="A local corner shop" width="1600" height="1200" loading="lazy"></a><figcaption class="gallery-caption position-absolute bottom-0 start-0 end-0 px-2 pb-2 pt-4 small text-white pe-none">A local corner shop</figcaption></figure></div>
+          <div class="col"><figure class="gallery-item position-relative overflow-hidden rounded-3 shadow-sm mb-0"><a class="ratio ratio-1x1 d-block" href="#photo-18" data-bs-toggle="modal"><img class="object-fit-cover" src="images/sunset-trees.webp" alt="Sunset through the trees" width="1600" height="1200" loading="lazy"></a><figcaption class="gallery-caption position-absolute bottom-0 start-0 end-0 px-2 pb-2 pt-4 small text-white pe-none">Sunset through the trees</figcaption></figure></div>
+          <div class="col"><figure class="gallery-item position-relative overflow-hidden rounded-3 shadow-sm mb-0"><a class="ratio ratio-1x1 d-block" href="#photo-19" data-bs-toggle="modal"><img class="object-fit-cover" src="images/minaret-mountains.webp" alt="Minaret and mountains" width="1600" height="1200" loading="lazy"></a><figcaption class="gallery-caption position-absolute bottom-0 start-0 end-0 px-2 pb-2 pt-4 small text-white pe-none">Minaret and mountains</figcaption></figure></div>
+          <div class="col"><figure class="gallery-item position-relative overflow-hidden rounded-3 shadow-sm mb-0"><a class="ratio ratio-1x1 d-block" href="#photo-20" data-bs-toggle="modal"><img class="object-fit-cover" src="images/windmill-sky.webp" alt="Old windmill at sunset" width="1600" height="1200" loading="lazy"></a><figcaption class="gallery-caption position-absolute bottom-0 start-0 end-0 px-2 pb-2 pt-4 small text-white pe-none">Old windmill at sunset</figcaption></figure></div>
         </div>
       </div>
     </section>
-    <!-- Lightboxes: hidden until their id is the URL #target -->
-    <div class="lightbox" id="photo-1" role="dialog" aria-label="Summer panorama of Chmustar"><a class="lightbox-close" href="#gallery-grid">Close ✕</a><img src="images/chmustar-panorama-summer.webp" alt="Summer panorama of Chmustar" width="1200" height="1200" loading="lazy"><p>Summer panorama of Chmustar · 1 / 20</p><nav class="lightbox-nav" aria-label="Photo navigation"><a href="#photo-20">← Previous</a><a href="#photo-2">Next →</a></nav></div>
-    <div class="lightbox" id="photo-2" role="dialog" aria-label="The Bekaa Valley seen from Chmustar"><a class="lightbox-close" href="#gallery-grid">Close ✕</a><img src="images/bekaa-valley-view.webp" alt="The Bekaa Valley seen from Chmustar" width="1200" height="1200" loading="lazy"><p>The Bekaa Valley seen from Chmustar · 2 / 20</p><nav class="lightbox-nav" aria-label="Photo navigation"><a href="#photo-1">← Previous</a><a href="#photo-3">Next →</a></nav></div>
-    <div class="lightbox" id="photo-3" role="dialog" aria-label="Snowy road between pine trees"><a class="lightbox-close" href="#gallery-grid">Close ✕</a><img src="images/snowy-road.webp" alt="Snowy road between pine trees" width="1200" height="1200" loading="lazy"><p>Snowy road between pine trees · 3 / 20</p><nav class="lightbox-nav" aria-label="Photo navigation"><a href="#photo-2">← Previous</a><a href="#photo-4">Next →</a></nav></div>
-    <div class="lightbox" id="photo-4" role="dialog" aria-label="Chmustar under snow and clouds"><a class="lightbox-close" href="#gallery-grid">Close ✕</a><img src="images/snow-town-clouds.webp" alt="Chmustar under snow and clouds" width="1200" height="1200" loading="lazy"><p>Chmustar under snow and clouds · 4 / 20</p><nav class="lightbox-nav" aria-label="Photo navigation"><a href="#photo-3">← Previous</a><a href="#photo-5">Next →</a></nav></div>
-    <div class="lightbox" id="photo-5" role="dialog" aria-label="Houses and minaret in the town centre"><a class="lightbox-close" href="#gallery-grid">Close ✕</a><img src="images/town-houses-minaret.webp" alt="Houses and minaret in the town centre" width="1200" height="1200" loading="lazy"><p>Houses and minaret in the town centre · 5 / 20</p><nav class="lightbox-nav" aria-label="Photo navigation"><a href="#photo-4">← Previous</a><a href="#photo-6">Next →</a></nav></div>
-    <div class="lightbox" id="photo-6" role="dialog" aria-label="Houses on the hills"><a class="lightbox-close" href="#gallery-grid">Close ✕</a><img src="images/town-hills-view.webp" alt="Houses on the hills" width="1200" height="1200" loading="lazy"><p>Houses on the hills · 6 / 20</p><nav class="lightbox-nav" aria-label="Photo navigation"><a href="#photo-5">← Previous</a><a href="#photo-7">Next →</a></nav></div>
-    <div class="lightbox" id="photo-7" role="dialog" aria-label="Golden wheat field"><a class="lightbox-close" href="#gallery-grid">Close ✕</a><img src="images/wheat-field.webp" alt="Golden wheat field" width="1200" height="1200" loading="lazy"><p>Golden wheat field · 7 / 20</p><nav class="lightbox-nav" aria-label="Photo navigation"><a href="#photo-6">← Previous</a><a href="#photo-8">Next →</a></nav></div>
-    <div class="lightbox" id="photo-8" role="dialog" aria-label="The arch lit up at night"><a class="lightbox-close" href="#gallery-grid">Close ✕</a><img src="images/arch-night-lights.webp" alt="The arch lit up at night" width="1200" height="1200" loading="lazy"><p>The arch lit up at night · 8 / 20</p><nav class="lightbox-nav" aria-label="Photo navigation"><a href="#photo-7">← Previous</a><a href="#photo-9">Next →</a></nav></div>
-    <div class="lightbox" id="photo-9" role="dialog" aria-label="Snow on the hills"><a class="lightbox-close" href="#gallery-grid">Close ✕</a><img src="images/snow-hills-palace.webp" alt="Snow on the hills" width="1200" height="1200" loading="lazy"><p>Snow on the hills · 9 / 20</p><nav class="lightbox-nav" aria-label="Photo navigation"><a href="#photo-8">← Previous</a><a href="#photo-10">Next →</a></nav></div>
-    <div class="lightbox" id="photo-10" role="dialog" aria-label="Pond reflecting the trees"><a class="lightbox-close" href="#gallery-grid">Close ✕</a><img src="images/pond-reflection.webp" alt="Pond reflecting the trees" width="1200" height="1200" loading="lazy"><p>Pond reflecting the trees · 10 / 20</p><nav class="lightbox-nav" aria-label="Photo navigation"><a href="#photo-9">← Previous</a><a href="#photo-11">Next →</a></nav></div>
-    <div class="lightbox" id="photo-11" role="dialog" aria-label="A green garden"><a class="lightbox-close" href="#gallery-grid">Close ✕</a><img src="images/garden-house.webp" alt="A green garden" width="1600" height="1200" loading="lazy"><p>A green garden · 11 / 20</p><nav class="lightbox-nav" aria-label="Photo navigation"><a href="#photo-10">← Previous</a><a href="#photo-12">Next →</a></nav></div>
-    <div class="lightbox" id="photo-12" role="dialog" aria-label="The town at dusk"><a class="lightbox-close" href="#gallery-grid">Close ✕</a><img src="images/valley-town-dusk.webp" alt="The town at dusk" width="1200" height="1200" loading="lazy"><p>The town at dusk · 12 / 20</p><nav class="lightbox-nav" aria-label="Photo navigation"><a href="#photo-11">← Previous</a><a href="#photo-13">Next →</a></nav></div>
-    <div class="lightbox" id="photo-13" role="dialog" aria-label="Clouds over Chmustar"><a class="lightbox-close" href="#gallery-grid">Close ✕</a><img src="images/sky-clouds-town.webp" alt="Clouds over Chmustar" width="1200" height="1200" loading="lazy"><p>Clouds over Chmustar · 13 / 20</p><nav class="lightbox-nav" aria-label="Photo navigation"><a href="#photo-12">← Previous</a><a href="#photo-14">Next →</a></nav></div>
-    <div class="lightbox" id="photo-14" role="dialog" aria-label="Autumn leaves and a street lamp"><a class="lightbox-close" href="#gallery-grid">Close ✕</a><img src="images/autumn-streetlight.webp" alt="Autumn leaves and a street lamp" width="1600" height="1200" loading="lazy"><p>Autumn leaves and a street lamp · 14 / 20</p><nav class="lightbox-nav" aria-label="Photo navigation"><a href="#photo-13">← Previous</a><a href="#photo-15">Next →</a></nav></div>
-    <div class="lightbox" id="photo-15" role="dialog" aria-label="A street at sunset"><a class="lightbox-close" href="#gallery-grid">Close ✕</a><img src="images/street-sunset-cars.webp" alt="A street at sunset" width="1600" height="1200" loading="lazy"><p>A street at sunset · 15 / 20</p><nav class="lightbox-nav" aria-label="Photo navigation"><a href="#photo-14">← Previous</a><a href="#photo-16">Next →</a></nav></div>
-    <div class="lightbox" id="photo-16" role="dialog" aria-label="The stone arch at the entrance"><a class="lightbox-close" href="#gallery-grid">Close ✕</a><img src="images/stone-arch-entrance.webp" alt="The stone arch at the entrance" width="1600" height="1200" loading="lazy"><p>The stone arch at the entrance · 16 / 20</p><nav class="lightbox-nav" aria-label="Photo navigation"><a href="#photo-15">← Previous</a><a href="#photo-17">Next →</a></nav></div>
-    <div class="lightbox" id="photo-17" role="dialog" aria-label="A local corner shop"><a class="lightbox-close" href="#gallery-grid">Close ✕</a><img src="images/corner-shop.webp" alt="A local corner shop" width="1600" height="1200" loading="lazy"><p>A local corner shop · 17 / 20</p><nav class="lightbox-nav" aria-label="Photo navigation"><a href="#photo-16">← Previous</a><a href="#photo-18">Next →</a></nav></div>
-    <div class="lightbox" id="photo-18" role="dialog" aria-label="Sunset through the trees"><a class="lightbox-close" href="#gallery-grid">Close ✕</a><img src="images/sunset-trees.webp" alt="Sunset through the trees" width="1600" height="1200" loading="lazy"><p>Sunset through the trees · 18 / 20</p><nav class="lightbox-nav" aria-label="Photo navigation"><a href="#photo-17">← Previous</a><a href="#photo-19">Next →</a></nav></div>
-    <div class="lightbox" id="photo-19" role="dialog" aria-label="Minaret and mountains"><a class="lightbox-close" href="#gallery-grid">Close ✕</a><img src="images/minaret-mountains.webp" alt="Minaret and mountains" width="1600" height="1200" loading="lazy"><p>Minaret and mountains · 19 / 20</p><nav class="lightbox-nav" aria-label="Photo navigation"><a href="#photo-18">← Previous</a><a href="#photo-20">Next →</a></nav></div>
-    <div class="lightbox" id="photo-20" role="dialog" aria-label="Old windmill at sunset"><a class="lightbox-close" href="#gallery-grid">Close ✕</a><img src="images/windmill-sky.webp" alt="Old windmill at sunset" width="1600" height="1200" loading="lazy"><p>Old windmill at sunset · 20 / 20</p><nav class="lightbox-nav" aria-label="Photo navigation"><a href="#photo-19">← Previous</a><a href="#photo-1">Next →</a></nav></div>
+    <!-- Photo viewers: Bootstrap modals, Previous/Next switch to the neighbouring modal -->
+    <div class="modal fade gallery-modal" id="photo-1" tabindex="-1" aria-labelledby="photo-1-title" aria-hidden="true"><div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content bg-dark text-white border-0"><div class="modal-header border-0"><h2 class="modal-title fs-6" id="photo-1-title">Summer panorama of Chmustar · 1 / 20</h2><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body p-0"><img class="d-block mx-auto img-fluid" src="images/chmustar-panorama-summer.webp" alt="Summer panorama of Chmustar" width="1200" height="1200" loading="lazy"></div><nav class="modal-footer border-0 justify-content-center" aria-label="Photo navigation"><button type="button" class="btn btn-outline-light" data-bs-target="#photo-20" data-bs-toggle="modal">← Previous</button><button type="button" class="btn btn-outline-light" data-bs-target="#photo-2" data-bs-toggle="modal">Next →</button></nav></div></div></div>
+    <div class="modal fade gallery-modal" id="photo-2" tabindex="-1" aria-labelledby="photo-2-title" aria-hidden="true"><div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content bg-dark text-white border-0"><div class="modal-header border-0"><h2 class="modal-title fs-6" id="photo-2-title">The Bekaa Valley seen from Chmustar · 2 / 20</h2><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body p-0"><img class="d-block mx-auto img-fluid" src="images/bekaa-valley-view.webp" alt="The Bekaa Valley seen from Chmustar" width="1200" height="1200" loading="lazy"></div><nav class="modal-footer border-0 justify-content-center" aria-label="Photo navigation"><button type="button" class="btn btn-outline-light" data-bs-target="#photo-1" data-bs-toggle="modal">← Previous</button><button type="button" class="btn btn-outline-light" data-bs-target="#photo-3" data-bs-toggle="modal">Next →</button></nav></div></div></div>
+    <div class="modal fade gallery-modal" id="photo-3" tabindex="-1" aria-labelledby="photo-3-title" aria-hidden="true"><div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content bg-dark text-white border-0"><div class="modal-header border-0"><h2 class="modal-title fs-6" id="photo-3-title">Snowy road between pine trees · 3 / 20</h2><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body p-0"><img class="d-block mx-auto img-fluid" src="images/snowy-road.webp" alt="Snowy road between pine trees" width="1200" height="1200" loading="lazy"></div><nav class="modal-footer border-0 justify-content-center" aria-label="Photo navigation"><button type="button" class="btn btn-outline-light" data-bs-target="#photo-2" data-bs-toggle="modal">← Previous</button><button type="button" class="btn btn-outline-light" data-bs-target="#photo-4" data-bs-toggle="modal">Next →</button></nav></div></div></div>
+    <div class="modal fade gallery-modal" id="photo-4" tabindex="-1" aria-labelledby="photo-4-title" aria-hidden="true"><div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content bg-dark text-white border-0"><div class="modal-header border-0"><h2 class="modal-title fs-6" id="photo-4-title">Chmustar under snow and clouds · 4 / 20</h2><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body p-0"><img class="d-block mx-auto img-fluid" src="images/snow-town-clouds.webp" alt="Chmustar under snow and clouds" width="1200" height="1200" loading="lazy"></div><nav class="modal-footer border-0 justify-content-center" aria-label="Photo navigation"><button type="button" class="btn btn-outline-light" data-bs-target="#photo-3" data-bs-toggle="modal">← Previous</button><button type="button" class="btn btn-outline-light" data-bs-target="#photo-5" data-bs-toggle="modal">Next →</button></nav></div></div></div>
+    <div class="modal fade gallery-modal" id="photo-5" tabindex="-1" aria-labelledby="photo-5-title" aria-hidden="true"><div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content bg-dark text-white border-0"><div class="modal-header border-0"><h2 class="modal-title fs-6" id="photo-5-title">Houses and minaret in the town centre · 5 / 20</h2><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body p-0"><img class="d-block mx-auto img-fluid" src="images/town-houses-minaret.webp" alt="Houses and minaret in the town centre" width="1200" height="1200" loading="lazy"></div><nav class="modal-footer border-0 justify-content-center" aria-label="Photo navigation"><button type="button" class="btn btn-outline-light" data-bs-target="#photo-4" data-bs-toggle="modal">← Previous</button><button type="button" class="btn btn-outline-light" data-bs-target="#photo-6" data-bs-toggle="modal">Next →</button></nav></div></div></div>
+    <div class="modal fade gallery-modal" id="photo-6" tabindex="-1" aria-labelledby="photo-6-title" aria-hidden="true"><div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content bg-dark text-white border-0"><div class="modal-header border-0"><h2 class="modal-title fs-6" id="photo-6-title">Houses on the hills · 6 / 20</h2><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body p-0"><img class="d-block mx-auto img-fluid" src="images/town-hills-view.webp" alt="Houses on the hills" width="1200" height="1200" loading="lazy"></div><nav class="modal-footer border-0 justify-content-center" aria-label="Photo navigation"><button type="button" class="btn btn-outline-light" data-bs-target="#photo-5" data-bs-toggle="modal">← Previous</button><button type="button" class="btn btn-outline-light" data-bs-target="#photo-7" data-bs-toggle="modal">Next →</button></nav></div></div></div>
+    <div class="modal fade gallery-modal" id="photo-7" tabindex="-1" aria-labelledby="photo-7-title" aria-hidden="true"><div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content bg-dark text-white border-0"><div class="modal-header border-0"><h2 class="modal-title fs-6" id="photo-7-title">Golden wheat field · 7 / 20</h2><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body p-0"><img class="d-block mx-auto img-fluid" src="images/wheat-field.webp" alt="Golden wheat field" width="1200" height="1200" loading="lazy"></div><nav class="modal-footer border-0 justify-content-center" aria-label="Photo navigation"><button type="button" class="btn btn-outline-light" data-bs-target="#photo-6" data-bs-toggle="modal">← Previous</button><button type="button" class="btn btn-outline-light" data-bs-target="#photo-8" data-bs-toggle="modal">Next →</button></nav></div></div></div>
+    <div class="modal fade gallery-modal" id="photo-8" tabindex="-1" aria-labelledby="photo-8-title" aria-hidden="true"><div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content bg-dark text-white border-0"><div class="modal-header border-0"><h2 class="modal-title fs-6" id="photo-8-title">The arch lit up at night · 8 / 20</h2><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body p-0"><img class="d-block mx-auto img-fluid" src="images/arch-night-lights.webp" alt="The arch lit up at night" width="1200" height="1200" loading="lazy"></div><nav class="modal-footer border-0 justify-content-center" aria-label="Photo navigation"><button type="button" class="btn btn-outline-light" data-bs-target="#photo-7" data-bs-toggle="modal">← Previous</button><button type="button" class="btn btn-outline-light" data-bs-target="#photo-9" data-bs-toggle="modal">Next →</button></nav></div></div></div>
+    <div class="modal fade gallery-modal" id="photo-9" tabindex="-1" aria-labelledby="photo-9-title" aria-hidden="true"><div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content bg-dark text-white border-0"><div class="modal-header border-0"><h2 class="modal-title fs-6" id="photo-9-title">Snow on the hills · 9 / 20</h2><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body p-0"><img class="d-block mx-auto img-fluid" src="images/snow-hills-palace.webp" alt="Snow on the hills" width="1200" height="1200" loading="lazy"></div><nav class="modal-footer border-0 justify-content-center" aria-label="Photo navigation"><button type="button" class="btn btn-outline-light" data-bs-target="#photo-8" data-bs-toggle="modal">← Previous</button><button type="button" class="btn btn-outline-light" data-bs-target="#photo-10" data-bs-toggle="modal">Next →</button></nav></div></div></div>
+    <div class="modal fade gallery-modal" id="photo-10" tabindex="-1" aria-labelledby="photo-10-title" aria-hidden="true"><div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content bg-dark text-white border-0"><div class="modal-header border-0"><h2 class="modal-title fs-6" id="photo-10-title">Pond reflecting the trees · 10 / 20</h2><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body p-0"><img class="d-block mx-auto img-fluid" src="images/pond-reflection.webp" alt="Pond reflecting the trees" width="1200" height="1200" loading="lazy"></div><nav class="modal-footer border-0 justify-content-center" aria-label="Photo navigation"><button type="button" class="btn btn-outline-light" data-bs-target="#photo-9" data-bs-toggle="modal">← Previous</button><button type="button" class="btn btn-outline-light" data-bs-target="#photo-11" data-bs-toggle="modal">Next →</button></nav></div></div></div>
+    <div class="modal fade gallery-modal" id="photo-11" tabindex="-1" aria-labelledby="photo-11-title" aria-hidden="true"><div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content bg-dark text-white border-0"><div class="modal-header border-0"><h2 class="modal-title fs-6" id="photo-11-title">A green garden · 11 / 20</h2><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body p-0"><img class="d-block mx-auto img-fluid" src="images/garden-house.webp" alt="A green garden" width="1600" height="1200" loading="lazy"></div><nav class="modal-footer border-0 justify-content-center" aria-label="Photo navigation"><button type="button" class="btn btn-outline-light" data-bs-target="#photo-10" data-bs-toggle="modal">← Previous</button><button type="button" class="btn btn-outline-light" data-bs-target="#photo-12" data-bs-toggle="modal">Next →</button></nav></div></div></div>
+    <div class="modal fade gallery-modal" id="photo-12" tabindex="-1" aria-labelledby="photo-12-title" aria-hidden="true"><div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content bg-dark text-white border-0"><div class="modal-header border-0"><h2 class="modal-title fs-6" id="photo-12-title">The town at dusk · 12 / 20</h2><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body p-0"><img class="d-block mx-auto img-fluid" src="images/valley-town-dusk.webp" alt="The town at dusk" width="1200" height="1200" loading="lazy"></div><nav class="modal-footer border-0 justify-content-center" aria-label="Photo navigation"><button type="button" class="btn btn-outline-light" data-bs-target="#photo-11" data-bs-toggle="modal">← Previous</button><button type="button" class="btn btn-outline-light" data-bs-target="#photo-13" data-bs-toggle="modal">Next →</button></nav></div></div></div>
+    <div class="modal fade gallery-modal" id="photo-13" tabindex="-1" aria-labelledby="photo-13-title" aria-hidden="true"><div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content bg-dark text-white border-0"><div class="modal-header border-0"><h2 class="modal-title fs-6" id="photo-13-title">Clouds over Chmustar · 13 / 20</h2><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body p-0"><img class="d-block mx-auto img-fluid" src="images/sky-clouds-town.webp" alt="Clouds over Chmustar" width="1200" height="1200" loading="lazy"></div><nav class="modal-footer border-0 justify-content-center" aria-label="Photo navigation"><button type="button" class="btn btn-outline-light" data-bs-target="#photo-12" data-bs-toggle="modal">← Previous</button><button type="button" class="btn btn-outline-light" data-bs-target="#photo-14" data-bs-toggle="modal">Next →</button></nav></div></div></div>
+    <div class="modal fade gallery-modal" id="photo-14" tabindex="-1" aria-labelledby="photo-14-title" aria-hidden="true"><div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content bg-dark text-white border-0"><div class="modal-header border-0"><h2 class="modal-title fs-6" id="photo-14-title">Autumn leaves and a street lamp · 14 / 20</h2><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body p-0"><img class="d-block mx-auto img-fluid" src="images/autumn-streetlight.webp" alt="Autumn leaves and a street lamp" width="1600" height="1200" loading="lazy"></div><nav class="modal-footer border-0 justify-content-center" aria-label="Photo navigation"><button type="button" class="btn btn-outline-light" data-bs-target="#photo-13" data-bs-toggle="modal">← Previous</button><button type="button" class="btn btn-outline-light" data-bs-target="#photo-15" data-bs-toggle="modal">Next →</button></nav></div></div></div>
+    <div class="modal fade gallery-modal" id="photo-15" tabindex="-1" aria-labelledby="photo-15-title" aria-hidden="true"><div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content bg-dark text-white border-0"><div class="modal-header border-0"><h2 class="modal-title fs-6" id="photo-15-title">A street at sunset · 15 / 20</h2><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body p-0"><img class="d-block mx-auto img-fluid" src="images/street-sunset-cars.webp" alt="A street at sunset" width="1600" height="1200" loading="lazy"></div><nav class="modal-footer border-0 justify-content-center" aria-label="Photo navigation"><button type="button" class="btn btn-outline-light" data-bs-target="#photo-14" data-bs-toggle="modal">← Previous</button><button type="button" class="btn btn-outline-light" data-bs-target="#photo-16" data-bs-toggle="modal">Next →</button></nav></div></div></div>
+    <div class="modal fade gallery-modal" id="photo-16" tabindex="-1" aria-labelledby="photo-16-title" aria-hidden="true"><div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content bg-dark text-white border-0"><div class="modal-header border-0"><h2 class="modal-title fs-6" id="photo-16-title">The stone arch at the entrance · 16 / 20</h2><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body p-0"><img class="d-block mx-auto img-fluid" src="images/stone-arch-entrance.webp" alt="The stone arch at the entrance" width="1600" height="1200" loading="lazy"></div><nav class="modal-footer border-0 justify-content-center" aria-label="Photo navigation"><button type="button" class="btn btn-outline-light" data-bs-target="#photo-15" data-bs-toggle="modal">← Previous</button><button type="button" class="btn btn-outline-light" data-bs-target="#photo-17" data-bs-toggle="modal">Next →</button></nav></div></div></div>
+    <div class="modal fade gallery-modal" id="photo-17" tabindex="-1" aria-labelledby="photo-17-title" aria-hidden="true"><div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content bg-dark text-white border-0"><div class="modal-header border-0"><h2 class="modal-title fs-6" id="photo-17-title">A local corner shop · 17 / 20</h2><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body p-0"><img class="d-block mx-auto img-fluid" src="images/corner-shop.webp" alt="A local corner shop" width="1600" height="1200" loading="lazy"></div><nav class="modal-footer border-0 justify-content-center" aria-label="Photo navigation"><button type="button" class="btn btn-outline-light" data-bs-target="#photo-16" data-bs-toggle="modal">← Previous</button><button type="button" class="btn btn-outline-light" data-bs-target="#photo-18" data-bs-toggle="modal">Next →</button></nav></div></div></div>
+    <div class="modal fade gallery-modal" id="photo-18" tabindex="-1" aria-labelledby="photo-18-title" aria-hidden="true"><div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content bg-dark text-white border-0"><div class="modal-header border-0"><h2 class="modal-title fs-6" id="photo-18-title">Sunset through the trees · 18 / 20</h2><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body p-0"><img class="d-block mx-auto img-fluid" src="images/sunset-trees.webp" alt="Sunset through the trees" width="1600" height="1200" loading="lazy"></div><nav class="modal-footer border-0 justify-content-center" aria-label="Photo navigation"><button type="button" class="btn btn-outline-light" data-bs-target="#photo-17" data-bs-toggle="modal">← Previous</button><button type="button" class="btn btn-outline-light" data-bs-target="#photo-19" data-bs-toggle="modal">Next →</button></nav></div></div></div>
+    <div class="modal fade gallery-modal" id="photo-19" tabindex="-1" aria-labelledby="photo-19-title" aria-hidden="true"><div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content bg-dark text-white border-0"><div class="modal-header border-0"><h2 class="modal-title fs-6" id="photo-19-title">Minaret and mountains · 19 / 20</h2><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body p-0"><img class="d-block mx-auto img-fluid" src="images/minaret-mountains.webp" alt="Minaret and mountains" width="1600" height="1200" loading="lazy"></div><nav class="modal-footer border-0 justify-content-center" aria-label="Photo navigation"><button type="button" class="btn btn-outline-light" data-bs-target="#photo-18" data-bs-toggle="modal">← Previous</button><button type="button" class="btn btn-outline-light" data-bs-target="#photo-20" data-bs-toggle="modal">Next →</button></nav></div></div></div>
+    <div class="modal fade gallery-modal" id="photo-20" tabindex="-1" aria-labelledby="photo-20-title" aria-hidden="true"><div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content bg-dark text-white border-0"><div class="modal-header border-0"><h2 class="modal-title fs-6" id="photo-20-title">Old windmill at sunset · 20 / 20</h2><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body p-0"><img class="d-block mx-auto img-fluid" src="images/windmill-sky.webp" alt="Old windmill at sunset" width="1600" height="1200" loading="lazy"></div><nav class="modal-footer border-0 justify-content-center" aria-label="Photo navigation"><button type="button" class="btn btn-outline-light" data-bs-target="#photo-19" data-bs-toggle="modal">← Previous</button><button type="button" class="btn btn-outline-light" data-bs-target="#photo-1" data-bs-toggle="modal">Next →</button></nav></div></div></div>
   </main>
 
   <!-- ===== FOOTER (same on every page) ===== -->
-  <footer class="site-footer">
+  <footer class="site-footer bg-dark pt-5 pb-4 d-print-none">
     <div class="container">
-      <div class="footer-grid">
-        <div>
-          <div class="footer-brand">
+      <div class="row g-5 mb-5">
+        <div class="col-md-6 col-lg-4">
+          <div class="d-flex align-items-center gap-2 mb-3">
             <img src="images/logo.svg" alt="" width="44" height="37">
-            <span>Chmustar Municipality</span>
+            <span class="font-heading fs-5 fw-bold text-white">Chmustar Municipality</span>
           </div>
           <p>One town, one website — all the information in one place. Serving the residents of Chmustar and the surrounding villages of Baalbek-Hermel.</p>
         </div>
-        <section>
-          <h2>Quick links</h2>
-          <ul>
-            <li><a href="services.html">Services &amp; Paperwork</a></li>
-            <li><a href="news.html">News &amp; Announcements</a></li>
-            <li><a href="emergency.html">Emergency Numbers</a></li>
-            <li><a href="gallery.html">Photo Gallery</a></li>
+        <section class="col-md-6 col-lg-2">
+          <h2 class="h6 text-white mb-3">Quick links</h2>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-2"><a href="services.html">Services &amp; Paperwork</a></li>
+            <li class="mb-2"><a href="news.html">News &amp; Announcements</a></li>
+            <li class="mb-2"><a href="emergency.html">Emergency Numbers</a></li>
+            <li class="mb-2"><a href="gallery.html">Photo Gallery</a></li>
           </ul>
         </section>
-        <section>
-          <h2>Discover</h2>
-          <ul>
-            <li><a href="about.html">About Chmustar</a></li>
-            <li><a href="nature.html">Nature &amp; Tourism</a></li>
-            <li><a href="agriculture.html">Agriculture</a></li>
-            <li><a href="culture.html">Culture &amp; Associations</a></li>
+        <section class="col-md-6 col-lg-2">
+          <h2 class="h6 text-white mb-3">Discover</h2>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-2"><a href="about.html">About Chmustar</a></li>
+            <li class="mb-2"><a href="nature.html">Nature &amp; Tourism</a></li>
+            <li class="mb-2"><a href="agriculture.html">Agriculture</a></li>
+            <li class="mb-2"><a href="culture.html">Culture &amp; Associations</a></li>
           </ul>
         </section>
-        <section>
-          <h2>Contact</h2>
-          <address>
-            <ul>
-              <li>Municipality Building, Main Street, Chmustar, Baalbek-Hermel, Lebanon</li>
-              <li><a href="tel:+9618000000">+961 8 000 000</a></li>
-              <li><a href="mailto:info@chmustar.gov.lb">info@chmustar.gov.lb</a></li>
-              <li><a href="https://www.facebook.com/search/top?q=%D8%A8%D9%84%D8%AF%D9%8A%D8%A9%20%D8%B4%D9%85%D8%B3%D8%B7%D8%A7%D8%B1" target="_blank" rel="noopener">Facebook page</a></li>
+        <section class="col-md-6 col-lg-4">
+          <h2 class="h6 text-white mb-3">Contact</h2>
+          <address class="mb-0">
+            <ul class="list-unstyled mb-0">
+              <li class="mb-2">Municipality Building, Main Street, Chmustar, Baalbek-Hermel, Lebanon</li>
+              <li class="mb-2"><a href="tel:+9618000000">+961 8 000 000</a></li>
+              <li class="mb-2"><a href="mailto:info@chmustar.gov.lb">info@chmustar.gov.lb</a></li>
+              <li class="mb-2"><a href="https://www.facebook.com/search/top?q=%D8%A8%D9%84%D8%AF%D9%8A%D8%A9%20%D8%B4%D9%85%D8%B3%D8%B7%D8%A7%D8%B1" target="_blank" rel="noopener">Facebook page</a></li>
             </ul>
           </address>
         </section>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 Chmustar Municipality. All rights reserved.</p>
-        <p><a href="#top">Back to top ↑</a></p>
+      <div class="d-flex flex-wrap justify-content-between gap-3 border-top border-white border-opacity-10 pt-4 small">
+        <p class="mb-0">&copy; 2026 Chmustar Municipality. All rights reserved.</p>
+        <p class="mb-0"><a href="#top">Back to top ↑</a></p>
       </div>
     </div>
   </footer>
 
-  <a href="#top" class="back-to-top" aria-label="Back to top">↑</a>
+  <a href="#top" class="back-to-top btn btn-primary rounded-circle shadow position-fixed bottom-0 end-0 m-3 z-3 d-flex align-items-center justify-content-center p-0 fs-5 d-print-none" aria-label="Back to top">↑</a>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
