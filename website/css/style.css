@@ -2,15 +2,16 @@
    Chmustar Municipality Website — Custom Stylesheet
    Loaded AFTER Bootstrap 5.3 (bootstrap.min.css / bootstrap.rtl.min.css).
    Bootstrap classes in the HTML do the layout, grid, components and spacing.
-   This file only:
-     1. maps the brand palette onto Bootstrap's CSS variables (theme), and
-     2. adds the few visual details Bootstrap has no class for.
+   This file keeps the ORIGINAL look of the site on top of Bootstrap:
+     1. maps the brand palette onto Bootstrap's CSS variables (no Bootstrap blue),
+     2. restyles Bootstrap components to match the original design,
+     3. adds the few details Bootstrap has no class for.
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
    1. BRAND TOKENS + BOOTSTRAP THEME
-   Utilities such as .text-primary, .bg-light, .border-warning read these
-   --bs-*-rgb variables, so they render in the brand colours.
+   Utilities such as .text-primary, .bg-light, .border-warning, .shadow-sm,
+   .rounded-4 read these variables, so they render in the original style.
    -------------------------------------------------------------------------- */
 :root {
   /* Brand palette (Step 4 · Visual Design) */
@@ -25,13 +26,20 @@
 
   --font-heading: "Poppins", "Segoe UI", Arial, sans-serif;
   --font-body: "Inter", "Segoe UI", Arial, sans-serif;
+  --radius: 14px;
+  --radius-sm: 8px;
+  --shadow: 0 6px 20px rgba(31, 42, 54, 0.08);
+  --shadow-hover: 0 12px 28px rgba(31, 42, 54, 0.16);
+  --focus-ring: 0 0 0 0.25rem rgba(62, 107, 72, 0.25);
   --header-height: 72px;
 
+  /* Theme colours → brand palette */
   --bs-primary: var(--green);
   --bs-primary-rgb: 62, 107, 72;
   --bs-primary-text-emphasis: var(--green-dark);
   --bs-primary-bg-subtle: #E3ECE5;
   --bs-primary-border-subtle: #B9CDBE;
+  --bs-blue: var(--green);
   --bs-warning: var(--sun);
   --bs-warning-rgb: 242, 163, 58;
   --bs-danger: var(--emergency);
@@ -41,6 +49,7 @@
   --bs-light: var(--sand);
   --bs-light-rgb: 237, 227, 209;
 
+  /* Text, background, links */
   --bs-body-font-family: var(--font-body);
   --bs-body-line-height: 1.65;
   --bs-body-color: var(--ink);
@@ -51,6 +60,14 @@
   --bs-link-color-rgb: 62, 107, 72;
   --bs-link-hover-color: var(--green-dark);
   --bs-link-hover-color-rgb: 47, 83, 56;
+  --bs-focus-ring-color: rgba(62, 107, 72, 0.25);
+
+  /* Original corners and shadows */
+  --bs-border-radius: var(--radius-sm);        /* .rounded-2, forms, dropdown */
+  --bs-border-radius-lg: 12px;                 /* .rounded-3 (icons) */
+  --bs-border-radius-xl: var(--radius);        /* .rounded-4 (cards, tables, images) */
+  --bs-box-shadow-sm: var(--shadow);           /* .shadow-sm */
+  --bs-box-shadow: var(--shadow-hover);        /* .shadow */
 }
 
 /* Arabic pages: Arabic fonts, taller lines */
@@ -61,7 +78,7 @@ html[lang="ar"] {
 }
 
 /* --------------------------------------------------------------------------
-   2. BASE
+   2. BASE (original typography)
    -------------------------------------------------------------------------- */
 html {
   scroll-padding-top: var(--header-height); /* anchors are not hidden under the sticky header */
@@ -71,24 +88,52 @@ h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   font-family: var(--font-heading);
   font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+h1, .h1 { font-size: 2.1rem; }
+h2, .h2 { font-size: 1.7rem; }
+h3, .h3 { font-size: 1.2rem; }
+
+@media (min-width: 600px) {
+  h1, .h1 { font-size: 2.6rem; }
+  h2, .h2 { font-size: 2rem; }
 }
 
 .font-heading {
   font-family: var(--font-heading);
 }
 
+.lead {
+  font-weight: 400;
+}
+
 a {
   text-underline-offset: 3px;
 }
 
-/* Visible keyboard focus on every interactive element (accessibility) */
+/* Visible keyboard focus on every interactive element (accessibility).
+   Replaces Bootstrap's blue focus glow with the brand "sun" outline. */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
 select:focus-visible,
-textarea:focus-visible {
+textarea:focus-visible,
+.nav-link:focus-visible,
+.btn:focus-visible,
+.btn-close:focus,
+.accordion-button:focus,
+.navbar-toggler:focus {
   outline: 3px solid var(--sun);
   outline-offset: 3px;
+  box-shadow: none;
+}
+
+.btn-close:focus:not(:focus-visible),
+.accordion-button:focus:not(:focus-visible),
+.navbar-toggler:focus:not(:focus-visible) {
+  outline: 0;
 }
 
 /* Arabic text inside English pages */
@@ -101,31 +146,54 @@ html:not([lang="ar"]) [lang="ar"] {
   unicode-bidi: isolate;
 }
 
+/* Original page width: fluid up to 1200px (Bootstrap's .container steps to 1140px) */
+.container {
+  max-width: 1200px;
+  padding-inline: 1rem;
+}
+
+@media (min-width: 1000px) {
+  .container {
+    padding-inline: 1.5rem;
+  }
+}
+
 /* Skip link must sit above the sticky navbar (z-index 1020) */
 .skip-link {
   z-index: 1100;
 }
 
+/* Original section spacing (4rem; Bootstrap's .py-5 is 3rem) */
+main > section.py-5 {
+  padding-top: 4rem !important;
+  padding-bottom: 4rem !important;
+}
+
 /* Small uppercase label above section titles */
 .eyebrow {
   font-family: var(--font-heading);
+  font-size: 0.8rem !important;
   letter-spacing: 0.12em;
 }
 
 html[lang="ar"] .eyebrow {
+  font-size: 0.9rem !important;
   letter-spacing: 0;
 }
 
 /* --------------------------------------------------------------------------
-   3. BOOTSTRAP COMPONENT THEMING (brand colours on buttons, nav, cards…)
+   3. BUTTONS (original pill buttons in brand colours)
    -------------------------------------------------------------------------- */
-.btn {
+.btn,
+.btn-lg {
   --bs-btn-font-family: var(--font-heading);
   --bs-btn-font-weight: 600;
+  --bs-btn-font-size: 1rem;
   --bs-btn-padding-x: 1.5rem;
-  --bs-btn-padding-y: 0.7rem;
+  --bs-btn-padding-y: 0.8rem;
   --bs-btn-border-width: 2px;
-  --bs-btn-border-radius: 50rem;
+  --bs-btn-border-radius: 999px;
+  --bs-btn-focus-box-shadow: none;
   transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
 }
 
@@ -133,16 +201,17 @@ html[lang="ar"] .eyebrow {
   transform: translateY(-2px);
 }
 
+/* Language switch */
 .btn-sm {
   --bs-btn-padding-x: 0.9rem;
-  --bs-btn-padding-y: 0.35rem;
+  --bs-btn-padding-y: 0.45rem;
+  --bs-btn-font-family: var(--font-body);
   --bs-btn-font-size: 0.9rem;
+  line-height: 1.2;
 }
 
-.btn-lg {
-  --bs-btn-padding-x: 1.75rem;
-  --bs-btn-padding-y: 0.8rem;
-  --bs-btn-font-size: 1.05rem;
+.btn-sm:hover {
+  transform: none;
 }
 
 .btn-primary {
@@ -155,7 +224,8 @@ html[lang="ar"] .eyebrow {
   --bs-btn-active-color: #fff;
   --bs-btn-active-bg: var(--green-dark);
   --bs-btn-active-border-color: var(--green-dark);
-  --bs-btn-focus-shadow-rgb: 62, 107, 72;
+  --bs-btn-disabled-bg: var(--green);
+  --bs-btn-disabled-border-color: var(--green);
 }
 
 .btn-warning {
@@ -168,7 +238,17 @@ html[lang="ar"] .eyebrow {
   --bs-btn-active-color: var(--ink);
   --bs-btn-active-bg: #E08F22;
   --bs-btn-active-border-color: #E08F22;
-  --bs-btn-focus-shadow-rgb: 242, 163, 58;
+}
+
+.btn-outline-light {
+  --bs-btn-color: #fff;
+  --bs-btn-border-color: #fff;
+  --bs-btn-hover-color: var(--ink);
+  --bs-btn-hover-bg: #fff;
+  --bs-btn-hover-border-color: #fff;
+  --bs-btn-active-color: var(--ink);
+  --bs-btn-active-bg: #fff;
+  --bs-btn-active-border-color: #fff;
 }
 
 .btn-outline-primary {
@@ -180,21 +260,26 @@ html[lang="ar"] .eyebrow {
   --bs-btn-active-color: #fff;
   --bs-btn-active-bg: var(--green);
   --bs-btn-active-border-color: var(--green);
-  --bs-btn-focus-shadow-rgb: 62, 107, 72;
 }
 
 .btn-outline-dark {
   --bs-btn-color: var(--ink);
   --bs-btn-border-color: var(--ink);
+  --bs-btn-hover-color: #fff;
   --bs-btn-hover-bg: var(--ink);
   --bs-btn-hover-border-color: var(--ink);
+  --bs-btn-active-color: #fff;
   --bs-btn-active-bg: var(--ink);
   --bs-btn-active-border-color: var(--ink);
 }
 
-/* Big emergency number tiles */
+.hero .btn {
+  text-shadow: none;
+}
+
+/* Big emergency number tiles (.btn-outline-danger on the Emergency page) */
 .btn-outline-danger {
-  --bs-btn-color: var(--emergency);
+  --bs-btn-color: var(--ink);
   --bs-btn-bg: #fff;
   --bs-btn-border-color: var(--emergency);
   --bs-btn-hover-color: #fff;
@@ -203,66 +288,165 @@ html[lang="ar"] .eyebrow {
   --bs-btn-active-color: #fff;
   --bs-btn-active-bg: var(--emergency);
   --bs-btn-active-border-color: var(--emergency);
+  --bs-btn-font-family: var(--font-body);
+  --bs-btn-font-weight: 400;
+  --bs-btn-line-height: 1.65;
 }
 
-.hero .btn {
-  text-shadow: none;
+.btn-outline-danger:hover {
+  transform: none;
 }
 
-/* White surfaces (Bootstrap would use the cream body colour) */
-.card,
-.accordion,
-.dropdown-menu {
-  --bs-card-bg: #fff;
-  --bs-accordion-bg: #fff;
-  --bs-dropdown-bg: #fff;
+.btn-outline-danger > span {
+  font-family: var(--font-heading);
+  font-size: 2.4rem;
+  font-weight: 800 !important;
+  line-height: 1.1 !important;
+  margin-bottom: 0 !important;
+  color: var(--emergency);
 }
 
-.table {
-  --bs-table-bg: #fff;
-}
-
-.accordion {
-  --bs-accordion-active-color: var(--green-dark);
-  --bs-accordion-active-bg: var(--bs-primary-bg-subtle);
-  --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem rgba(62, 107, 72, 0.25);
+.btn-outline-danger:hover > span,
+.btn-outline-danger:focus-visible > span {
+  color: #fff;
 }
 
 /* --------------------------------------------------------------------------
-   4. HEADER / NAVBAR
+   4. HEADER / NAVBAR (original look: pill for current page, hover dropdown)
    -------------------------------------------------------------------------- */
 .site-header {
   background-color: rgba(250, 247, 242, 0.96);
+  border-bottom-color: var(--sand) !important;
   backdrop-filter: blur(6px);
 }
 
 .site-header .navbar {
   min-height: var(--header-height);
   --bs-navbar-color: var(--ink);
-  --bs-navbar-hover-color: var(--green);
+  --bs-navbar-hover-color: var(--ink);
   --bs-navbar-active-color: #fff;
   --bs-navbar-brand-color: var(--ink);
   --bs-navbar-brand-hover-color: var(--ink);
   --bs-navbar-nav-link-padding-x: 0.7rem;
+  --bs-navbar-toggler-padding-y: 0.5rem;
+  --bs-navbar-toggler-padding-x: 0.9rem;
   --bs-navbar-toggler-font-size: 1rem;
   --bs-navbar-toggler-border-color: var(--ink);
+  --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%231F2A36' stroke-linecap='round' stroke-width='2.5' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.site-header .navbar-brand .fs-5 {
+  font-size: 1.15rem !important;
+}
+
+.site-header .navbar-brand .small {
+  font-size: 0.75rem;
+}
+
+.site-header .navbar-toggler {
+  border-width: 2px;
+  font-family: var(--font-heading);
+}
+
+.site-header .navbar-toggler-icon {
+  width: 1.1em;
+  height: 1.1em;
 }
 
 .site-header .navbar-nav {
   --bs-nav-link-padding-x: 0.75rem;
+  --bs-nav-link-padding-y: 0.65rem;
   --bs-nav-link-font-weight: 500;
   --bs-nav-pills-link-active-bg: var(--green);
-  --bs-nav-pills-border-radius: 8px;
+  --bs-nav-pills-border-radius: var(--radius-sm);
 }
 
-/* An open (but not current) dropdown toggle keeps readable green text */
-.site-header .navbar-nav .nav-link.show:not(.active) {
+.site-header .navbar-nav .nav-link:not(.active):hover {
+  background-color: var(--sand);
+}
+
+/* "Explore" is a group title, not a pill: green + bold when one of its pages is open */
+.site-header .nav-pills .dropdown-toggle.active,
+.site-header .nav-pills .dropdown-toggle.show {
+  background-color: transparent;
+  color: var(--ink);
+}
+
+.site-header .nav-pills .dropdown-toggle.active {
   color: var(--green);
+  font-weight: 700;
 }
 
 .site-header .dropdown-menu {
+  --bs-dropdown-min-width: 230px;
+  --bs-dropdown-padding-x: 0.5rem;
+  --bs-dropdown-padding-y: 0.5rem;
+  --bs-dropdown-font-size: 0.95rem;
+  --bs-dropdown-bg: #fff;
+  --bs-dropdown-border-radius: var(--radius-sm);
+  --bs-dropdown-item-padding-x: 0.7rem;
+  --bs-dropdown-item-padding-y: 0.5rem;
+  --bs-dropdown-item-border-radius: var(--radius-sm);
+  --bs-dropdown-link-color: var(--ink);
+  --bs-dropdown-link-hover-color: var(--ink);
   --bs-dropdown-link-hover-bg: var(--sand);
+  --bs-dropdown-link-active-color: #fff;
   --bs-dropdown-link-active-bg: var(--green);
+}
+
+.site-header .dropdown-item {
+  font-weight: 500;
+}
+
+/* Phones & tablets: the "Explore" pages are always listed under a small title */
+@media (max-width: 991.98px) {
+  .site-header .dropdown-toggle {
+    color: var(--muted) !important;
+    font-size: 0.8rem;
+    font-weight: 500 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding-bottom: 0.25rem;
+    pointer-events: none;
+  }
+
+  html[lang="ar"] .site-header .dropdown-toggle {
+    letter-spacing: 0;
+    text-transform: none;
+  }
+
+  .site-header .dropdown-toggle::after {
+    display: none;
+  }
+
+  .site-header .dropdown-menu {
+    display: block;
+    position: static;
+    padding: 0 0 0 1rem;
+    padding-inline: 1rem 0;
+    background: transparent;
+    box-shadow: none !important;
+  }
+
+  .site-header .dropdown-item {
+    padding: 0.65rem 0.75rem;
+  }
+}
+
+/* Desktop: smaller links, dropdown opens on hover AND on keyboard focus */
+@media (min-width: 992px) {
+  .site-header .navbar-nav {
+    --bs-nav-link-font-size: 0.95rem;
+    --bs-nav-link-padding-y: 0.5rem;
+  }
+
+  .site-header .dropdown:hover > .dropdown-menu,
+  .site-header .dropdown:focus-within > .dropdown-menu {
+    display: block;
+    top: 100%;
+    inset-inline-start: 0;
+    margin-top: 0;
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -283,16 +467,55 @@ html[lang="ar"] .eyebrow {
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
 }
 
+.hero h1 {
+  font-size: 2.6rem;
+}
+
+.hero h1 > span {
+  font-size: 1.6rem !important;
+}
+
+@media (min-width: 600px) {
+  .hero h1 { font-size: 3.4rem; }
+}
+
+@media (min-width: 1000px) {
+  .hero h1 { font-size: 4rem; }
+}
+
+.hero .lead {
+  font-size: 1.15rem;
+  max-width: 560px;
+}
+
 .stats-overlap {
   margin-top: -2.5rem;
   position: relative;
   z-index: 2;
 }
 
+.stats-overlap dt {
+  font-size: 0.9rem;
+}
+
+.stats-overlap dd {
+  font-size: 1.8rem !important;
+}
+
 .page-hero {
+  padding: 4rem 0 2.5rem !important;
   background-color: var(--ink);
   background-size: cover;
   background-position: center;
+}
+
+.page-hero h1 {
+  margin-bottom: 0.5rem;
+}
+
+.page-hero .lead {
+  font-size: 1.1rem;
+  max-width: 640px;
 }
 
 .page-hero--about        { background-image: linear-gradient(rgba(31,42,54,.65), rgba(31,42,54,.75)), url("../images/town-hills-view.webp"); }
@@ -312,6 +535,7 @@ html[lang="ar"] .eyebrow {
   --bs-breadcrumb-divider: "›";
   --bs-breadcrumb-divider-color: var(--sun);
   --bs-breadcrumb-item-active-color: var(--sand);
+  --bs-breadcrumb-item-padding-x: 0.4rem;
   font-size: 0.9rem;
 }
 
@@ -320,19 +544,51 @@ html[lang="ar"] .eyebrow {
 }
 
 /* --------------------------------------------------------------------------
-   6. CARDS, LISTS, QUOTE
+   6. CARDS, ALERTS (callouts), LISTS, QUOTE
    -------------------------------------------------------------------------- */
+.card {
+  --bs-card-bg: #fff;
+  --bs-card-border-radius: var(--radius);
+  --bs-card-inner-border-radius: var(--radius);
+  --bs-card-title-spacer-y: 1rem;
+}
+
+.card .h5 {
+  font-size: 1.2rem;
+}
+
+.card .h6 {
+  font-size: 1rem;
+}
+
 .hover-lift {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .hover-lift:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 28px rgba(31, 42, 54, 0.16) !important;
+  box-shadow: var(--shadow-hover) !important;
 }
 
 .card-img-top {
   aspect-ratio: 16 / 10;
+}
+
+.badge {
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.15rem 0.7rem;
+}
+
+/* Callouts: white box with a coloured start border (Bootstrap .alert) */
+.alert-warning,
+.alert-danger {
+  --bs-alert-bg: #fff;
+  --bs-alert-color: var(--ink);
+  --bs-alert-padding-x: 1.5rem;
+  --bs-alert-padding-y: 1.5rem;
+  --bs-alert-border-radius: var(--radius-sm);
+  --bs-alert-link-color: var(--green);
 }
 
 /* Green tick bullets (used with Bootstrap's .list-unstyled) */
@@ -358,7 +614,7 @@ html[lang="ar"] .eyebrow {
   background-color: var(--green);
 }
 
-/* Big decorative quote mark on the home-page message */
+/* Home-page message with a big decorative quote mark */
 .quote {
   position: relative;
 }
@@ -374,8 +630,106 @@ html[lang="ar"] .eyebrow {
   color: var(--sun);
 }
 
+.quote .blockquote {
+  font-size: 1.1rem;
+}
+
+.quote .blockquote-footer {
+  font-size: 1rem;
+  margin-top: 0;
+}
+
 /* --------------------------------------------------------------------------
-   7. GALLERY (grid of thumbnails + Bootstrap modals)
+   7. TABLES (original sand header, cream zebra rows)
+   -------------------------------------------------------------------------- */
+.table {
+  --bs-table-bg: #fff;
+  --bs-table-color: var(--ink);
+  --bs-table-border-color: var(--sand);
+  --bs-table-hover-bg: #F6EFE2;
+  --bs-table-hover-color: var(--ink);
+  min-width: 420px;
+}
+
+.table > :not(caption) > * > * {
+  padding: 0.8rem 1rem;
+}
+
+/* Original zebra stripes are on EVEN rows */
+.table-striped > tbody > tr:nth-of-type(odd) > * {
+  --bs-table-bg-type: transparent;
+}
+
+.table-striped > tbody > tr:nth-of-type(even) > * {
+  --bs-table-bg-type: #FCFAF6;
+}
+
+.table-light {
+  --bs-table-color: var(--ink);
+  --bs-table-bg: var(--sand);
+  --bs-table-border-color: var(--sand);
+}
+
+.table thead th {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+}
+
+/* --------------------------------------------------------------------------
+   8. FAQ (Bootstrap accordion styled like the original separate boxes)
+   -------------------------------------------------------------------------- */
+.accordion {
+  --bs-accordion-bg: #fff;
+  --bs-accordion-border-width: 0;
+  --bs-accordion-border-radius: var(--radius-sm);
+  --bs-accordion-inner-border-radius: var(--radius-sm);
+  --bs-accordion-btn-padding-x: 1.5rem;
+  --bs-accordion-btn-padding-y: 1rem;
+  --bs-accordion-body-padding-x: 1.5rem;
+  --bs-accordion-body-padding-y: 0;
+  --bs-accordion-active-color: var(--ink);
+  --bs-accordion-active-bg: #fff;
+}
+
+.accordion-item {
+  margin-bottom: 1rem;
+  border-radius: var(--radius-sm) !important;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.accordion-header {
+  margin-bottom: 0;
+}
+
+.accordion-button {
+  font-size: 1rem;
+  box-shadow: none !important;
+}
+
+/* "+" when closed, "−" when open (instead of Bootstrap's chevron) */
+.accordion-button::after,
+.accordion-button:not(.collapsed)::after {
+  content: "+";
+  background-image: none;
+  transform: none;
+  width: auto;
+  height: auto;
+  color: var(--green);
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.accordion-button:not(.collapsed)::after {
+  content: "−";
+}
+
+.accordion-body p {
+  padding-bottom: 1rem;
+}
+
+/* --------------------------------------------------------------------------
+   9. GALLERY (grid of thumbnails + Bootstrap modals)
    -------------------------------------------------------------------------- */
 .gallery-item img {
   transition: transform 0.4s ease;
@@ -389,21 +743,74 @@ html[lang="ar"] .eyebrow {
   background: linear-gradient(transparent, rgba(31, 42, 54, 0.85));
 }
 
+.modal-backdrop {
+  --bs-backdrop-bg: rgb(15, 20, 26);
+  --bs-backdrop-opacity: 0.92;
+}
+
+.gallery-modal .modal-content {
+  background-color: transparent !important;
+}
+
 .gallery-modal .modal-body img {
-  max-height: 75vh;
+  max-height: 80vh;
   width: auto;
+  border-radius: var(--radius-sm);
+}
+
+.gallery-modal .btn {
+  --bs-btn-padding-x: 1rem;
+  --bs-btn-padding-y: 0.4rem;
+  --bs-btn-border-color: rgba(255, 255, 255, 0.4);
+  --bs-btn-hover-bg: var(--sun);
+  --bs-btn-hover-border-color: var(--sun);
+  --bs-btn-hover-color: var(--ink);
 }
 
 /* --------------------------------------------------------------------------
-   8. FORMS — Bootstrap .form-control / .form-select, brand focus colour.
+   10. FORMS — original sand fields on cream, green focus.
    :user-invalid shows errors only AFTER the user has touched a field
    (Nielsen: error prevention), with no JavaScript needed.
    -------------------------------------------------------------------------- */
+.form-control,
+.form-select {
+  color: var(--ink);
+  background-color: var(--cream);
+  border: 2px solid var(--sand);
+  border-radius: var(--radius-sm);
+  padding-block: 0.75rem;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.form-control {
+  padding-inline: 0.9rem;
+}
+
+.form-select {
+  padding-inline-start: 0.9rem;
+}
+
+textarea.form-control {
+  min-height: 140px;
+  resize: vertical;
+}
+
 .form-control:focus,
-.form-select:focus,
+.form-select:focus {
+  border-color: var(--green);
+  background-color: #fff;
+  box-shadow: none;
+}
+
+.form-check-input {
+  width: 1.2rem;
+  height: 1.2rem;
+  margin-top: 0.25rem;
+}
+
 .form-check-input:focus {
   border-color: var(--green);
-  box-shadow: 0 0 0 0.25rem rgba(62, 107, 72, 0.25);
+  box-shadow: var(--focus-ring);
 }
 
 .form-check-input:checked {
@@ -411,10 +818,25 @@ html[lang="ar"] .eyebrow {
   border-color: var(--green);
 }
 
+.form-check-label {
+  padding-inline-start: 0.4rem;
+}
+
+.form-text,
+.invalid-feedback {
+  font-size: 0.85rem;
+  margin-top: 0.3rem;
+}
+
+.invalid-feedback {
+  color: var(--emergency);
+  font-weight: 600;
+}
+
 .form-control:user-invalid,
 .form-select:user-invalid,
 .form-check-input:user-invalid {
-  border-color: var(--bs-form-invalid-border-color);
+  border-color: var(--emergency);
   background-color: #FDF0EE;
 }
 
@@ -429,10 +851,14 @@ html[lang="ar"] .eyebrow {
 }
 
 /* --------------------------------------------------------------------------
-   9. FOOTER + BACK TO TOP
+   11. FOOTER + BACK TO TOP
    -------------------------------------------------------------------------- */
 .site-footer {
   color: #D5DBE1;
+}
+
+.site-footer .h6 {
+  font-size: 1.05rem;
 }
 
 .site-footer a {
@@ -448,10 +874,17 @@ html[lang="ar"] .eyebrow {
 .back-to-top {
   width: 48px;
   height: 48px;
+  --bs-btn-hover-bg: var(--sun);
+  --bs-btn-hover-border-color: var(--sun);
+  --bs-btn-hover-color: var(--ink);
+}
+
+.back-to-top:hover {
+  transform: none;
 }
 
 /* --------------------------------------------------------------------------
-   10. ACCESSIBILITY + PRINT
+   12. ACCESSIBILITY + PRINT
    -------------------------------------------------------------------------- */
 @media (prefers-reduced-motion: reduce) {
   *,
